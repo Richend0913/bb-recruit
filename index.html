@@ -3,2679 +3,900 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>配送パートナー募集｜BURNING BROS.【バーニングブロス】｜神奈川・東京エリア</title>
-<meta name="description" content="BURNING BROS.【バーニングブロス】では神奈川・東京エリアで配送パートナーを募集中。下請けパートナー（法人・個人事業主）、直接委託ドライバー（個人・未経験歓迎）の2つの働き方をご用意しています。">
+<title>配送パートナー募集｜BURNING BROS.【バーニングブロス】株式会社</title>
+<meta name="description" content="BURNING BROS.では神奈川・東京エリアで配送パートナーを募集中。下請けパートナー・直接委託ドライバーの2つの働き方。¥143〜/個の高単価。座間・相模原・横浜・世田谷・大田エリア。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500;900&display=swap" rel="stylesheet">
 <style>
-/* ========================================
-   CSS RESET & BASE
-   ======================================== */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --navy: #0f2137;
-  --navy-light: #1a3350;
-  --navy-dark: #0a1828;
-  --gold: #d4953a;
-  --gold-light: #e8b06a;
-  --gold-dark: #b87d2e;
-  --white: #ffffff;
-  --off-white: #f8f9fb;
-  --gray-50: #f4f5f7;
-  --gray-100: #e8eaed;
-  --gray-200: #d1d5db;
-  --gray-300: #9ca3af;
-  --gray-400: #6b7280;
-  --gray-500: #4b5563;
-  --gray-600: #374151;
-  --text-primary: #1a1a2e;
-  --text-secondary: #4a4a6a;
-  --text-light: #7a7a9a;
-  --shadow-sm: 0 1px 3px rgba(15, 33, 55, 0.08);
-  --shadow-md: 0 4px 16px rgba(15, 33, 55, 0.1);
-  --shadow-lg: 0 8px 32px rgba(15, 33, 55, 0.12);
-  --shadow-xl: 0 16px 48px rgba(15, 33, 55, 0.16);
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: var(--text-primary);
-  background: var(--white);
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  color: #111;
+  background: #fff;
   overflow-x: hidden;
+  line-height: 1.8;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ---------- UTILITY ---------- */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ---------- HEADER (FIXED) ---------- */
+.site-header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+  padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  mix-blend-mode: difference;
 }
-
-ul, ol {
-  list-style: none;
+.site-header img {
+  height: 28px; width: auto;
+  filter: brightness(0) invert(1);
 }
-
-/* ========================================
-   UTILITIES
-   ======================================== */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+.header-tel {
+  font-weight: 500; font-size: 0.8rem; letter-spacing: 0.08em;
+  color: #fff;
 }
+.header-tel span { display: block; font-size: 1.1rem; font-weight: 900; }
 
-.container--narrow {
+/* ---------- SECTION: HERO ---------- */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 600px;
+  display: flex; align-items: flex-end;
+  padding: 0 40px 80px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://burning-bros.com/cms/wp-content/uploads/2021/07/Fotolia_115037316_Subscription_Monthly_M.jpg') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.3) 100%);
+}
+.hero-content {
+  position: relative; z-index: 2;
   max-width: 900px;
 }
-
-.section {
-  padding: 100px 0;
+.hero-content h1 {
+  font-size: clamp(42px, 8vw, 96px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.hero-content h1 em {
+  font-style: normal;
+  color: #d32f2f;
+}
+.hero-sub {
+  font-size: clamp(14px, 1.6vw, 18px);
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+.scroll-hint {
+  position: absolute; bottom: 30px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  z-index: 2;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: rgba(255,255,255,0.3);
+  position: relative; overflow: hidden;
+}
+.scroll-line::after {
+  content: ''; position: absolute; top: -100%; left: 0;
+  width: 1px; height: 100%; background: #fff;
+  animation: scrollDown 2s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0% { top: -100%; }
+  100% { top: 100%; }
 }
 
-.section--gray {
-  background: var(--off-white);
+/* ---------- SECTION: MESSAGE ---------- */
+.message {
+  padding: 160px 40px 120px;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+.message h2 {
+  font-size: clamp(48px, 9vw, 120px);
+  font-weight: 900;
+  color: #d32f2f;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+}
+.message p {
+  font-size: clamp(14px, 1.4vw, 17px);
+  max-width: 520px;
+  color: #555;
+  line-height: 2;
 }
 
-.section--navy {
-  background: var(--navy);
-  color: var(--white);
+/* ---------- SECTION: TWO PATHS ---------- */
+.two-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
 }
+.path-card {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.path-card:hover .path-arrow { transform: translateX(8px); }
 
-.section-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+.path-left {
+  background: #111;
+  color: #fff;
+}
+.path-right {
+  background: #d32f2f;
+  color: #fff;
+}
+.path-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
-  display: block;
+  opacity: 0.6;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.path-card h3 {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.path-card p {
+  font-size: clamp(13px, 1.2vw, 16px);
+  opacity: 0.8;
+  line-height: 1.9;
+  max-width: 400px;
+}
+.path-arrow {
+  margin-top: 40px;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
 }
 
-.section-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.3;
+/* ---------- SECTION: DRIVER DETAIL ---------- */
+.driver-detail {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.driver-bg {
+  position: absolute; inset: 0;
+  background: url('https://burning-bros.com/cms/wp-content/uploads/2021/08/busan-night-scene-1747130_1920.jpg') center/cover no-repeat;
+}
+.driver-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+.driver-inner {
+  position: relative; z-index: 2;
+  width: 100%;
+  padding: 120px 40px;
+}
+.price-display {
+  display: flex; align-items: baseline; gap: 8px;
+  margin-bottom: 60px;
+}
+.price-yen {
+  font-size: clamp(18px, 2.5vw, 28px);
+  font-weight: 500; color: #d32f2f;
+}
+.price-num {
+  font-size: clamp(80px, 14vw, 180px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.price-unit {
+  font-size: clamp(16px, 2vw, 24px);
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+.price-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 8px;
+}
+.driver-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px 60px;
+  max-width: 1100px;
+}
+.driver-grid dt {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #d32f2f;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.driver-grid dd {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* ---------- SECTION: SUBCONTRACTOR ---------- */
+.subcontractor {
+  padding: 160px 40px;
+  max-width: 900px;
+}
+.subcontractor .section-en {
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  color: #bbb; font-weight: 500;
+  margin-bottom: 20px; text-transform: uppercase;
+}
+.subcontractor h2 {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900; line-height: 1.15;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+.subcontractor h2 em {
+  font-style: normal; color: #d32f2f;
+}
+.sub-features {
+  display: flex; flex-direction: column; gap: 0;
+  border-top: 1px solid #ddd;
+}
+.sub-features li {
+  padding: 28px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 500;
+  display: flex; align-items: baseline; gap: 16px;
+}
+.sub-features li::before {
+  content: '';
+  display: block; width: 8px; height: 8px;
+  background: #d32f2f;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---------- SECTION: AREAS ---------- */
+.areas {
+  background: #000;
+  padding: 140px 40px;
+  overflow: hidden;
+}
+.areas .section-en {
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  color: #555; font-weight: 500;
+  margin-bottom: 40px; text-transform: uppercase;
+}
+.area-list {
+  display: flex; flex-direction: column;
+}
+.area-item {
+  font-size: clamp(48px, 10vw, 140px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.area-item .area-sub {
+  font-size: clamp(11px, 1.2vw, 14px);
+  font-weight: 300;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- SECTION: DAY FLOW ---------- */
+.day-flow {
+  padding: 140px 40px;
+  max-width: 800px;
+}
+.day-flow .section-en {
+  font-size: 0.7rem; letter-spacing: 0.2em;
+  color: #bbb; font-weight: 500;
+  margin-bottom: 60px; text-transform: uppercase;
+}
+.timeline {
+  display: flex; flex-direction: column; gap: 0;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+.timeline-time {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1;
+  color: #111;
+  text-align: right;
+}
+.timeline-line {
+  background: #ddd;
+  position: relative;
+}
+.timeline-line::before {
+  content: '';
+  position: absolute; top: 8px; left: -4px;
+  width: 9px; height: 9px;
+  background: #d32f2f;
+  border-radius: 50%;
+}
+.timeline-content h4 {
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+.timeline-content p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ---------- SECTION: WHY US ---------- */
+.why-us {
+  padding: 120px 40px;
+  background: #fafafa;
+}
+.why-item {
+  padding: 48px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  max-width: 1000px;
+}
+.why-item:first-child { border-top: 1px solid #e0e0e0; }
+.why-num {
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 900;
+  color: #d32f2f;
+}
+.why-item h3 {
+  font-size: clamp(22px, 3.5vw, 40px);
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.why-item p {
+  grid-column: 2;
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: #777;
+  line-height: 1.9;
+  max-width: 600px;
+}
+
+/* ---------- SECTION: APPLY ---------- */
+.apply {
+  background: #d32f2f;
+  padding: 120px 40px;
+  color: #fff;
+}
+.apply h2 {
+  font-size: clamp(36px, 7vw, 80px);
+  font-weight: 900;
+  line-height: 1.15;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
-
-.section-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  max-width: 640px;
-  line-height: 1.9;
+.apply > p {
+  font-size: clamp(13px, 1.2vw, 16px);
+  opacity: 0.8;
+  margin-bottom: 60px;
+  max-width: 500px;
 }
-
-.section--navy .section-subtitle {
-  color: rgba(255,255,255,0.7);
+.apply-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 600px;
+  margin-bottom: 80px;
 }
-
-.text-center {
+.apply-btn {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 36px 24px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: clamp(16px, 2vw, 22px);
+  transition: all 0.3s ease;
+  cursor: pointer;
   text-align: center;
+  background: none;
+  color: #fff;
+}
+.apply-btn:hover {
+  background: #fff;
+  color: #d32f2f;
+  border-color: #fff;
+}
+.apply-btn small {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+.apply-divider {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+/* --- Apply Form --- */
+.apply-form {
+  max-width: 600px;
+}
+.apply-form .form-group {
+  margin-bottom: 20px;
+}
+.apply-form label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+.apply-form input,
+.apply-form select {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.apply-form input::placeholder { color: rgba(255,255,255,0.4); }
+.apply-form input:focus,
+.apply-form select:focus {
+  border-color: #fff;
+}
+.apply-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23fff' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+.apply-form select option { color: #333; background: #fff; }
+.submit-btn {
+  display: inline-block;
+  padding: 18px 60px;
+  background: #fff;
+  color: #d32f2f;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+.submit-btn:hover {
+  background: #111;
+  color: #fff;
 }
 
-/* ========================================
-   FADE-IN ANIMATIONS
-   ======================================== */
-.fade-in {
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 40px 40px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.footer-logo img {
+  height: 24px; width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 16px;
+}
+.footer-logo p {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.8;
+}
+.footer-contact {
+  text-align: right;
+}
+.footer-contact a {
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+.footer-contact p {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 4px;
+}
+.footer-copy {
+  font-size: 0.65rem;
+  color: #444;
+  letter-spacing: 0.1em;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ---------- SCROLL ANIMATIONS ---------- */
+.fade-up {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
-.fade-in.visible {
+.fade-up.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
-
-/* ========================================
-   HEADER
-   ======================================== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 0 24px;
-  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
-}
-
-.header--scrolled {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 1px 12px rgba(15, 33, 55, 0.08);
-}
-
-.header__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  transition: height var(--transition);
-}
-
-.header--scrolled .header__inner {
-  height: 68px;
-}
-
-.header__logo {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.02em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: color var(--transition);
-}
-
-.header--scrolled .header__logo {
-  color: var(--navy);
-}
-
-.header__logo-mark {
-  width: 36px;
-  height: 36px;
-  background: var(--gold);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0;
-}
-
-.header__nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.header__nav-link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
-  transition: color var(--transition);
-  position: relative;
-}
-
-.header--scrolled .header__nav-link {
-  color: var(--text-secondary);
-}
-
-.header__nav-link:hover {
-  color: var(--gold);
-}
-
-.header__nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: width var(--transition);
-}
-
-.header__nav-link:hover::after {
-  width: 100%;
-}
-
-.header__cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 24px;
-  background: var(--gold);
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background var(--transition), transform var(--transition);
-}
-
-.header__cta:hover {
-  background: var(--gold-dark);
-  transform: translateY(-1px);
-}
-
-/* Mobile menu toggle */
-.header__menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 1001;
-}
-
-.header__menu-toggle span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  transition: all var(--transition);
-  border-radius: 2px;
-}
-
-.header--scrolled .header__menu-toggle span {
-  background: var(--navy);
-}
-
-.header__menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.header__menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.header__menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ========================================
-   HERO
-   ======================================== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.hero__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 24, 40, 0.88) 0%,
-    rgba(15, 33, 55, 0.82) 40%,
-    rgba(15, 33, 55, 0.7) 100%
-  );
-  z-index: 1;
-}
-
-.hero__content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 24px;
-  max-width: 880px;
-}
-
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  background: rgba(212, 149, 58, 0.15);
-  border: 1px solid rgba(212, 149, 58, 0.3);
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--gold-light);
-  margin-bottom: 32px;
-  backdrop-filter: blur(8px);
-}
-
-.hero__badge-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--gold);
-  border-radius: 50%;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.hero__title {
-  font-size: clamp(2.2rem, 6vw, 4rem);
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-
-.hero__title-accent {
-  color: var(--gold);
-}
-
-.hero__subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 48px;
-  font-weight: 400;
-  line-height: 1.8;
-}
-
-.hero__actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px 36px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  font-family: inherit;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all var(--transition);
-  border: none;
-  white-space: nowrap;
-}
-
-.btn--outline {
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: var(--white);
-}
-
-.btn--outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--white);
-  transform: translateY(-2px);
-}
-
-.btn--gold {
-  background: var(--gold);
-  color: var(--white);
-  box-shadow: 0 4px 20px rgba(212, 149, 58, 0.35);
-}
-
-.btn--gold:hover {
-  background: var(--gold-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(212, 149, 58, 0.45);
-}
-
-.btn--navy {
-  background: var(--navy);
-  color: var(--white);
-  box-shadow: 0 4px 20px rgba(15, 33, 55, 0.25);
-}
-
-.btn--navy:hover {
-  background: var(--navy-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(15, 33, 55, 0.35);
-}
-
-.btn--lg {
-  padding: 18px 44px;
-  font-size: 1.05rem;
-  border-radius: 12px;
-}
-
-.btn--full {
-  width: 100%;
-}
-
-.btn__arrow {
-  transition: transform var(--transition);
-}
-
-.btn:hover .btn__arrow {
-  transform: translateX(3px);
-}
-
-.hero__scroll {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  animation: float 3s ease-in-out infinite;
-}
-
-.hero__scroll-line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-}
-
-@keyframes float {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
-/* ========================================
-   ABOUT
-   ======================================== */
-.about__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-
-.about__text p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 2;
-  margin-bottom: 24px;
-}
-
-.about__text p:last-child {
-  margin-bottom: 0;
-}
-
-.about__image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-xl);
-  position: relative;
-}
-
-.about__image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-.about__image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 64px;
-}
-
-.stat-card {
-  background: var(--white);
-  padding: 36px 28px;
-  border-radius: var(--radius-md);
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-100);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.stat-card__icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, rgba(212,149,58,0.1), rgba(212,149,58,0.05));
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  font-size: 1.4rem;
-}
-
-.stat-card__number {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-
-.stat-card__label {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  font-weight: 500;
-}
-
-.stat-card__note {
-  font-size: 0.7rem;
-  color: var(--gray-300);
-  margin-top: 4px;
-}
-
-/* ========================================
-   COVERAGE AREAS
-   ======================================== */
-.areas__intro {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.areas__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.area-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 32px 28px;
-  border: 1px solid var(--gray-100);
-  transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.area-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transition: transform var(--transition);
-}
-
-.area-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.area-card:hover::before {
-  transform: scaleX(1);
-}
-
-.area-card__region {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.area-card__name {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.area-card__desc {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  line-height: 1.7;
-}
-
-.area-card__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 14px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #16a34a;
-  background: rgba(22, 163, 74, 0.08);
-  padding: 4px 12px;
-  border-radius: 100px;
-}
-
-/* ========================================
-   RECRUITMENT SECTIONS
-   ======================================== */
-.recruit {
-  position: relative;
-}
-
-.recruit__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.recruit__content {
-  position: relative;
-}
-
-.recruit__accent-bar {
-  width: 4px;
-  height: 48px;
-  border-radius: 4px;
-  margin-bottom: 24px;
-}
-
-.recruit__accent-bar--gold {
-  background: linear-gradient(to bottom, var(--gold), var(--gold-light));
-}
-
-.recruit__accent-bar--navy {
-  background: linear-gradient(to bottom, var(--navy), var(--navy-light));
-}
-
-.recruit__tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-
-.recruit__tag--gold {
-  background: rgba(212, 149, 58, 0.1);
-  color: var(--gold-dark);
-}
-
-.recruit__tag--navy {
-  background: rgba(15, 33, 55, 0.08);
-  color: var(--navy);
-}
-
-.recruit__title {
-  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.3;
-}
-
-.recruit__subtitle {
-  font-size: 1rem;
-  color: var(--text-light);
-  margin-bottom: 32px;
-}
-
-.recruit__desc {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  margin-bottom: 32px;
-  line-height: 1.9;
-}
-
-.recruit__features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 36px;
-}
-
-.recruit__feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 16px;
-  background: var(--off-white);
-  border-radius: var(--radius-sm);
-  transition: background var(--transition);
-}
-
-.recruit__feature:hover {
-  background: var(--gray-100);
-}
-
-.recruit__feature-icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-}
-
-.recruit__feature-icon--gold {
-  background: rgba(212, 149, 58, 0.12);
-}
-
-.recruit__feature-icon--navy {
-  background: rgba(15, 33, 55, 0.08);
-}
-
-.recruit__feature-text {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.5;
-}
-
-.recruit__compensation {
-  background: var(--off-white);
-  border-radius: var(--radius-md);
-  padding: 28px;
-  margin-bottom: 32px;
-  border: 1px solid var(--gray-100);
-}
-
-.recruit__compensation-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 8px;
-}
-
-.recruit__compensation-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.recruit__compensation-note {
-  font-size: 0.78rem;
-  color: var(--text-light);
-  margin-top: 4px;
-}
-
-.recruit__requirements {
-  margin-bottom: 36px;
-}
-
-.recruit__requirements-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 14px;
-}
-
-.recruit__requirements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.recruit__requirements-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-}
-
-.recruit__requirements-item svg {
-  flex-shrink: 0;
-  color: var(--gold);
-}
-
-/* Timeline (driver daily schedule) */
-.recruit__timeline {
-  margin-bottom: 36px;
-}
-
-.recruit__timeline-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 18px;
-}
-
-.timeline {
-  position: relative;
-  padding-left: 28px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: var(--gray-200);
-}
-
-.timeline__item {
-  position: relative;
-  padding-bottom: 18px;
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-}
-
-.timeline__item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline__dot {
-  position: absolute;
-  left: -24px;
-  top: 7px;
-  width: 12px;
-  height: 12px;
-  background: var(--white);
-  border: 2.5px solid var(--navy);
-  border-radius: 50%;
-}
-
-.timeline__time {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--navy);
-  min-width: 48px;
-}
-
-.timeline__desc {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.recruit__sidebar {
-  position: sticky;
-  top: 100px;
-}
-
-.recruit__image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: 24px;
-}
-
-.recruit__image img {
-  width: 100%;
-  height: 340px;
-  object-fit: cover;
-}
-
-.recruit__sidebar-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 32px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-100);
-}
-
-.recruit__sidebar-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--navy);
-}
-
-.recruit__sidebar-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--gray-100);
-  font-size: 0.88rem;
-}
-
-.recruit__sidebar-item:last-child {
-  border-bottom: none;
-}
-
-.recruit__sidebar-label {
-  color: var(--text-light);
-  font-weight: 500;
-}
-
-.recruit__sidebar-value {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-/* ========================================
-   WHY CHOOSE US
-   ======================================== */
-.reasons__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-top: 56px;
-}
-
-.reason-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 36px 28px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-100);
-  transition: all var(--transition);
-  text-align: center;
-}
-
-.reason-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-6px);
-}
-
-.reason-card__icon {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 1.5rem;
-}
-
-.reason-card__title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.reason-card__desc {
-  font-size: 0.88rem;
-  color: var(--text-light);
-  line-height: 1.7;
-}
-
-/* ========================================
-   TESTIMONIALS
-   ======================================== */
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 56px;
-}
-
-.testimonial-card {
-  background: var(--white);
-  border-radius: var(--radius-md);
-  padding: 36px 32px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-100);
-  position: relative;
-  transition: all var(--transition);
-}
-
-.testimonial-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
-}
-
-.testimonial-card__quote {
-  position: absolute;
-  top: 20px;
-  right: 24px;
-  font-size: 3rem;
-  color: var(--gray-100);
-  font-family: Georgia, serif;
-  line-height: 1;
-}
-
-.testimonial-card__stars {
-  display: flex;
-  gap: 2px;
-  margin-bottom: 16px;
-  color: var(--gold);
-  font-size: 0.9rem;
-}
-
-.testimonial-card__text {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.9;
-  margin-bottom: 24px;
-}
-
-.testimonial-card__author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding-top: 20px;
-  border-top: 1px solid var(--gray-100);
-}
-
-.testimonial-card__avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.testimonial-card__avatar--female {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-}
-
-.testimonial-card__name {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.testimonial-card__role {
-  font-size: 0.8rem;
-  color: var(--text-light);
-}
-
-.testimonials__note {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 0.78rem;
-  color: var(--text-light);
-}
-
-/* ========================================
-   PROCESS
-   ======================================== */
-.process__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: 56px;
-  position: relative;
-}
-
-.process__connector {
-  position: absolute;
-  top: 52px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 2px;
-  background: rgba(255,255,255,0.15);
-  z-index: 0;
-}
-
-.process-step {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-  padding: 0 16px;
-}
-
-.process-step__number {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--white);
-  box-shadow: 0 4px 16px rgba(212, 149, 58, 0.3);
-}
-
-.process-step__title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--white);
-}
-
-.process-step__desc {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
-}
-
-.process__badge {
-  text-align: center;
-  margin-top: 48px;
-}
-
-.process__badge-inner {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 28px;
-  background: rgba(212, 149, 58, 0.12);
-  border: 1px solid rgba(212, 149, 58, 0.25);
-  border-radius: 100px;
-  color: var(--gold-light);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* ========================================
-   FAQ
-   ======================================== */
-.faq__list {
-  max-width: 800px;
-  margin: 48px auto 0;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--gray-100);
-}
-
-.faq-item__question {
-  width: 100%;
-  text-align: left;
-  padding: 22px 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  font-family: inherit;
-  line-height: 1.6;
-  transition: color var(--transition);
-}
-
-.faq-item__question:hover {
-  color: var(--gold-dark);
-}
-
-.faq-item__icon {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--off-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--transition);
-}
-
-.faq-item__icon svg {
-  transition: transform var(--transition);
-}
-
-.faq-item.active .faq-item__icon {
-  background: var(--gold);
-}
-
-.faq-item.active .faq-item__icon svg {
-  transform: rotate(45deg);
-  color: var(--white);
-}
-
-.faq-item__answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s;
-}
-
-.faq-item__answer-inner {
-  padding: 0 0 22px;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.9;
-}
-
-/* ========================================
-   APPLICATION FORM
-   ======================================== */
-.form-section {
-  background: var(--off-white);
-}
-
-.form-wrapper {
-  max-width: 720px;
-  margin: 0 auto;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 48px;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--gray-100);
-}
-
-.form__group {
-  margin-bottom: 28px;
-}
-
-.form__label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-
-.form__required {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.68rem;
-  font-weight: 700;
-  color: var(--white);
-  background: #dc2626;
-  padding: 1px 6px;
-  border-radius: 3px;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.form__input,
-.form__textarea {
-  width: 100%;
-  padding: 14px 18px;
-  font-size: 0.95rem;
-  font-family: inherit;
-  border: 1.5px solid var(--gray-200);
-  border-radius: var(--radius-sm);
-  background: var(--white);
-  color: var(--text-primary);
-  transition: border-color var(--transition), box-shadow var(--transition);
-  outline: none;
-}
-
-.form__input:focus,
-.form__textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(212, 149, 58, 0.12);
-}
-
-.form__input::placeholder,
-.form__textarea::placeholder {
-  color: var(--gray-300);
-}
-
-.form__textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form__radio-group,
-.form__checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.form__radio,
-.form__checkbox {
-  position: relative;
-}
-
-.form__radio input,
-.form__checkbox input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.form__radio-label,
-.form__checkbox-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1.5px solid var(--gray-200);
-  border-radius: var(--radius-sm);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all var(--transition);
-  user-select: none;
-}
-
-.form__radio-label:hover,
-.form__checkbox-label:hover {
-  border-color: var(--gold);
-}
-
-.form__radio input:checked + .form__radio-label,
-.form__checkbox input:checked + .form__checkbox-label {
-  background: rgba(212, 149, 58, 0.08);
-  border-color: var(--gold);
-  color: var(--gold-dark);
-  font-weight: 600;
-}
-
-.form__radio-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid var(--gray-300);
-  position: relative;
-  transition: border-color var(--transition);
-}
-
-.form__radio input:checked + .form__radio-label .form__radio-dot {
-  border-color: var(--gold);
-}
-
-.form__radio input:checked + .form__radio-label .form__radio-dot::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 8px;
-  height: 8px;
-  background: var(--gold);
-  border-radius: 50%;
-}
-
-.form__checkbox-box {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  border: 2px solid var(--gray-300);
-  position: relative;
-  transition: all var(--transition);
-  flex-shrink: 0;
-}
-
-.form__checkbox input:checked + .form__checkbox-label .form__checkbox-box {
-  background: var(--gold);
-  border-color: var(--gold);
-}
-
-.form__checkbox input:checked + .form__checkbox-label .form__checkbox-box::after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  left: 4.5px;
-  width: 5px;
-  height: 9px;
-  border: solid var(--white);
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-
-.form__submit-area {
-  margin-top: 36px;
-  text-align: center;
-}
-
-.form__privacy {
-  font-size: 0.82rem;
-  color: var(--text-light);
-  margin-top: 16px;
-}
-
-.form__privacy a {
-  color: var(--gold-dark);
-  text-decoration: underline;
-}
-
-/* ========================================
-   FOOTER
-   ======================================== */
-.footer {
-  background: var(--navy-dark);
-  color: rgba(255, 255, 255, 0.7);
-  padding: 64px 0 32px;
-}
-
-.footer__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-
-.footer__brand {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer__logo {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer__desc {
-  font-size: 0.88rem;
-  line-height: 1.8;
-}
-
-.footer__heading {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
-}
-
-.footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer__link {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.6);
-  transition: color var(--transition);
-}
-
-.footer__link:hover {
-  color: var(--gold);
-}
-
-.footer__info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.88rem;
-  margin-bottom: 12px;
-}
-
-.footer__info-icon {
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--gold);
-}
-
-.footer__divider {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 24px;
-}
-
-.footer__bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-/* ========================================
-   RESPONSIVE
-   ======================================== */
-@media (max-width: 1024px) {
-  .reasons__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-
-  .process__connector {
-    display: none;
-  }
-
-  .recruit__inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .recruit__sidebar {
-    position: static;
-    order: -1;
-  }
-}
-
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
-  .section {
-    padding: 72px 0;
-  }
+  .site-header { padding: 16px 20px; }
+  .site-header img { height: 22px; }
+  .header-tel { display: none; }
 
-  .header__nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 85%;
-    max-width: 360px;
-    height: 100vh;
-    background: var(--white);
-    flex-direction: column;
-    justify-content: center;
-    gap: 0;
-    padding: 80px 40px;
-    box-shadow: -8px 0 32px rgba(0,0,0,0.1);
-    transition: right var(--transition);
-    z-index: 999;
-  }
+  .hero { padding: 0 20px 60px; }
 
-  .header__nav.open {
-    right: 0;
-  }
+  .message { padding: 100px 20px 80px; }
 
-  .header__nav-link {
-    color: var(--text-primary) !important;
-    font-size: 1.1rem;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--gray-100);
-    width: 100%;
-  }
-
-  .header__cta {
-    margin-top: 16px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .header__menu-toggle {
-    display: flex;
-  }
-
-  .hero__title {
-    font-size: clamp(1.8rem, 7vw, 2.8rem);
-  }
-
-  .hero__actions {
-    flex-direction: column;
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  .hero__actions .btn {
-    width: 100%;
-  }
-
-  .about__grid {
+  .two-paths {
     grid-template-columns: 1fr;
-    gap: 40px;
+    min-height: auto;
+  }
+  .path-card { padding: 60px 24px; }
+
+  .driver-detail { min-height: auto; }
+  .driver-inner { padding: 100px 20px; }
+  .driver-grid { gap: 32px; }
+
+  .subcontractor { padding: 100px 20px; }
+
+  .areas { padding: 100px 20px; }
+
+  .day-flow { padding: 100px 20px; }
+  .timeline-item {
+    grid-template-columns: 80px 1px 1fr;
+    gap: 20px;
+    padding: 28px 0;
   }
 
-  .stats {
+  .why-us { padding: 80px 20px; }
+  .why-item {
     grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .areas__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .recruit__features {
-    grid-template-columns: 1fr;
-  }
-
-  .reasons__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonials__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .footer__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .footer__bottom {
-    flex-direction: column;
     gap: 8px;
-    text-align: center;
+    padding: 32px 0;
+  }
+  .why-num { font-size: 12px; }
+  .why-item p { grid-column: 1; }
+
+  .apply { padding: 80px 20px; }
+  .apply-methods {
+    grid-template-columns: 1fr;
+    max-width: 100%;
   }
 
-  .form-wrapper {
-    padding: 32px 24px;
-  }
+  .site-footer { padding: 60px 20px 30px; }
+  .footer-inner { flex-direction: column; }
+  .footer-contact { text-align: left; }
+}
 
-  .form__radio-group,
-  .form__checkbox-group {
+@media (max-width: 480px) {
+  .area-item {
     flex-direction: column;
+    gap: 0;
   }
-}
-
-/* Mobile overlay for menu */
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 998;
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition);
-}
-
-.mobile-overlay.active {
-  opacity: 1;
-  visibility: visible;
+  .area-item .area-sub {
+    font-size: 10px;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- ========================================
-     HEADER
-     ======================================== -->
-<header class="header" id="header">
-  <div class="header__inner">
-    <a href="#" class="header__logo">
-      <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/logo2.png" alt="BURNING BROS." style="height:32px;">
-      BURNING BROS.
-    </a>
-    <nav class="header__nav" id="nav">
-      <a href="#about" class="header__nav-link" onclick="closeMenu()">会社概要</a>
-      <a href="#areas" class="header__nav-link" onclick="closeMenu()">対応エリア</a>
-      <a href="#subcontractor" class="header__nav-link" onclick="closeMenu()">下請け募集</a>
-      <a href="#driver" class="header__nav-link" onclick="closeMenu()">ドライバー募集</a>
-      <a href="#faq" class="header__nav-link" onclick="closeMenu()">よくある質問</a>
-      <a href="#apply" class="header__cta" onclick="closeMenu()">応募する</a>
-    </nav>
-    <button class="header__menu-toggle" id="menuToggle" aria-label="メニュー">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://burning-bros.com" target="_blank" rel="noopener">
+    <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/logo2.png" alt="BURNING BROS.">
+  </a>
+  <div class="header-tel">
+    <span>042-866-3866</span>
   </div>
 </header>
-<div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- ========================================
-     HERO
-     ======================================== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero__bg">
-    <img src="https://burning-bros.com/cms/wp-content/uploads/2021/07/Fotolia_115037316_Subscription_Monthly_M.jpg" alt="配送トラック" loading="eager">
+  <div class="hero-bg" role="img" aria-label="高速道路を走るトラック"></div>
+  <div class="hero-content">
+    <h1>届ける、<br>その<em>先</em>へ。</h1>
+    <p class="hero-sub">BURNING BROS. — 配送パートナー募集</p>
   </div>
-  <div class="hero__overlay"></div>
-  <div class="hero__content">
-    <div class="hero__badge">
-      <span class="hero__badge-dot"></span>
-      配送パートナー積極募集中
-    </div>
-    <h1 class="hero__title">あなたの力で、<span class="hero__title-accent">届けよう。</span></h1>
-    <p class="hero__subtitle">BURNING BROS.【バーニングブロス】｜神奈川・東京エリア 配送パートナー募集<br>法人・個人事業主の下請けから、個人ドライバーまで。あなたに合った働き方を。</p>
-    <div class="hero__actions">
-      <a href="#subcontractor" class="btn btn--outline btn--lg">
-        下請け募集の詳細
-        <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-      <a href="#driver" class="btn btn--gold btn--lg">
-        ドライバー募集の詳細
-        <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="hero__scroll">
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
     SCROLL
-    <div class="hero__scroll-line"></div>
   </div>
 </section>
 
-<!-- ========================================
-     ABOUT
-     ======================================== -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="about__grid">
-      <div class="about__text fade-in">
-        <span class="section-label">About Us</span>
-        <h2 class="section-title">BURNING BROS.【バーニングブロス】について</h2>
-        <p>神奈川・東京エリアで配送事業を展開するBURNING BROS.【バーニングブロス】。お客様への確実な配送と、パートナーの働きやすさを大切にしています。</p>
-        <p>大手ECサイトをはじめとした安定した配送案件を多数保有。下請けパートナー（法人・個人事業主）と直接委託ドライバー（個人）の2つの働き方で、あなたのスタイルに合った配送ビジネスをサポートします。</p>
-      </div>
-      <div class="about__image fade-in fade-in-delay-2">
-        <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/busan-night-scene-1747130_1920.jpg" alt="配送業務の様子" loading="lazy">
-      </div>
-    </div>
-  </div>
+<!-- MESSAGE -->
+<section class="message">
+  <h2 class="fade-up">配送パートナー、<br>募集。</h2>
+  <p class="fade-up">BURNING BROS.では、神奈川・東京エリアを中心に<br>軽貨物配送の委託パートナーを募集しています。<br>法人の方も、個人の方も、未経験の方も。<br>あなたに合った働き方を一緒に見つけます。</p>
 </section>
 
-<!-- ========================================
-     COVERAGE AREAS
-     ======================================== -->
-<section class="section section--gray" id="areas">
-  <div class="container">
-    <div class="areas__intro fade-in">
-      <span class="section-label">Coverage Areas</span>
-      <h2 class="section-title text-center">募集エリア</h2>
-      <p class="section-subtitle mx-auto text-center">神奈川・東京の各エリアで配送パートナーを積極募集中です。<br>お住まいに近いエリアでの稼働が可能です。</p>
-    </div>
-    <div class="areas__grid">
-      <div class="area-card fade-in fade-in-delay-1">
-        <div class="area-card__region">神奈川県</div>
-        <div class="area-card__name">座間市</div>
-        <div class="area-card__desc">住宅街中心の配送エリア。安定した案件量で効率よく稼げます。</div>
-        <div class="area-card__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
-          積極募集中
-        </div>
-      </div>
-      <div class="area-card fade-in fade-in-delay-2">
-        <div class="area-card__region">神奈川県</div>
-        <div class="area-card__name">相模原市</div>
-        <div class="area-card__desc">広域エリアで多様な配送案件。経験者にもおすすめです。</div>
-        <div class="area-card__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
-          積極募集中
-        </div>
-      </div>
-      <div class="area-card fade-in fade-in-delay-3">
-        <div class="area-card__region">神奈川県</div>
-        <div class="area-card__name">横浜市</div>
-        <div class="area-card__desc">都市部の配送案件が豊富。高単価案件も多数あります。</div>
-        <div class="area-card__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
-          積極募集中
-        </div>
-      </div>
-      <div class="area-card fade-in fade-in-delay-1">
-        <div class="area-card__region">東京都</div>
-        <div class="area-card__name">世田谷区</div>
-        <div class="area-card__desc">住宅密集エリアで効率的な配送が可能。件数を稼ぎやすい環境です。</div>
-        <div class="area-card__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
-          積極募集中
-        </div>
-      </div>
-      <div class="area-card fade-in fade-in-delay-2">
-        <div class="area-card__region">東京都</div>
-        <div class="area-card__name">大田区</div>
-        <div class="area-card__desc">羽田空港周辺の物流拠点に近く、アクセス良好なエリアです。</div>
-        <div class="area-card__badge">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
-          積極募集中
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- TWO PATHS -->
+<section class="two-paths" id="paths">
+  <a href="#subcontractor" class="path-card path-left fade-up">
+    <span class="path-label">for business</span>
+    <h3>下請け<br>パートナー</h3>
+    <p>法人・個人事業主向け。エリア一括委託で安定した案件量を確保。既に配送ネットワークをお持ちの方に。</p>
+    <span class="path-arrow">→</span>
+  </a>
+  <a href="#driver" class="path-card path-right fade-up">
+    <span class="path-label">for driver</span>
+    <h3>直接委託<br>ドライバー</h3>
+    <p>個人の方歓迎・未経験OK。¥143〜/個の高単価案件。軽バンがあれば今日から始められます。</p>
+    <span class="path-arrow">→</span>
+  </a>
 </section>
 
-<!-- ========================================
-     SUBCONTRACTOR SECTION
-     ======================================== -->
-<section class="section recruit" id="subcontractor">
-  <div class="container">
-    <div class="recruit__inner">
-      <div class="recruit__content fade-in">
-        <div class="recruit__accent-bar recruit__accent-bar--gold"></div>
-        <span class="recruit__tag recruit__tag--gold">法人・個人事業主向け</span>
-        <h2 class="recruit__title">下請けパートナー募集</h2>
-        <p class="recruit__subtitle">法人・個人事業主の方へ</p>
-        <p class="recruit__desc">エリア一括での配送業務委託を行っています。貴社のスタッフで運営いただき、安定した案件量をお約束します。スケジュール管理は貴社にお任せ。自由度の高い業務形態です。</p>
-
-        <div class="recruit__features">
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--gold">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <span class="recruit__feature-text">エリア丸ごとお任せ</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--gold">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <span class="recruit__feature-text">自社スタッフで運営</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--gold">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <span class="recruit__feature-text">安定した案件量</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--gold">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <span class="recruit__feature-text">スケジュール管理は貴社にお任せ</span>
-          </div>
-        </div>
-
-        <div class="recruit__compensation">
-          <div class="recruit__compensation-label">報酬について</div>
-          <div class="recruit__compensation-value">詳細はお問い合わせください</div>
-          <div class="recruit__compensation-note">※エリア・案件量に応じて個別にご案内いたします</div>
-        </div>
-
-        <div class="recruit__requirements">
-          <div class="recruit__requirements-title">応募条件</div>
-          <div class="recruit__requirements-list">
-            <div class="recruit__requirements-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              軽貨物車両を保有していること
-            </div>
-            <div class="recruit__requirements-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              貨物軽自動車運送事業の届出済みであること
-            </div>
-            <div class="recruit__requirements-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              法人または個人事業主であること
-            </div>
-          </div>
-        </div>
-
-        <a href="#apply" class="btn btn--gold btn--lg">
-          下請けパートナーに応募する
-          <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+<!-- DRIVER DETAIL -->
+<section class="driver-detail" id="driver">
+  <div class="driver-bg" role="img" aria-label="夜の都市風景"></div>
+  <div class="driver-inner">
+    <div class="fade-up">
+      <div class="price-display">
+        <span class="price-yen">¥</span>
+        <span class="price-num">143</span>
+        <span class="price-unit">〜 / 個</span>
       </div>
-
-      <div class="recruit__sidebar fade-in fade-in-delay-2">
-        <div class="recruit__image">
-          <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/busan-night-scene-1747130_1920.jpg" alt="下請けパートナーのイメージ" loading="lazy">
-        </div>
-        <div class="recruit__sidebar-card">
-          <div class="recruit__sidebar-title">募集概要</div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">契約形態</span>
-            <span class="recruit__sidebar-value">業務委託</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">対象</span>
-            <span class="recruit__sidebar-value">法人・個人事業主</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">エリア</span>
-            <span class="recruit__sidebar-value">神奈川・東京</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">車両</span>
-            <span class="recruit__sidebar-value">自社保有</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">案件</span>
-            <span class="recruit__sidebar-value">大手EC配送</span>
-          </div>
-        </div>
-      </div>
+      <p class="price-note">※エリア・案件により変動あり</p>
     </div>
-  </div>
-</section>
-
-<!-- ========================================
-     DRIVER SECTION
-     ======================================== -->
-<section class="section section--gray recruit" id="driver">
-  <div class="container">
-    <div class="recruit__inner">
-      <div class="recruit__content fade-in">
-        <div class="recruit__accent-bar recruit__accent-bar--navy"></div>
-        <span class="recruit__tag recruit__tag--navy">個人の方向け</span>
-        <h2 class="recruit__title">直接委託ドライバー募集</h2>
-        <p class="recruit__subtitle">個人の方へ｜未経験歓迎</p>
-        <p class="recruit__desc">軽貨物での個人宅配送をお任せします。未経験の方でも充実した研修制度があるので安心してスタートできます。休日の調整もOK、日払い・週払いにも対応しています。</p>
-
-        <div class="recruit__features">
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--navy">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f2137" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <span class="recruit__feature-text">休日の調整OK（シフト管理）</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--navy">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f2137" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <span class="recruit__feature-text">未経験者歓迎・研修あり</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--navy">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f2137" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <span class="recruit__feature-text">日払い/週払い対応</span>
-          </div>
-          <div class="recruit__feature">
-            <div class="recruit__feature-icon recruit__feature-icon--navy">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f2137" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-            </div>
-            <span class="recruit__feature-text">車両リースあり</span>
-          </div>
-        </div>
-
-        <div class="recruit__compensation">
-          <div class="recruit__compensation-label">報酬例</div>
-          <div class="recruit__compensation-value">1個あたり ¥143〜</div>
-          <div class="recruit__compensation-note">※エリア・配送件数により変動します。詳細は面談時にご案内します。</div>
-        </div>
-
-        <div class="recruit__timeline">
-          <div class="recruit__timeline-title">1日の流れ（例）</div>
-          <div class="timeline">
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">7:00</span>
-              <span class="timeline__desc">出勤・朝礼</span>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">7:30</span>
-              <span class="timeline__desc">荷積み・ルート確認</span>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">8:30</span>
-              <span class="timeline__desc">配送開始</span>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">12:00</span>
-              <span class="timeline__desc">昼休憩</span>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">13:00</span>
-              <span class="timeline__desc">午後の配送</span>
-            </div>
-            <div class="timeline__item">
-              <div class="timeline__dot"></div>
-              <span class="timeline__time">18:00</span>
-              <span class="timeline__desc">業務終了・帰庫</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="recruit__requirements">
-          <div class="recruit__requirements-title">応募条件</div>
-          <div class="recruit__requirements-list">
-            <div class="recruit__requirements-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              普通自動車免許（AT限定可）
-            </div>
-            <div class="recruit__requirements-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4953a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              20歳以上の方
-            </div>
-          </div>
-        </div>
-
-        <a href="#apply" class="btn btn--navy btn--lg">
-          ドライバーに応募する
-          <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      <div class="recruit__sidebar fade-in fade-in-delay-2">
-        <div class="recruit__image">
-          <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/busan-night-scene-1747130_1920.jpg" alt="ドライバーのイメージ" loading="lazy">
-        </div>
-        <div class="recruit__sidebar-card">
-          <div class="recruit__sidebar-title">募集概要</div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">契約形態</span>
-            <span class="recruit__sidebar-value">直接委託</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">対象</span>
-            <span class="recruit__sidebar-value">個人（未経験OK）</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">エリア</span>
-            <span class="recruit__sidebar-value">神奈川・東京</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">車両</span>
-            <span class="recruit__sidebar-value">持込 or リース</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">支払い</span>
-            <span class="recruit__sidebar-value">日払い/週払い可</span>
-          </div>
-          <div class="recruit__sidebar-item">
-            <span class="recruit__sidebar-label">研修</span>
-            <span class="recruit__sidebar-value">あり（無料）</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     WHY CHOOSE US
-     ======================================== -->
-<section class="section" id="reasons">
-  <div class="container">
-    <div class="text-center fade-in">
-      <span class="section-label">Why Choose Us</span>
-      <h2 class="section-title">BURNING BROS.【バーニングブロス】が選ばれる理由</h2>
-      <p class="section-subtitle mx-auto">多くのパートナー様にご支持いただいている、BURNING BROS.【バーニングブロス】の強みをご紹介します。</p>
-    </div>
-    <div class="reasons__grid">
-      <div class="reason-card fade-in fade-in-delay-1">
-        <div class="reason-card__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <h3 class="reason-card__title">安定した案件量</h3>
-        <p class="reason-card__desc">大手ECサイトの配送案件を安定的に確保。季節変動にも左右されにくい体制です。</p>
-      </div>
-      <div class="reason-card fade-in fade-in-delay-2">
-        <div class="reason-card__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3 class="reason-card__title">サポート体制</h3>
-        <p class="reason-card__desc">困ったときはすぐ相談できる体制を整備。未経験でも安心してスタートできます。</p>
-      </div>
-      <div class="reason-card fade-in fade-in-delay-3">
-        <div class="reason-card__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3 class="reason-card__title">報酬の透明性</h3>
-        <p class="reason-card__desc">明確な単価設定と、遅延のない支払い。安心して働ける報酬体系です。</p>
-      </div>
-      <div class="reason-card fade-in fade-in-delay-4">
-        <div class="reason-card__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="reason-card__title">働きやすい環境</h3>
-        <p class="reason-card__desc">休日調整や研修制度など、働く人のことを第一に考えた環境づくりをしています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     TESTIMONIALS
-     ======================================== -->
-<section class="section section--gray" id="testimonials">
-  <div class="container">
-    <div class="text-center fade-in">
-      <span class="section-label">Voice</span>
-      <h2 class="section-title">ドライバーの声</h2>
-      <p class="section-subtitle mx-auto">BURNING BROS.【バーニングブロス】で活躍するパートナーの方々にお話を伺いました。</p>
-    </div>
-    <div class="testimonials__grid">
-      <div class="testimonial-card fade-in fade-in-delay-1">
-        <div class="testimonial-card__quote">"</div>
-        <div class="testimonial-card__stars">
-          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-        </div>
-        <p class="testimonial-card__text">前職は会社員でしたが、もっと自分のペースで働きたいと思い転職しました。最初は不安でしたが、研修がしっかりしていて、先輩ドライバーにも気軽に相談できる環境です。今では安定した収入を得ながら、家族との時間も増えました。</p>
-        <div class="testimonial-card__author">
-          <div class="testimonial-card__avatar">T.K</div>
-          <div>
-            <div class="testimonial-card__name">30代男性</div>
-            <div class="testimonial-card__role">座間エリア・直接委託ドライバー</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in fade-in-delay-2">
-        <div class="testimonial-card__quote">"</div>
-        <div class="testimonial-card__stars">
-          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-        </div>
-        <p class="testimonial-card__text">安定した案件量で、スタッフの配置に困ることがありません。他社と比較しても報酬の支払いが早く、透明性も高いので信頼しています。エリア丸ごと任せてもらえるので、自社の裁量で効率よく回せています。</p>
-        <div class="testimonial-card__author">
-          <div class="testimonial-card__avatar">S.M</div>
-          <div>
-            <div class="testimonial-card__name">40代男性</div>
-            <div class="testimonial-card__role">横浜エリア・下請けパートナー</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card fade-in fade-in-delay-3">
-        <div class="testimonial-card__quote">"</div>
-        <div class="testimonial-card__stars">
-          <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-        </div>
-        <p class="testimonial-card__text">未経験から始めましたが、丁寧な研修のおかげですぐに慣れました。女性ドライバーは少ないですが、周りのサポートもあり問題なく働けています。日払いにも対応してもらえるので、生活面でも安心です。</p>
-        <div class="testimonial-card__author">
-          <div class="testimonial-card__avatar testimonial-card__avatar--female">A.Y</div>
-          <div>
-            <div class="testimonial-card__name">20代女性</div>
-            <div class="testimonial-card__role">相模原エリア・直接委託ドライバー</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="testimonials__note">※個人の感想です。成果を保証するものではありません。</p>
-  </div>
-</section>
-
-<!-- ========================================
-     APPLICATION PROCESS
-     ======================================== -->
-<section class="section section--navy" id="process">
-  <div class="container">
-    <div class="text-center fade-in">
-      <span class="section-label">Process</span>
-      <h2 class="section-title">応募の流れ</h2>
-      <p class="section-subtitle mx-auto">お問い合わせから最短1週間で稼働開始が可能です。</p>
-    </div>
-    <div class="process__grid">
-      <div class="process__connector"></div>
-      <div class="process-step fade-in fade-in-delay-1">
-        <div class="process-step__number">1</div>
-        <h3 class="process-step__title">お問い合わせ</h3>
-        <p class="process-step__desc">下記フォームまたはお電話でお気軽にご連絡ください。</p>
-      </div>
-      <div class="process-step fade-in fade-in-delay-2">
-        <div class="process-step__number">2</div>
-        <h3 class="process-step__title">面談</h3>
-        <p class="process-step__desc">ご希望の条件やエリアについてお話しします。オンライン面談も可能です。</p>
-      </div>
-      <div class="process-step fade-in fade-in-delay-3">
-        <div class="process-step__number">3</div>
-        <h3 class="process-step__title">契約・研修</h3>
-        <p class="process-step__desc">契約手続きと配送研修を行います。未経験の方も安心です。</p>
-      </div>
-      <div class="process-step fade-in fade-in-delay-4">
-        <div class="process-step__number">4</div>
-        <h3 class="process-step__title">稼働開始</h3>
-        <p class="process-step__desc">いよいよ配送スタート。サポート体制も万全です。</p>
-      </div>
-    </div>
-    <div class="process__badge fade-in">
-      <div class="process__badge-inner">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        最短1週間で稼働開始
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     FAQ
-     ======================================== -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="text-center fade-in">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title">よくある質問</h2>
-      <p class="section-subtitle mx-auto">応募前に多く寄せられるご質問にお答えします。</p>
-    </div>
-    <div class="faq__list">
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>未経験でも大丈夫ですか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">はい、大丈夫です。直接委託ドライバーは未経験者歓迎です。配送ルートの回り方や荷物の取り扱いなど、しっかりとした研修制度をご用意しています。先輩ドライバーとの同乗研修もありますので、安心してスタートできます。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>車両を持っていないのですが応募できますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">直接委託ドライバーの方は、車両リース制度がありますのでご自身の車両がなくても応募可能です。リースの詳細については面談時にご説明いたします。下請けパートナーの方は、自社車両の保有が必要となります。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>1日に何件くらい配送しますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">エリアや時期によって異なりますが、個人ドライバーの場合は1日あたり80〜150件程度が目安です。慣れてくるとより効率的に回れるようになります。詳細は面談時にエリアごとの実績をお伝えします。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>報酬の支払いサイクルはどうなっていますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">直接委託ドライバーの方は、日払い・週払い・月払いからお選びいただけます。下請けパートナーの方は月末締め翌月払いが基本ですが、ご相談に応じます。いずれも支払い遅延は一切ありません。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>ガソリン代は自己負担ですか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">業務委託契約のため、ガソリン代はご自身での負担となります。ただし、報酬にはガソリン代を含めた設定をしておりますのでご安心ください。また、確定申告時に経費として計上できます。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>副業としてもできますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">はい、可能です。週末だけ、平日の数日だけなど、ご都合に合わせた稼働ができます。ただし、安定した案件確保のため、最低稼働日数についてはご相談させていただく場合があります。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>女性ドライバーはいますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">はい、女性ドライバーも活躍しています。軽貨物の荷物は比較的軽量なものが多く、力仕事に不安がある方でも問題なくお仕事いただけます。性別問わず、同じ条件でお仕事いただけます。</div>
-        </div>
-      </div>
-      <div class="faq-item fade-in">
-        <button class="faq-item__question" aria-expanded="false">
-          <span>繁忙期はありますか？</span>
-          <span class="faq-item__icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </span>
-        </button>
-        <div class="faq-item__answer">
-          <div class="faq-item__answer-inner">年末年始やセール時期（プライムデー等）は配送量が増えますが、通年で安定した案件があります。繁忙期にはインセンティブが付く場合もありますので、しっかり稼ぎたい方にもおすすめです。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     APPLICATION FORM
-     ======================================== -->
-<section class="section form-section" id="apply">
-  <div class="container">
-    <div class="text-center fade-in" style="margin-bottom: 48px;">
-      <span class="section-label">Application</span>
-      <h2 class="section-title">応募フォーム</h2>
-      <p class="section-subtitle mx-auto">下記フォームよりお気軽にお問い合わせください。<br>担当者より2営業日以内にご連絡いたします。</p>
-    </div>
-    <div class="form-wrapper fade-in">
-      <form action="https://formspree.io/f/placeholder" method="POST" id="applicationForm">
-        <div class="form__group">
-          <label class="form__label">
-            応募種別
-            <span class="form__required">必須</span>
-          </label>
-          <div class="form__radio-group">
-            <div class="form__radio">
-              <input type="radio" name="type" id="type-sub" value="下請けパートナー" required>
-              <label for="type-sub" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                下請けパートナー
-              </label>
-            </div>
-            <div class="form__radio">
-              <input type="radio" name="type" id="type-driver" value="直接委託ドライバー" required>
-              <label for="type-driver" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                直接委託ドライバー
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <label for="name" class="form__label">
-            お名前
-            <span class="form__required">必須</span>
-          </label>
-          <input type="text" name="name" id="name" class="form__input" placeholder="例：山田 太郎" required>
-        </div>
-
-        <div class="form__group">
-          <label for="phone" class="form__label">
-            電話番号
-            <span class="form__required">必須</span>
-          </label>
-          <input type="tel" name="phone" id="phone" class="form__input" placeholder="例：090-1234-5678" required>
-        </div>
-
-        <div class="form__group">
-          <label for="email" class="form__label">
-            メールアドレス
-            <span class="form__required">必須</span>
-          </label>
-          <input type="email" name="email" id="email" class="form__input" placeholder="例：example@email.com" required>
-        </div>
-
-        <div class="form__group">
-          <label class="form__label">
-            希望エリア
-            <span class="form__required">必須</span>
-          </label>
-          <div class="form__checkbox-group">
-            <div class="form__checkbox">
-              <input type="checkbox" name="area" id="area-zama" value="座間市">
-              <label for="area-zama" class="form__checkbox-label">
-                <span class="form__checkbox-box"></span>
-                座間市
-              </label>
-            </div>
-            <div class="form__checkbox">
-              <input type="checkbox" name="area" id="area-sagamihara" value="相模原市">
-              <label for="area-sagamihara" class="form__checkbox-label">
-                <span class="form__checkbox-box"></span>
-                相模原市
-              </label>
-            </div>
-            <div class="form__checkbox">
-              <input type="checkbox" name="area" id="area-yokohama" value="横浜市">
-              <label for="area-yokohama" class="form__checkbox-label">
-                <span class="form__checkbox-box"></span>
-                横浜市
-              </label>
-            </div>
-            <div class="form__checkbox">
-              <input type="checkbox" name="area" id="area-setagaya" value="世田谷区">
-              <label for="area-setagaya" class="form__checkbox-label">
-                <span class="form__checkbox-box"></span>
-                世田谷区
-              </label>
-            </div>
-            <div class="form__checkbox">
-              <input type="checkbox" name="area" id="area-ota" value="大田区">
-              <label for="area-ota" class="form__checkbox-label">
-                <span class="form__checkbox-box"></span>
-                大田区
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <label class="form__label">車両について</label>
-          <div class="form__radio-group">
-            <div class="form__radio">
-              <input type="radio" name="vehicle" id="vehicle-own" value="所有">
-              <label for="vehicle-own" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                車両所有
-              </label>
-            </div>
-            <div class="form__radio">
-              <input type="radio" name="vehicle" id="vehicle-lease" value="リース希望">
-              <label for="vehicle-lease" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                リース希望
-              </label>
-            </div>
-            <div class="form__radio">
-              <input type="radio" name="vehicle" id="vehicle-none" value="なし">
-              <label for="vehicle-none" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                なし
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <label class="form__label">配送経験</label>
-          <div class="form__radio-group">
-            <div class="form__radio">
-              <input type="radio" name="experience" id="exp-yes" value="配送経験あり">
-              <label for="exp-yes" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                配送経験あり
-              </label>
-            </div>
-            <div class="form__radio">
-              <input type="radio" name="experience" id="exp-no" value="未経験">
-              <label for="exp-no" class="form__radio-label">
-                <span class="form__radio-dot"></span>
-                未経験
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form__group">
-          <label for="message" class="form__label">自由記入欄</label>
-          <textarea name="message" id="message" class="form__textarea" placeholder="ご質問やご希望がありましたらご記入ください。"></textarea>
-        </div>
-
-        <div class="form__submit-area">
-          <button type="submit" class="btn btn--gold btn--lg btn--full">
-            応募内容を送信する
-            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </button>
-          <p class="form__privacy">個人情報の取り扱いについては<a href="#">プライバシーポリシー</a>をご確認ください。</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================
-     FOOTER
-     ======================================== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <div class="footer__logo">
-          <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/logo2.png" alt="BURNING BROS." style="height:32px;">
-          BURNING BROS.【バーニングブロス】
-        </div>
-        <p class="footer__desc">神奈川・東京エリアで配送事業を展開。お客様への確実な配送とパートナーの働きやすさを大切にしています。</p>
+    <dl class="driver-grid fade-up" style="margin-top:60px">
+      <div>
+        <dt>雇用形態</dt>
+        <dd>業務委託</dd>
       </div>
       <div>
-        <div class="footer__heading">サイトマップ</div>
-        <div class="footer__links">
-          <a href="#about" class="footer__link">会社概要</a>
-          <a href="#areas" class="footer__link">対応エリア</a>
-          <a href="#subcontractor" class="footer__link">下請けパートナー募集</a>
-          <a href="#driver" class="footer__link">ドライバー募集</a>
-          <a href="#faq" class="footer__link">よくある質問</a>
-          <a href="#apply" class="footer__link">応募フォーム</a>
-        </div>
+        <dt>対象</dt>
+        <dd>個人・未経験歓迎</dd>
       </div>
       <div>
-        <div class="footer__heading">お問い合わせ</div>
-        <div class="footer__info-item">
-          <span class="footer__info-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </span>
-          <span>〒252-0318<br>神奈川県相模原市南区上鶴間本町3-18-27</span>
-        </div>
-        <div class="footer__info-item">
-          <span class="footer__info-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </span>
-          <span>042-866-3866</span>
-        </div>
-        <div class="footer__info-item">
-          <span class="footer__info-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </span>
-          <span>burning-bros.com</span>
-        </div>
+        <dt>車両</dt>
+        <dd>軽バン持込<br>（リースの相談可）</dd>
+      </div>
+      <div>
+        <dt>報酬</dt>
+        <dd>¥143〜/個 × 配達個数<br>月収目安 30〜50万円</dd>
+      </div>
+      <div>
+        <dt>配送エリア</dt>
+        <dd>座間市・相模原市・横浜市<br>世田谷区・大田区</dd>
+      </div>
+      <div>
+        <dt>勤務時間</dt>
+        <dd>7:00〜18:00 目安<br>（案件により変動）</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- SUBCONTRACTOR DETAIL -->
+<section class="subcontractor" id="subcontractor">
+  <p class="section-en fade-up">subcontract partner</p>
+  <h2 class="fade-up">エリア<em>一括</em>委託で、<br>事業を拡大する。</h2>
+  <ul class="sub-features fade-up">
+    <li>エリア単位での一括委託が可能</li>
+    <li>安定した案件量を長期的に確保</li>
+    <li>既存の配送体制にそのまま組み込める</li>
+    <li>担当者との直接コミュニケーション</li>
+    <li>詳細条件はお問い合わせにてご案内</li>
+  </ul>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <p class="section-en fade-up">delivery area</p>
+  <div class="area-list">
+    <div class="area-item fade-up">座間<span class="area-sub">ZAMA</span></div>
+    <div class="area-item fade-up">相模原<span class="area-sub">SAGAMIHARA</span></div>
+    <div class="area-item fade-up">横浜<span class="area-sub">YOKOHAMA</span></div>
+    <div class="area-item fade-up">世田谷<span class="area-sub">SETAGAYA</span></div>
+    <div class="area-item fade-up">大田<span class="area-sub">OTA</span></div>
+  </div>
+</section>
+
+<!-- DAY FLOW -->
+<section class="day-flow">
+  <p class="section-en fade-up">daily schedule</p>
+  <div class="timeline">
+    <div class="timeline-item fade-up">
+      <div class="timeline-time">7:00</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>出勤・荷積み</h4>
+        <p>営業所に到着、荷物の積み込みとルート確認</p>
       </div>
     </div>
-    <div class="footer__divider"></div>
-    <div class="footer__bottom">
-      <span>&copy; 2026 BURNING BROS.【バーニングブロス】 All Rights Reserved.</span>
-      <span>配送パートナー募集サイト</span>
+    <div class="timeline-item fade-up">
+      <div class="timeline-time">8:00</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>午前配送</h4>
+        <p>指定エリアで午前中の配達を実施</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-time">12:00</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>昼休憩</h4>
+        <p>自分のペースで休憩</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-time">13:00</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>午後配送</h4>
+        <p>午後〜夕方の時間指定配達を中心に</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-up">
+      <div class="timeline-time">18:00</div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h4>業務終了</h4>
+        <p>配達完了報告を送信して終了</p>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="why-item fade-up">
+    <span class="why-num">01</span>
+    <h3>高単価。稼ぎたい人のための案件。</h3>
+    <p>¥143〜/個。配達すればするほど収入に直結する、シンプルな報酬体系です。</p>
+  </div>
+  <div class="why-item fade-up">
+    <span class="why-num">02</span>
+    <h3>地元密着。通勤が短い。</h3>
+    <p>神奈川・東京南部エリアに特化。地元で効率よく配送できるから、無駄な移動時間はありません。</p>
+  </div>
+  <div class="why-item fade-up">
+    <span class="why-num">03</span>
+    <h3>未経験でも、始められる。</h3>
+    <p>配送経験ゼロでもOK。先輩ドライバーの同行研修からスタートします。</p>
+  </div>
+  <div class="why-item fade-up">
+    <span class="why-num">04</span>
+    <h3>人で選ばれる会社でありたい。</h3>
+    <p>制度や条件だけじゃない。困った時に相談できる。それがBURNING BROS.の文化です。</p>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <h2 class="fade-up">今すぐ、<br>応募する。</h2>
+  <p class="fade-up">まずはお気軽にお問い合わせください。</p>
+
+  <div class="apply-methods fade-up">
+    <a href="tel:042-866-3866" class="apply-btn">
+      <small>CALL</small>
+      042-866-3866
+    </a>
+    <a href="#apply-form" class="apply-btn">
+      <small>WEB</small>
+      フォームで応募
+    </a>
+  </div>
+
+  <p class="apply-divider fade-up">── または、下記フォームから ──</p>
+
+  <form class="apply-form fade-up" id="apply-form" action="https://formspree.io/f/placeholder" method="POST">
+    <div class="form-group">
+      <label for="name">お名前</label>
+      <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+    </div>
+    <div class="form-group">
+      <label for="tel">電話番号</label>
+      <input type="tel" id="tel" name="phone" placeholder="090-0000-0000" required>
+    </div>
+    <div class="form-group">
+      <label for="type">応募種別</label>
+      <select id="type" name="type" required>
+        <option value="" disabled selected>選択してください</option>
+        <option value="driver">直接委託ドライバー</option>
+        <option value="subcontract">下請けパートナー</option>
+        <option value="other">その他・相談</option>
+      </select>
+    </div>
+    <button type="submit" class="submit-btn">送信する</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://burning-bros.com/cms/wp-content/uploads/2021/08/logo2.png" alt="BURNING BROS.">
+      <p>BURNING BROS.【バーニングブロス】株式会社<br>
+      〒252-0318 神奈川県相模原市南区上鶴間本町3-18-27</p>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:042-866-3866">042-866-3866</a>
+      <p><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a></p>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; BURNING BROS. All rights reserved.</p>
 </footer>
 
-<!-- ========================================
-     JAVASCRIPT
-     ======================================== -->
 <script>
+// Intersection Observer for scroll animations
 (function() {
-  'use strict';
-
-  // ---- Sticky Header ----
-  const header = document.getElementById('header');
-  let lastScroll = 0;
-
-  function handleScroll() {
-    const scrollY = window.scrollY;
-    if (scrollY > 60) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
-    }
-    lastScroll = scrollY;
-  }
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-
-  // ---- Mobile Menu ----
-  const menuToggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('nav');
-  const overlay = document.getElementById('mobileOverlay');
-
-  function openMenu() {
-    menuToggle.classList.add('active');
-    nav.classList.add('open');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMenuFn() {
-    menuToggle.classList.remove('active');
-    nav.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Expose closeMenu globally for onclick handlers
-  window.closeMenu = closeMenuFn;
-
-  menuToggle.addEventListener('click', function() {
-    if (nav.classList.contains('open')) {
-      closeMenuFn();
-    } else {
-      openMenu();
-    }
-  });
-
-  overlay.addEventListener('click', closeMenuFn);
-
-  // ---- Smooth Scroll ----
-  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const headerHeight = header.offsetHeight;
-        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
-        window.scrollTo({ top: top, behavior: 'smooth' });
+  const targets = document.querySelectorAll('.fade-up');
+  if (!targets.length) return;
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
       }
     });
-  });
-
-  // ---- IntersectionObserver Fade-in ----
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if ('IntersectionObserver' in window) {
-    const fadeObserver = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    fadeEls.forEach(function(el) {
-      fadeObserver.observe(el);
-    });
-  } else {
-    // Fallback: show all
-    fadeEls.forEach(function(el) {
-      el.classList.add('visible');
-    });
-  }
-
-  // ---- FAQ Accordion ----
-  document.querySelectorAll('.faq-item__question').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      const item = this.parentElement;
-      const answer = item.querySelector('.faq-item__answer');
-      const isActive = item.classList.contains('active');
-
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(function(faqItem) {
-        faqItem.classList.remove('active');
-        var ans = faqItem.querySelector('.faq-item__answer');
-        ans.style.maxHeight = null;
-        faqItem.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
-      });
-
-      // Open clicked (if was closed)
-      if (!isActive) {
-        item.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        this.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  // ---- Form: handle radio/checkbox styling ----
-  // The CSS handles this via :checked pseudo-class, no JS needed
-
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  targets.forEach(function(t) { observer.observe(t); });
 })();
 </script>
+
 </body>
 </html>
