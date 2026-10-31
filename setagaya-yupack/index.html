@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>世田谷区｜ゆうパック配送の業務委託パートナー募集｜BURNING BROS.</title>
-<meta name="description" content="世田谷区のゆうパック配送（軽貨物）を業務委託でお任せします。加盟金・登録料は一切なし。丁目単位の狭いエリア。報酬は個建て。経費を引いたあとの手取りを、あなたの数字で試算できます。普通免許（AT可）・未経験から相談可。TEL 042-866-3866">
+<meta name="description" content="世田谷区のゆうパック配送（軽貨物・業務委託）。当社は単価の高さで人を集めていません。配達を入口に、現場を任せる側・運営側へ進む人を探しています。短期で稼ぎたい方には向きません。加盟金ゼロ・条件は全開示。TEL 042-866-3866">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://richend0913.github.io/bb-recruit/setagaya-yupack/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="世田谷区｜ゆうパック配送の業務委託パートナー募集｜BURNING BROS.">
-<meta property="og:description" content="加盟金・登録料ゼロ。丁目単位の狭域配送。報酬は個建て。経費を引いたあとの手取りを自分の数字で試算できます。">
+<meta property="og:description" content="配達は入口です。単価勝負はしません。長く一緒にやり、いずれ現場を任せる側に回る人を世田谷で探しています。">
 <meta property="og:url" content="https://richend0913.github.io/bb-recruit/setagaya-yupack/">
 <meta property="og:image" content="https://burning-bros.com/cms/wp-content/uploads/2021/07/Fotolia_115037316_Subscription_Monthly_M.jpg">
 <meta property="og:site_name" content="BURNING BROS.【バーニングブロス】株式会社">
@@ -124,6 +124,50 @@ h2.sec-title {
 }
 h2.sec-title em { font-style: normal; color: #d32f2f; }
 .lead { font-size: clamp(14px, 3.8vw, 17px); color: #333; }
+
+/* ---------- FIT (向く人・向かない人) ---------- */
+.fit { background: #fff; }
+.fit-grid { display: grid; gap: 18px; margin-top: 28px; }
+.fit-col { border: 2px solid #111; border-radius: 10px; padding: 22px 20px; min-width: 0; }
+.fit-col.is-no { border-color: #d32f2f; }
+.fit-col h3 { font-size: 1.05rem; font-weight: 900; margin-bottom: 14px; display: flex; gap: 8px; align-items: baseline; }
+.fit-col.is-no h3 { color: #d32f2f; }
+.fit-col li { font-size: 0.92rem; padding: 8px 0 8px 1.3em; position: relative; border-bottom: 1px dashed #e4e4e4; }
+.fit-col li:last-child { border-bottom: 0; }
+.fit-col li::before { content: '✓'; position: absolute; left: 0; font-weight: 900; }
+.fit-col.is-no li::before { content: '✕'; color: #d32f2f; }
+.fit-note { margin-top: 20px; font-size: 0.9rem; color: #444; border-left: 4px solid #111; padding: 12px 0 12px 16px; }
+
+/* ---------- FUTURE (配達の先) ---------- */
+.future { background: #111; color: #fff; }
+.future h2.sec-title { color: #fff; }
+.future .lead { color: rgba(255,255,255,0.75); }
+.steps { display: grid; gap: 14px; margin-top: 30px; counter-reset: step; }
+.steps li {
+  background: #1c1c1c; border: 1px solid #2e2e2e; border-radius: 10px;
+  padding: 20px 20px 20px 62px; position: relative; min-width: 0;
+}
+.steps li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 18px; top: 18px;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #d32f2f; color: #fff; font-weight: 900; font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.steps h3 { font-size: 1.08rem; font-weight: 900; margin-bottom: 6px; }
+.steps p { font-size: 0.9rem; color: rgba(255,255,255,0.72); }
+.steps .tag {
+  display: inline-block; margin-bottom: 8px;
+  font-size: 0.68rem; letter-spacing: 0.12em; font-weight: 500;
+  color: #ff8a80; border: 1px solid rgba(255,138,128,0.5);
+  padding: 2px 8px; border-radius: 3px;
+}
+.future-note {
+  margin-top: 24px; font-size: 0.86rem; line-height: 1.9;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid #2e2e2e; border-radius: 8px; padding: 18px;
+}
+.future-note b { color: #fff; }
 
 /* ---------- HONEST ---------- */
 .honest { background: #f6f6f6; }
@@ -267,6 +311,7 @@ body { padding-bottom: 72px; }
   .site-header { padding: 14px 40px; }
   .sim-grid { grid-template-columns: 1.05fr 1fr; align-items: start; }
   .why-list { grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  .fit-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .apply-grid { grid-template-columns: 1fr 1fr; }
   .disclose-table tr { display: grid; grid-template-columns: 230px 1fr; gap: 20px; align-items: baseline; }
   .disclose-table th { margin-bottom: 0; }
@@ -292,19 +337,79 @@ body { padding-bottom: 72px; }
 <section class="hero">
   <div class="hero-bg" role="img" aria-label="配送中の車両"></div>
   <div class="hero-inner">
-    <span class="hero-eyebrow">東京都世田谷区 ／ 業務委託パートナー募集</span>
-    <h1><span class="ph">世田谷区の<em>ゆうパック</em>。</span><span class="ph">任せられる人を、</span><span class="ph">探しています。</span></h1>
-    <p class="hero-sub">BURNING BROS.【バーニングブロス】株式会社 ─ 個人（軽貨物ドライバー）・法人（協力会社）どちらも募集。</p>
+    <span class="hero-eyebrow">東京都世田谷区 ／ ゆうパック配送 ／ 業務委託パートナー募集</span>
+    <h1><span class="ph">配達は、</span><span class="ph"><em>入口</em>です。</span></h1>
+    <p class="hero-sub">BURNING BROS.【バーニングブロス】株式会社 ─ 単価の高さで人を集めるつもりはありません。長く一緒にやって、いずれ現場を任せる側に回る人を探しています。</p>
     <ul class="hero-badges">
+      <li>長く続ける前提の募集</li>
       <li>加盟金・登録料ゼロ</li>
       <li>丁目単位の狭いエリア</li>
-      <li>普通免許（AT可）</li>
       <li>未経験は同行研修から</li>
     </ul>
     <div class="hero-cta">
       <a class="btn btn-primary" href="tel:0428663866" data-cta="tel-hero"><small>CALL ─ 担当者に直接つながります</small>042-866-3866</a>
-      <a class="btn btn-ghost" href="#sim"><small>FIRST</small>手取りを試算する</a>
+      <a class="btn btn-ghost" href="#fit"><small>FIRST</small>向き・不向きを読む</a>
     </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="fit" id="fit">
+  <div class="inner">
+    <p class="section-en">who we are looking for</p>
+    <h2 class="sec-title">先に、<em>向かない方</em>を<br>書いておきます。</h2>
+    <p class="lead">お互いの時間を無駄にしたくないので、ふるいを先に置きます。ここで「違うな」と思ったら、読むのをやめてもらって構いません。</p>
+    <div class="fit-grid">
+      <div class="fit-col is-no">
+        <h3>向いていない方</h3>
+        <ul>
+          <li>今月だけ、短期で稼ぎたい方</li>
+          <li>単価の高さだけで請け先を選びたい方</li>
+          <li>配達以外のことには関わりたくない方</li>
+          <li>掛け持ちの合間に数日だけ入りたい方</li>
+        </ul>
+      </div>
+      <div class="fit-col">
+        <h3>一緒にやりたい方</h3>
+        <ul>
+          <li>数年単位で腰を据えるつもりの方</li>
+          <li>いずれ人や現場を見る側に回りたい方</li>
+          <li>自分で段取りを組んで動ける方</li>
+          <li>後から入る人に教える側になれる方</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fit-note">単価だけを比べるなら、もっと高い案件は世田谷にもあります。それでも当社を選ぶ理由を作りたいので、この募集は「配達の先」を一緒に見られる人に絞っています。</p>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="future">
+  <div class="inner">
+    <p class="section-en">beyond delivery</p>
+    <h2 class="sec-title">配達の<em>先</em>に、<br>何があるか。</h2>
+    <p class="lead">配送会社には、荷物を運ぶ人と同じだけ「現場を回す人」が要ります。エリアを預かる人、新しく入った人を教える人、品質を見る人。当社はその担い手を外から連れてくるのではなく、現場から出したいと考えています。報酬も、配達の出来高だけで頭打ちにはしません。</p>
+    <ul class="steps">
+      <li>
+        <span class="tag">START</span>
+        <h3>まず、配達で現場を覚える</h3>
+        <p>世田谷区の担当エリアを持ち、ゆうパックの集配を回します。未経験の方は先輩の同行から。ここは全員が通ります。</p>
+      </li>
+      <li>
+        <span class="tag">NEXT</span>
+        <h3>教える側・まとめる側に回る</h3>
+        <p>新しく入った方の同行研修、エリアの割り振り、現場のトラブル対応。配達と並行して任せていく範囲が広がります。</p>
+      </li>
+      <li>
+        <span class="tag">THEN</span>
+        <h3>管理業務も、あわせて任せる</h3>
+        <p>配達の委託に加えて、育成・エリアの調整・品質管理といった管理業務を別途お任せします。報酬は配達分に加えて<b>インセンティブ</b>が付く形です。社員登用ではなく、業務委託のまま任せる範囲と報酬を増やしていくやり方です。</p>
+      </li>
+    </ul>
+    <p class="future-note">
+      <b>ここは誤解されたくないので、はっきり書きます。</b>当社は社員登用という形を取っていません。先に進んでも<b>契約は業務委託のまま</b>で、社会保険・雇用保険が付くわけではありません。増えるのは、任せる業務の範囲と、それに対するインセンティブ報酬です。<br>
+      そして<b>「何年で何を任せる」という約束も書きません。</b>あなたの経験と当社の現状の両方で決まるからです。面談で、いま任せられる範囲とその先の道筋を具体的にお伝えします。数字だけ並べて期待を作るほうが、よほど不誠実だと考えています。
+    </p>
   </div>
 </section>
 
@@ -312,8 +417,8 @@ body { padding-bottom: 72px; }
 <section class="honest">
   <div class="inner">
     <p class="section-en">how to read this page</p>
-    <h2 class="sec-title">先に、<em>盛らない</em>と約束します。</h2>
-    <p class="lead">軽貨物の募集で「月収60万円可能！」という数字をよく見ます。この募集ではその書き方をしません。理由は、面談で話が違うと分かった時点で、お互いの時間が無駄になるからです。代わりに、判断材料を全部置いておきます。</p>
+    <h2 class="sec-title">お金の話も、<em>隠しません</em>。</h2>
+    <p class="lead">単価で勝負するつもりはない、と書きました。ただ、生活が成り立たない話に人を誘うのはもっと不誠実です。だから報酬の仕組みと経費は、先に全部出します。そのうえで、金額だけで決めないでほしいという立場です。</p>
     <ul class="honest-list">
       <li><strong>報酬は完全出来高（個建て）です</strong>配達した個数 × 単価が売上になります。単価は案件・担当局・エリアによって変わるため、このページに「確定した1つの数字」は書けません。実単価は面談でお伝えし、契約時に書面（電磁的方法を含む）で明示します。</li>
       <li><strong>経費を引いたあとの金額を主役にします</strong>燃料・任意保険・車両は、どこまでがご自身の負担になるかが案件ごとに違います。だから下の試算は「あなたの実費」を入れて出してください。経費を引く前の売上だけを見せる書き方はしません。</li>
@@ -326,9 +431,9 @@ body { padding-bottom: 72px; }
 <!-- SIMULATOR -->
 <section class="sim" id="sim">
   <div class="inner">
-    <p class="section-en">income simulator</p>
-    <h2 class="sec-title">あなたの数字で、<br><em>手取り</em>を出してください。</h2>
-    <p class="lead">スライダーを動かすと、経費を引いたあとの金額が変わります。初期値は当社が公表している最低単価（143円/個）と、一般的な配達個数を置いただけのものです。これは収入の保証ではありません。</p>
+    <p class="section-en">reality check</p>
+    <h2 class="sec-title">生活が成り立つかは、<br>先に<em>確かめて</em>ください。</h2>
+    <p class="lead">これは「こんなに稼げます」の表ではありません。経費を引いたあとに手元に何が残るのかを、ご自身の数字で確認するための道具です。初期値は当社が公表している最低単価（143円/個）と一般的な配達個数を置いただけで、収入の保証ではありません。</p>
 
     <div class="sim-grid">
       <div class="sim-card">
@@ -415,6 +520,8 @@ body { padding-bottom: 72px; }
         <tr><th>違約金・ペナルティ</th><td><span class="pending">違約金の有無と内容は<b>契約書面で明示</b>します。書面に無い金銭を後から請求することはありません。</span></td></tr>
         <tr><th>社会保険・労災</th><td>業務委託のため、当社の健康保険・厚生年金・雇用保険の適用はありません。労災保険については、ご自身で特別加入制度を利用できる場合があります（加入手続きはご自身で行っていただきます）。</td></tr>
         <tr><th>研修</th><td>未経験の方は、先輩ドライバーの同行からスタートします。</td></tr>
+        <tr><th>求める関わり方</th><td>長期的に関わっていただける方を前提とした募集です。短期・スポットのみのご依頼は、この案件ではお受けしていません。</td></tr>
+        <tr><th>配達の先の役割・報酬</th><td>当社は<b>社員登用という形を取っていません</b>。業務委託のまま、育成・エリアの調整・品質管理といった管理業務をあわせてお任せし、その分の<b>インセンティブ報酬</b>が加わる形です。役割が変わっても契約は業務委託であり、社会保険・雇用保険は適用されません。<span class="pending">任せる業務の範囲と、インセンティブの計算方法・金額は、<b>その都度 書面（電磁的方法を含む）で明示</b>します。年数や役割の約束はこのページではしません。</span></td></tr>
         <tr><th>法人・協力会社の方</th><td>エリア単位での一括委託の相談が可能です。既存の配送体制にそのまま組み込める形を、担当者と直接詰めてください。</td></tr>
         <tr><th>この募集内容の時点</th><td>2026年10月31日時点の内容です。募集を終了した場合は、このページを速やかに閉じます。</td></tr>
       </tbody>
@@ -448,7 +555,7 @@ body { padding-bottom: 72px; }
       <li><h3>エリアが狭い</h3><p>1丁目〜3丁目といった範囲がメインです。移動時間が短いほど、同じ時間で積める個数が増えます。出来高制では、ここが収入に直結します。</p></li>
       <li><h3>加盟金ゼロ</h3><p>登録料・加盟金・保証金は取りません。初期費用で縛って辞めにくくする、という作り方をしていません。</p></li>
       <li><h3>担当者と直接話せる</h3><p>窓口はコールセンターではありません。042-866-3866 にかけると、条件を決められる担当者につながります。</p></li>
-      <li><h3>個人も法人も受けられる</h3><p>1台で始めたい個人の方と、エリアごと引き受けたい協力会社の方、どちらの形でも相談できます。</p></li>
+      <li><h3>人を使い捨てにしない</h3><p>単価で釣って、繁忙期が終わったら切る。そういう集め方をしていないので、募集の書き方も「長く続けられるか」から始めています。個人の方も、エリアごと引き受けたい協力会社の方も同じ考え方です。</p></li>
     </ul>
   </div>
 </section>
@@ -467,6 +574,8 @@ body { padding-bottom: 72px; }
       <details><summary>結局いくら稼げますか？</summary><div class="faq-a">出来高制なので、配達個数と単価、そしてご自身の経費で変わります。このページのシミュレータに、ご自身が想定する個数と実費を入れて計算してください。当社から「月○万円を保証します」という言い方はしません。</div></details>
       <details><summary>雇用とはどう違いますか？</summary><div class="faq-a">業務委託契約なので、当社の健康保険・厚生年金・雇用保険は適用されず、確定申告はご自身で行っていただきます。有給休暇や残業代といった労働基準法上の制度も適用されません。労災保険は、ご自身で特別加入制度を利用できる場合があります。</div></details>
       <details><summary>法人（協力会社）としてエリアごと受けられますか？</summary><div class="faq-a">できます。エリア単位での一括委託の相談が可能です。台数・稼働可能日・既存の配送体制をお聞かせいただければ、具体的な形を詰めます。同じ窓口（042-866-3866）へお電話ください。</div></details>
+      <details><summary>短期だけ、副業として数日だけでも働けますか？</summary><div class="faq-a">この案件ではお受けしていません。長期的に関わっていただける方を前提に募集しているためです。短期で収入を作りたい場合は、他社のスポット案件のほうが条件が合うと思います。</div></details>
+      <details><summary>「配達の先」とは、具体的にどうなるのですか？</summary><div class="faq-a">新しく入った方の同行研修、エリアの調整、品質管理といった管理業務を、配達とあわせてお任せしていきます。報酬は配達分に加えてインセンティブが付く形です。社員登用という形は取っていないので、<b>業務委託のまま、任せる範囲と報酬が増えていく</b>とお考えください。社会保険・雇用保険が適用されない点は、役割が変わっても同じです。「何年で何を任せる」という約束はこのページには書きません。面談で、いま任せられる範囲とその先の道筋をお伝えします。</div></details>
       <details><summary>世田谷区以外でも働けますか？</summary><div class="faq-a">当社は座間市・相模原市・横浜市・世田谷区・大田区で配送を行っています。このページは世田谷区の案件向けですが、他エリアのご相談も同じ窓口で受け付けています。</div></details>
       <details><summary>応募したら、いつ連絡が来ますか？</summary><div class="faq-a">お電話なら、その場で担当者が条件をお伝えします。公式サイトのお問い合わせフォームからの場合は、3営業日以内にご返答しています。急いでいる方は、お電話のほうが確実です。</div></details>
     </div>
@@ -478,7 +587,7 @@ body { padding-bottom: 72px; }
   <div class="inner">
     <p class="section-en">apply</p>
     <h2 class="sec-title">話を、はじめましょう。</h2>
-    <p class="lead">履歴書は要りません。まず「世田谷のゆうパックの件で」とだけ伝えてください。</p>
+    <p class="lead">履歴書は要りません。まず「世田谷のゆうパックの件で」とだけ伝えてください。どこまでやりたいか、何年くらいで考えているか。そこから話しましょう。</p>
 
     <div class="apply-grid">
       <div class="apply-card">
@@ -626,6 +735,8 @@ body { padding-bottom: 72px; }
         { "@type": "Question", "name": "加盟金や登録料はかかりますか？", "acceptedAnswer": { "@type": "Answer", "text": "かかりません。加盟金などの費用は一切不要です。" } },
         { "@type": "Question", "name": "単価はいくらですか？", "acceptedAnswer": { "@type": "Answer", "text": "当社が公表している単価は143円／個〜で、エリア・案件によって変動します。実際の単価は面談でお伝えし、契約時に書面（電磁的方法を含む）で明示します。" } },
         { "@type": "Question", "name": "雇用とはどう違いますか？", "acceptedAnswer": { "@type": "Answer", "text": "業務委託契約なので、当社の健康保険・厚生年金・雇用保険は適用されず、確定申告はご自身で行っていただきます。労災保険はご自身で特別加入制度を利用できる場合があります。" } },
+        { "@type": "Question", "name": "短期だけ、副業として数日だけでも働けますか？", "acceptedAnswer": { "@type": "Answer", "text": "この案件ではお受けしていません。長期的に関わっていただける方を前提に募集しているためです。" } },
+        { "@type": "Question", "name": "「配達の先」とは、具体的にどうなるのですか？", "acceptedAnswer": { "@type": "Answer", "text": "新しく入った方の同行研修、エリアの調整、品質管理といった管理業務を、配達とあわせてお任せしていきます。報酬は配達分に加えてインセンティブが付く形です。社員登用という形は取っておらず、業務委託のまま任せる範囲と報酬が増えていきます。社会保険・雇用保険が適用されない点は役割が変わっても同じです。年数や役割の約束はせず、面談でいま任せられる範囲とその先の道筋をお伝えします。" } },
         { "@type": "Question", "name": "法人（協力会社）としてエリアごと受けられますか？", "acceptedAnswer": { "@type": "Answer", "text": "できます。エリア単位での一括委託の相談が可能です。台数・稼働可能日・既存の配送体制をお聞かせください。窓口は042-866-3866です。" } },
         { "@type": "Question", "name": "応募したら、いつ連絡が来ますか？", "acceptedAnswer": { "@type": "Answer", "text": "お電話ならその場で担当者が条件をお伝えします。公式サイトのお問い合わせフォームからの場合は3営業日以内にご返答しています。" } }
       ]
