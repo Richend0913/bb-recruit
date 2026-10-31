@@ -145,7 +145,13 @@ LPの「法人・協力会社の方」行と、全エリア版の「下請けパ
 1. ジモティーのアカウントで上の原稿を投稿（最優先。15分）
 2. Indeedの採用担当アカウントで無料掲載（30分）
 3. Googleビジネスプロフィールに投稿（5分）
-4. Google Search Console に `https://richend0913.github.io/bb-recruit/sitemap.xml` を送信（インデックスを早める）
+
+~~4. Google Search Console に sitemap を送信~~ → **不要になった（2026-10-31）**。
+Search Console 送信済みの `https://richend0913.github.io/sitemap_index.xml` に
+`bb-recruit/sitemap.xml` を足したので、Google は次の巡回で自動的に拾う。
+あわせてサイト内の導線を2本足した（どちらも検索エンジンがこのページを見つける経路になる）:
+- 親サイトのトップ「求人 / 採用」欄 → 世田谷ページ
+- 既存の採用LP `/recruit/` の勤務エリア「東京」カード → 世田谷ページ
 
 ## 数字の見かた
 
