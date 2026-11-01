@@ -44,7 +44,7 @@ gtag('config', 'G-MEKMEB48FQ', { page_area: 'setagaya-yupack' });
   --asphalt:#1B1C1E;--asphalt-2:#26272A;--asphalt-3:#121315;--on-dark:#F4F1EA;--on-dark-2:#B8B3A9;--rule-dark:rgba(244,241,234,.16);
   /* 差し色（朱） */
   --ember:#D23A1E;--ember-ink:#B02E18;--ember-hi:#F0643F;--ember-tint:#F7E3DB;--ember-deep:#7E2010;
-  --marker:#F3D54E;
+  --ico-a:var(--ember);
   --f-mincho:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho","YuMincho","BIZ UDPMincho",serif;
   --f-gothic:"Hiragino Sans","Hiragino Kaku Gothic ProN","BIZ UDPGothic","Yu Gothic Medium","YuGothic",Meiryo,system-ui,sans-serif;
   --f-num:"Barlow Condensed","Arial Narrow","Hiragino Sans","BIZ UDPGothic",Meiryo,sans-serif;
@@ -53,8 +53,9 @@ gtag('config', 'G-MEKMEB48FQ', { page_area: 'setagaya-yupack' });
   --gx:24px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-bottom:calc(72px + env(safe-area-inset-bottom))}
-body{font-family:var(--f-gothic);font-size:16px;line-height:1.9;letter-spacing:.02em;color:var(--ink);
+body{font-family:var(--f-gothic);font-size:16px;line-height:1.8;letter-spacing:.02em;color:var(--ink);
   background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .1 0 0 0 0 .09 0 0 0 0 .08 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
   line-break:strict;overflow-wrap:anywhere;text-wrap:pretty;-webkit-font-smoothing:antialiased}
 img,svg{display:block;max-width:100%}
@@ -71,27 +72,32 @@ h4{font-weight:700}
 :focus-visible{outline:3px solid var(--ember-ink);outline-offset:2px}
 .dark :focus-visible,.hd :focus-visible,.ft :focus-visible{outline-color:var(--ember-hi)}
 .ico{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.ico.s20{width:20px;height:20px;stroke-width:2}
+.dark,.hd,.ft{--ico-a:var(--ember-hi)}
+.btn .ico{--ico-a:currentColor}
 .skip{position:absolute;left:8px;top:-60px;z-index:80;background:var(--sheet);color:var(--ink);padding:8px 16px;border-radius:4px;font-weight:700}
 .skip:focus{top:8px}
 .wrap{max-width:calc(1120px + var(--gx) * 2);margin-inline:auto;padding-inline:var(--gx)}
 @media(max-width:359px){:root{--gx:16px}}
-.sec{position:relative;padding-block:48px}
+.sec{position:relative;padding:64px 0 72px}
 .sec.sec-cont{padding-top:0}
 section[id]{scroll-margin-top:16px}
 p{max-width:34em}
 
-/* ---------- 区画の頭（番号・罫・ラベル・柱） ---------- */
+/* ---------- 区画の頭（番号・罫・ラベル） ---------- */
 .sh{display:flex;align-items:center;gap:12px;padding-bottom:12px;margin-bottom:16px;border-bottom:1px solid var(--rule);font-size:14px;font-weight:700;letter-spacing:.06em;line-height:1.4}
 .sh-no{font-family:var(--f-num);font-weight:600;font-size:15px;letter-spacing:.12em;color:var(--ember-ink)}
 .sh-rl{width:32px;height:1px;background:var(--ink);opacity:.45;flex:none}
 .dark .sh{border-color:var(--rule-dark)}
 .dark .sh-no{color:var(--ember-hi)}
 .dark .sh-rl{background:var(--on-dark)}
-h2{font-size:clamp(30px,9vw,36px);line-height:1.32;letter-spacing:.03em}
-.lead{font-size:17px;margin-top:16px}
+h2{font-size:clamp(28px,8.6vw,34px);line-height:1.35;letter-spacing:.03em}
+.lead{font-size:16px;line-height:1.8;margin-top:12px;max-width:30em}
 .dark .lead{color:var(--on-dark-2)}
-.note-s{font-size:14px;line-height:1.75;color:var(--ink-2)}
-.cap{font-size:12px;line-height:1.4;letter-spacing:.04em;color:var(--ink-2);margin-top:8px}
+.fig{margin-top:24px}
+.cap{font-size:12px;line-height:1.5;letter-spacing:.04em;color:var(--ink-2);margin-top:8px}
+.dark .cap,.ft .cap{color:var(--on-dark-2)}
+.cap a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule-strong)}
 .ph-note{position:absolute;right:8px;top:8px;background:rgba(26,24,20,.72);color:#F4F1EA;font-size:12px;line-height:1.4;letter-spacing:.04em;padding:3px 8px;border-radius:2px;white-space:nowrap}
 
 /* ---------- ボタン ---------- */
@@ -111,6 +117,83 @@ h2{font-size:clamp(30px,9vw,36px);line-height:1.32;letter-spacing:.03em}
 /* ---------- 浮き上がり（JSが動くときだけ隠す） ---------- */
 .rv{transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--i,0) * 60ms)}
 .js:not(.rv-off) .rv:not(.in){opacity:0;transform:translateY(16px)}
+.irows>li{transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.irows>li:nth-child(2){transition-delay:40ms}.irows>li:nth-child(3){transition-delay:80ms}.irows>li:nth-child(4){transition-delay:120ms}.irows>li:nth-child(5){transition-delay:160ms}.irows>li:nth-child(6){transition-delay:200ms}
+.js:not(.rv-off) .irows:not(.in)>li{opacity:0;transform:translateY(8px)}
+
+/* ---------- アイコン付きの一行 ---------- */
+.irows{border-top:1px solid var(--rule)}
+.irow{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:12px;align-items:start;padding:10px 0;border-bottom:1px solid var(--rule);line-height:1.6}
+.irow>span{min-width:0}
+.irow>.ico{margin-top:2px}
+.irows.b .irow{font-weight:700}
+.dark .irows,.dark .irow{border-color:var(--rule-dark)}
+.irow.note{grid-template-columns:20px minmax(0,1fr);column-gap:10px;padding:8px 0;border:0;font-size:14px;color:var(--ink-2)}
+.irow.note>.ico{margin-top:1px}
+
+/* ---------- 道筋の図（手順・時刻・流れ） ---------- */
+.route{position:relative}
+.route>li{position:relative}
+.route>li::before{content:"";position:absolute;width:2px;background:var(--ember);transform-origin:top;transition:transform .4s ease-in-out;transition-delay:calc(var(--i,0) * .3s)}
+.route>li:last-child::before{display:none}
+.dark .route>li::before{background:var(--ember-hi)}
+.stop{position:relative;z-index:1;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--ember);background:var(--sheet);color:var(--ink);transition:transform .3s var(--ease);transition-delay:calc(var(--i,0) * .3s)}
+.route>li:last-child .stop{background:var(--ember);color:var(--sheet);--ico-a:var(--sheet)}
+.dark .stop{background:var(--asphalt-2);border-color:var(--ember-hi);color:var(--on-dark)}
+.dark .route>li:last-child .stop{background:var(--ember-hi);color:var(--asphalt);--ico-a:var(--asphalt)}
+.js:not(.rv-off) .route:not(.in)>li::before{transform:scaleY(0)}
+.js:not(.rv-off) .route:not(.in) .stop{transform:scale(.6)}
+.route .t small{display:block;font-size:14px;font-weight:400;line-height:1.6;color:var(--ink-2);letter-spacing:.02em}
+.dark .route .t small{color:var(--on-dark-2)}
+/* 手順・流れ（縦） */
+.route--steps>li,.route--flow>li{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:16px;padding-bottom:20px}
+.route--flow>li{padding-bottom:16px}
+.route--steps>li:last-child,.route--flow>li:last-child{padding-bottom:0}
+.route--steps>li::before,.route--flow>li::before{left:19px;top:40px;bottom:0}
+.route--steps h3{font-size:20px;line-height:1.45;padding-top:6px}
+.route--steps p{font-size:14px;line-height:1.6;color:var(--on-dark-2);margin-top:4px}
+.route--flow .t{font-size:16px;font-weight:700;line-height:1.5;padding-top:8px}
+/* 時刻（縦） */
+.route--time>li{display:grid;grid-template-columns:52px 40px minmax(0,1fr);column-gap:12px;align-items:start;padding-bottom:16px}
+.route--time>li:last-child{padding-bottom:0}
+.route--time>li::before{left:83px;top:40px;bottom:0}
+.route--time .tm{font-size:22px;line-height:40px;text-align:right;white-space:nowrap}
+.route--time .t{font-size:16px;font-weight:700;line-height:1.5;padding-top:8px}
+
+/* ---------- 折りたたみ（束） ---------- */
+.pl{position:relative;display:block;width:24px;height:24px;flex:none;border:1px solid var(--rule-strong);border-radius:4px;color:var(--ink)}
+.pl::before,.pl::after{content:"";position:absolute;left:5px;right:5px;top:50%;height:2px;margin-top:-1px;background:currentColor;transition:transform .2s}
+.pl::after{transform:rotate(90deg)}
+details[open]>summary .pl::after{transform:none}
+.dark .pl,.ft .pl{border-color:var(--rule-dark);color:var(--on-dark)}
+summary{list-style:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+summary::-webkit-details-marker{display:none}
+.more{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;line-height:1.4;color:var(--ember-ink);white-space:nowrap}
+.more .c{display:none}
+details[open]>summary .more .o{display:none}
+details[open]>summary .more .c{display:inline}
+.dark .more,.ft .more{color:var(--ember-hi)}
+.fold{margin:32px 0 8px}
+.fold>summary{display:grid;grid-template-columns:24px minmax(0,1fr) auto;column-gap:12px;align-items:center;min-height:56px;padding:8px 12px 8px 16px;background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;
+  box-shadow:0 4px 0 -1px var(--sheet),0 4px 0 0 var(--rule-strong),0 8px 0 -1px var(--sheet),0 8px 0 0 var(--rule);transition:background .12s}
+.fold>summary:hover{background:var(--paper)}
+.fold[open]>summary{box-shadow:none;border-radius:4px 4px 0 0}
+.fd-t{min-width:0;font-weight:700;line-height:1.5}
+.fd-t .nm{font-size:18px;color:var(--ember-ink);margin:0 1px}
+.fold>.body{background:var(--sheet);border:1px solid var(--rule-strong);border-top:0;border-radius:0 0 4px 4px;padding:16px;font-size:14px;line-height:1.75}
+.fold[open]>.body{animation:openIn .2s ease-out}
+.dark .fold>summary,.ft .fold>summary{background:var(--asphalt-2);border-color:var(--rule-dark);color:var(--on-dark);box-shadow:0 4px 0 -1px var(--asphalt-2),0 4px 0 0 var(--rule-dark),0 8px 0 -1px var(--asphalt-2),0 8px 0 0 var(--rule-dark)}
+.dark .fold>summary:hover,.ft .fold>summary:hover{background:var(--asphalt)}
+.dark .fold[open]>summary,.ft .fold[open]>summary{box-shadow:none}
+.dark .fold>.body,.ft .fold>.body{background:var(--asphalt-2);border-color:var(--rule-dark);color:var(--on-dark-2)}
+.dark .fd-t .nm,.ft .fd-t .nm{color:var(--ember-hi)}
+@keyframes openIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* ---------- 印 ---------- */
+.stamp{display:inline-block;border:1px solid var(--ember);color:var(--ember-ink);font-size:14px;font-weight:700;line-height:1.35;padding:0 6px;margin-right:6px;border-radius:2px;white-space:nowrap;vertical-align:1px}
+.dstamp{display:inline-flex;align-items:baseline;padding:5px 14px;border:1.5px solid var(--ember-ink);border-radius:999px;outline:1px solid var(--ember-ink);outline-offset:-5px;color:var(--ember-ink);font-size:14px;font-weight:700;line-height:1.3;white-space:nowrap}
+.dstamp .nm{font-size:18px;line-height:1.1}
+.dstamp .u2{margin-left:4px}
 
 /* ---------- S0 ヘッダー ---------- */
 .hd{background:var(--asphalt);color:var(--on-dark);z-index:50;transition:box-shadow .2s}
@@ -128,95 +211,82 @@ h2{font-size:clamp(30px,9vw,36px);line-height:1.32;letter-spacing:.03em}
 /* ---------- S1 ヒーロー ---------- */
 .hero{position:relative;display:flex;flex-direction:column;padding-bottom:16px}
 .hero-ph{position:relative;margin:0;overflow:hidden;background:var(--asphalt)}
-.hero-ph img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 58%;animation:heroIn 1.4s ease-out both}
-.hero-ph .ph-note{top:auto;bottom:40px;right:16px}
+.hero-ph img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 62%;animation:heroIn 1.4s ease-out both}
 @keyframes heroIn{from{transform:scale(1.04)}to{transform:none}}
-.hero-sheet{z-index:1;display:flex;flex-direction:column;margin:-32px 16px 0;padding:24px 24px 16px;background:var(--sheet);border-radius:4px;box-shadow:var(--shadow-paper)}
+.hero-sheet{z-index:1;display:flex;flex-direction:column;margin:-32px 16px 0;padding:20px 20px 16px;background:var(--sheet);border-radius:4px;box-shadow:var(--shadow-paper)}
 .hero-sheet>*{min-width:0}
-h1{font-size:clamp(44px,14vw,56px);line-height:1.22;letter-spacing:.02em}
+h1{font-size:clamp(40px,12.4vw,52px);line-height:1.22;letter-spacing:.02em}
 h1 em{font-style:normal;color:var(--ember);text-decoration:underline;text-decoration-color:var(--ember);text-decoration-thickness:3px;text-underline-offset:.14em;text-decoration-skip-ink:none}
 .hero-labels{display:block;margin-bottom:12px;font-family:var(--f-gothic);font-size:14px;font-weight:700;line-height:1.5;letter-spacing:.04em;color:var(--ink-2);font-feature-settings:"palt"}
 .hero-labels .ph{display:block}
 .hero-labels .sep{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.hero .lead{margin-top:16px;order:2}
-.hero-sheet h1{order:1}
-.hero-cta{order:4;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:22px}
+.hero .lead{font-size:17px;margin-top:14px}
+.facts .ntag{position:relative;min-width:0;border-top:2px solid var(--ink)}
+.facts .ntag::before{content:"";position:absolute;left:0;top:-2px;width:16px;height:2px;background:var(--ember)}
+.facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:20px}
+.facts .ntag{padding-top:8px}
+.facts dt{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:700;line-height:1.6;color:var(--ink-2);white-space:nowrap}
+.facts dd{margin-top:2px}
+.facts .nv{display:flex;align-items:baseline;gap:2px;white-space:nowrap;line-height:1.1}
+.facts .nv .nm{font-size:32px;line-height:1.1}
+.facts .nv .u{font-size:15px;font-weight:700}
+.facts .nt{font-size:14px;line-height:1.6;color:var(--ink-2);margin-top:4px}
+.facts .tv{font-size:16px;font-weight:700;line-height:1.5;padding-top:2px}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:24px}
 .hero-cta .btn-tel{width:100%;padding-inline:20px}
-.facts{order:3;margin-top:18px;border-top:1.5px solid var(--ink)}
-.facts>div{display:grid;grid-template-columns:2.6em minmax(0,1fr);column-gap:12px;padding:9px 0;border-bottom:1px solid var(--rule);animation:tagIn .5s var(--ease) both}
-.facts>div:nth-child(2){animation-delay:.06s}.facts>div:nth-child(3){animation-delay:.12s}.facts>div:nth-child(4){animation-delay:.18s}
-.facts dt{font-size:14px;font-weight:700;line-height:1.6;color:var(--ink-2);padding-top:1px;white-space:nowrap}
-.facts dd{font-size:15px;line-height:1.6}
-.facts dd b{font-weight:700}
-.facts dd small{display:block;font-size:14px;line-height:1.5;color:var(--ink-2)}
-@keyframes tagIn{from{transform:translateY(8px)}to{transform:none}}
-.issuer{order:5;margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;line-height:1.6;color:var(--ink-2)}
+.issuer .who{display:block}
+.issuer{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule);font-size:14px;line-height:1.6;color:var(--ink-2)}
 @media(min-width:480px){.hero-labels .ph{display:inline-block}.hero-labels .sep{position:static;width:auto;height:auto;overflow:visible;clip:auto;display:inline;margin:0 .35em;color:var(--rule-strong)}}
-@media(max-width:359px){.hero-sheet{margin-inline:12px;padding-inline:20px}.hero-cta .btn-tel{padding-inline:16px;gap:10px}.hero-cta .btn-tel .nm{font-size:28px}}
+@media(max-width:359px){.hero-sheet{margin-inline:12px;padding-inline:16px}.hero-cta .btn-tel{padding-inline:16px;gap:10px}.hero-cta .btn-tel .nm{font-size:28px}.facts{column-gap:12px}}
 
 /* ---------- S2 向き・不向き ---------- */
-.fit-cols{display:grid;gap:16px;margin-top:28px}
-.fit-card{position:relative;min-width:0;padding:18px 20px;border-radius:4px;overflow:hidden}
+.fit-cols{display:grid;gap:16px;margin-top:24px}
+.fit-card{min-width:0;padding:16px 16px 6px;border-radius:4px}
 .fit-no{background:var(--paper-2)}
 .fit-yes{background:var(--sheet);border-top:3px solid var(--ink);box-shadow:0 0 0 1px var(--rule)}
-.fit-card h3{display:flex;align-items:center;gap:10px;font-size:20px;line-height:1.45}
-.fit-card h3 .ico{width:22px;height:22px;stroke-width:2.2}
-.fit-list{margin-top:10px}
-.fit-list li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px dotted var(--rule-strong);line-height:1.6}
-.fit-list li:last-child{border-bottom:0}
-.fit-list .ico{width:18px;height:18px;margin-top:3px;stroke-width:2.2}
-.fit-no li{color:var(--ink-2)}
-.fit-yes li{font-weight:500}
-.fit-yes .fit-list .ico{color:var(--ember-ink)}
-.fit-close{margin-top:28px;padding-left:20px;border-left:3px solid var(--ember);font-size:19px;line-height:1.8;letter-spacing:.03em;max-width:none}
+.fit-card h3{display:flex;align-items:center;gap:10px;font-size:18px;line-height:1.45;padding-bottom:10px}
+.fit-card h3 .ico{stroke-width:2.2}
+.fit-card .irows{border-top-color:var(--rule-strong)}
+.fit-card .irow:last-child{border-bottom:0}
+.fit-no .irow{color:var(--ink-2)}
+.fit-no .ico{color:var(--ink-2)}
+.fit-yes .ico{color:var(--ember);stroke-width:2}
 
 /* ---------- S3 配達の先（路面） ---------- */
 .dark{background:var(--asphalt);color:var(--on-dark)}
-.fut-ph{position:relative;margin-top:28px}
-.fut-ph img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 35%;border-radius:4px}
-.route{position:relative}
-.route>li{position:relative}
-.route>li::before{content:"";position:absolute;transition:transform .4s ease-in-out;transition-delay:calc(var(--i,0) * .32s)}
-.route>li:last-child::before{display:none}
-.stop{position:relative;z-index:1;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font-family:var(--f-num);font-weight:600;font-size:17px;line-height:1;transition:transform .3s var(--ease);transition-delay:calc(var(--i,0) * .32s)}
-.js:not(.rv-off) .route:not(.in)>li::before{transform:scaleY(0)}
-.js:not(.rv-off) .route:not(.in) .stop{transform:scale(.6)}
-.steps{margin-top:36px}
-.steps>li{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:16px;padding-bottom:24px}
-.steps>li:last-child{padding-bottom:0}
-.steps>li::before{left:17px;top:36px;bottom:0;width:2px;background:var(--ember-hi);transform-origin:top}
-.steps .stop{background:var(--asphalt);border:2px solid var(--ember-hi);color:var(--on-dark)}
-.steps>li:last-child .stop{background:var(--ember);border-color:var(--ember);color:#fff}
-.steps h3{font-size:22px;line-height:1.45;padding-top:2px}
-.steps p{color:var(--on-dark-2);margin-top:6px}
-.plain{margin-top:36px;padding:20px 20px 22px;background:var(--sheet);color:var(--ink);border-top:4px solid var(--ember);border-radius:4px;box-shadow:var(--shadow-paper)}
-.plain h3{font-size:20px;line-height:1.45}
-.plain ol{display:grid;gap:8px;margin-top:12px}
-.plain li{display:grid;grid-template-columns:24px minmax(0,1fr);column-gap:10px;line-height:1.75}
-.plain .n{font-family:var(--f-num);font-weight:600;font-size:20px;line-height:1.4;color:var(--ember-ink)}
+.fut-ph{margin:24px 0 0}
+.fut-ph img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 40%;border-radius:4px}
+.fut-ph .cap{text-align:right}
+.route--steps{margin-top:32px}
+.plain{margin-top:32px;padding:20px 20px 12px;background:var(--sheet);color:var(--ink);border-top:4px solid var(--ember);border-radius:4px;box-shadow:var(--shadow-paper);--ico-a:var(--ember)}
+.plain h3{font-size:18px;line-height:1.45;padding-bottom:10px}
+.plain .irow{border-color:var(--rule);line-height:1.7}
+.plain .irows{border-color:var(--rule-strong)}
+.plain .irow:last-child{border-bottom:0}
+@media(max-width:359px){.plain{padding-inline:16px}.plain .ph{display:inline}}
 
 /* ---------- S4 仕事と1日 ---------- */
-.map{position:relative;margin-top:28px;background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;overflow:hidden}
+.sec.day{padding-top:0;padding-bottom:24px}
+.band{position:relative;margin:0}
+.band-ph{position:relative;margin:0;overflow:hidden;background:var(--asphalt)}
+.band img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.band-tag{position:relative;z-index:1;margin:-40px 16px 0;padding:20px 20px 24px;background:var(--sheet);border-radius:4px;box-shadow:var(--shadow-paper)}
+.band-tag>*{min-width:0}
+.day-grid{margin-top:32px}
+.map{position:relative;background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;overflow:hidden}
 .map svg{width:100%;height:auto;aspect-ratio:4/3}
 .map-lbl{font:700 17px var(--f-gothic);letter-spacing:.04em}
-.day-h{margin-top:36px;font-size:20px;line-height:1.45}
-.dphoto{position:relative;margin:16px 0 18px}
-.dphoto img{width:100%;aspect-ratio:var(--r,1.5);object-fit:cover;border-radius:4px;background:var(--paper-2)}
-.dphoto .t{position:absolute;left:8px;top:8px;background:rgba(251,250,246,.94);font-size:17px;line-height:1.2;padding:4px 8px;border-radius:2px;white-space:nowrap}
-.dphoto figcaption{margin-top:6px;font-size:12px;line-height:1.5;letter-spacing:.04em;color:var(--ink-2)}
-.tl>li{display:grid;grid-template-columns:64px 12px minmax(0,1fr);column-gap:12px;padding-bottom:14px}
-.tl>li:last-child{padding-bottom:0}
-.tl>li::before{left:81px;top:22px;bottom:-12px;width:2px;background:var(--rule);transform-origin:top}
-.tl-t{font-size:28px;line-height:1.1;white-space:nowrap}
-.tl .stop{width:12px;height:12px;margin-top:10px;background:var(--sheet);border:2px solid var(--ember)}
-.tl.t2>li:last-child .stop{background:var(--ember)}
-.tl h4{font-size:17px;line-height:1.6}
-.tl p{color:var(--ink-2);margin-top:2px;line-height:1.75}
-.day-note{margin-top:22px}
+.map-f{margin:0}
+.map-f .cap{text-align:right}
+.day-h{margin-top:32px;font-size:20px;line-height:1.45}
+.route--time{margin-top:16px}
+.day .note{margin-top:12px}
+.band--end{margin-top:32px}
+.band-cap{max-width:calc(1120px + var(--gx) * 2);margin:8px auto 0;padding-inline:var(--gx);text-align:right}
 
 /* ---------- S5 収入の試算 ---------- */
 .sim{background:var(--paper-2)}
-.sim-body{margin-top:28px}
+.sim-body{margin-top:24px}
 .sim-mini{position:sticky;top:8px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:10px;height:56px;padding:0 14px;background:var(--sheet);border:1px solid var(--rule-strong);border-bottom:1px solid var(--ink);border-radius:4px 4px 0 0;box-shadow:0 10px 18px -14px rgba(26,24,20,.55);transition:opacity .2s,visibility 0s}
 .sim-mini.off{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility 0s .2s}
 .no-js .sim-mini{display:none}
@@ -224,6 +294,7 @@ h1 em{font-style:normal;color:var(--ember);text-decoration:underline;text-decora
 .sim-mini b{font-size:28px;line-height:1;margin-left:auto}
 .sim-mini i{font-style:normal;font-size:14px;font-weight:700;white-space:nowrap}
 .calc{background:var(--sheet);border:1px solid var(--rule-strong);border-top:0;border-radius:0 0 4px 4px;padding:0 16px 4px}
+.no-js .calc{border-top:1px solid var(--rule-strong);border-radius:4px}
 .calc-g h3{font-size:18px;line-height:1.45;padding:16px 0 10px;border-bottom:1px solid var(--rule-strong)}
 .fld{padding:12px 0 12px;border-bottom:1px solid var(--rule)}
 .calc-g .fld:last-child{border-bottom:0}
@@ -272,53 +343,59 @@ input[type=range]:focus-visible{outline:3px solid var(--ember-ink);outline-offse
 .bar-l span::before{content:"";display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px;border:1px solid var(--ink)}
 .bar-l span:first-child::before{background:var(--ink)}
 .bar-l span:last-child::before{background:var(--paper-2)}
-.brk{width:100%;border-collapse:collapse;margin-top:16px;font-feature-settings:"palt"}
-.brk th{text-align:left;font-weight:400;font-size:15px;line-height:1.5;padding:9px 8px 9px 0;border-top:1px solid var(--rule)}
-.brk td{text-align:right;white-space:nowrap;padding:9px 0;border-top:1px solid var(--rule);font-size:20px;line-height:1.2}
-.brk td small{font-family:var(--f-gothic);font-size:14px;font-weight:700;margin-left:2px}
-.disc{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
-.disc li{padding-left:1.2em;text-indent:-1.2em;font-size:14px;line-height:1.65;color:var(--ink-2)}
+.disc{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule)}
+.disc li{padding-left:1.2em;text-indent:-1.2em;font-size:14px;line-height:1.65}
 .disc li+li{margin-top:2px}
-.res-col .btn-tel{width:100%;margin-top:20px;min-height:56px;justify-content:center}
+.disc .ph{text-indent:0}
+.fold .disc{margin-top:0;padding-top:0;border-top:0}
+.fold .disc li{color:var(--ink)}
+.res-col .fold{margin-top:24px}
+.res-col .btn-tel{width:100%;margin-top:24px;min-height:56px;justify-content:center}
 .res-col .btn-tel .ico{width:22px;height:22px}
 
-/* ---------- S6 条件 ---------- */
-.legend{margin-top:20px}
-.stamp,.mx-k{display:inline-block;border:1px solid var(--ember);color:var(--ember-ink);font-size:14px;font-weight:700;line-height:1.35;padding:0 6px;border-radius:2px;white-space:nowrap}
-.doc{margin-top:24px;background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px;padding:0 12px 4px}
-.g-hd{display:flex;align-items:baseline;gap:10px;padding:14px 0 8px;border-bottom:1.5px solid var(--ink);font-size:20px;line-height:1.4}
-.g-l{font-size:26px;line-height:1}
-.g-c{font-family:var(--f-gothic);font-size:14px;font-weight:700;color:var(--ink-2);white-space:nowrap}
-.row{padding:8px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.7}
-.grp .row:last-child{border-bottom:0}
-.row dt{display:inline;font-weight:700;margin-right:.6em}
-.row dd{display:inline}
-.mx{display:block;margin-top:2px}
-.mx-k{margin-right:6px;vertical-align:1px}
+/* ---------- S6 条件（仕様書） ---------- */
+.legend{margin-top:12px;font-size:14px;line-height:1.7;color:var(--ink-2)}
+.spec-tools{display:flex;justify-content:flex-end;margin-top:8px}
+.spec-all{display:inline-flex;align-items:center;min-height:44px;font-size:14px;font-weight:700;text-decoration:underline;text-decoration-color:var(--ember);text-decoration-thickness:2px;text-underline-offset:5px}
+.spec{margin-top:8px;background:var(--sheet);border:1px solid var(--rule-strong);border-radius:4px}
+.spec-g{display:flex;align-items:center;gap:10px;padding:16px 16px 10px;border-bottom:2px solid var(--ink)}
+.spec-g+.row{border-top:0}
+.gl{font-size:24px;line-height:1;color:var(--ember-ink)}
+.spec-g h3{font-size:18px;line-height:1.4;min-width:0}
+.row>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"k m" "v v";column-gap:12px;row-gap:2px;padding:10px 16px 12px;border-bottom:1px solid var(--rule);transition:background .12s}
+.row>summary:hover{background:rgba(26,24,20,.035)}
+.row:last-child>summary{border-bottom:0}
+.row .k{grid-area:k;min-width:0;font-size:14px;font-weight:700;line-height:1.6;color:var(--ink-2);letter-spacing:0}
+.row .v{grid-area:v;min-width:0;font-size:16px;font-weight:700;line-height:1.6}
+.row .v .ln{display:block}
+.row .more{grid-area:m;align-self:start}
+.row .full{padding:4px 16px 16px;border-bottom:1px solid var(--rule)}
+.row:last-child .full{border-bottom:0}
+.row[open]>summary{border-bottom-color:transparent}
+.row .full dd{font-size:15px;line-height:1.8;padding-left:12px;border-left:2px solid var(--rule-strong);max-width:34em}
+.row[open]>.full{animation:openIn .2s ease-out}
+.spec-g:not(:first-child){border-top:1px solid var(--rule-strong);margin-top:0}
 
 /* ---------- S7 よくある質問 ---------- */
-.faq-list{margin-top:28px;border-top:1px solid var(--ink)}
 .qa{border-bottom:1px solid var(--rule-strong)}
-.qa summary{list-style:none;display:grid;grid-template-columns:28px minmax(0,1fr) 24px;column-gap:12px;align-items:start;min-height:56px;padding:14px 0;cursor:pointer}
-.qa summary::-webkit-details-marker{display:none}
-.q-mk{display:grid;place-items:center;width:28px;height:28px;font-size:18px;line-height:1;color:var(--ink)}
-.q-tx{font-weight:700;line-height:1.6;padding-top:1px;text-wrap:balance}
-.pm{position:relative;width:24px;height:24px;margin-top:4px;transition:transform .2s}
-.pm::before,.pm::after{content:"";position:absolute;left:4px;right:4px;top:11px;height:2px;background:var(--ink)}
-.pm::after{transform:rotate(90deg)}
-details[open]>summary .pm{transform:rotate(45deg)}
-.ans{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:12px;padding:0 36px 20px 0}
-.a-mk{font-size:16px;line-height:1.9;text-align:center;color:var(--ember-ink)}
+.qa>summary{display:grid;grid-template-columns:24px minmax(0,1fr) 24px;column-gap:12px;align-items:start;min-height:56px;padding:14px 0}
+.qa>summary>.ico{margin-top:2px}
+.q-tx{font-weight:700;line-height:1.6;padding-top:0;text-wrap:balance;min-width:0}
+.qa .pl{margin-top:1px}
+.ans{padding:0 36px 20px 36px}
+.ans p{padding-left:12px;border-left:2px solid var(--rule-strong);line-height:1.8}
 .ans a{text-decoration:underline;text-decoration-color:var(--ember);text-underline-offset:4px}
-details[open] .ans{animation:openIn .2s ease-out}
-@keyframes openIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.qa[open]>.ans{animation:openIn .2s ease-out}
+.faq-more{margin-top:24px}
+.faq-more .body{padding:0 16px}
+.faq-more .qa:last-child{border-bottom:0}
 
-/* ---------- S8 応募（路面） ---------- */
-.apply-cards{display:grid;gap:16px;margin-top:28px;align-items:start}
-.card{min-width:0;border-radius:4px;padding:22px 22px 24px}
-.card h3{font-size:22px;line-height:1.45}
-.card p{margin-top:6px}
-.card-tel{background:var(--sheet);color:var(--ink);border-top:4px solid var(--ember);box-shadow:var(--shadow-paper)}
+/* ---------- S8 連絡（路面） ---------- */
+.apply-cards{display:grid;gap:16px;margin-top:24px;align-items:start}
+.card{min-width:0;border-radius:4px;padding:20px 20px 24px}
+.card h3{display:flex;align-items:center;gap:10px;font-size:20px;line-height:1.45}
+.card p{margin-top:6px;line-height:1.7}
+.card-tel{background:var(--sheet);color:var(--ink);border-top:4px solid var(--ember);box-shadow:var(--shadow-paper);--ico-a:var(--ember)}
 .btn-big{width:100%;min-height:72px;margin-top:16px;padding:10px 20px}
 .btn-big .nm{font-size:clamp(28px,9vw,36px)}
 .card-form{background:var(--asphalt-2);border:1px solid var(--rule-dark);color:var(--on-dark)}
@@ -329,45 +406,46 @@ details[open] .ans{animation:openIn .2s ease-out}
 .js .copy-btn{display:inline-flex}
 .copy-btn .ico{width:18px;height:18px}
 .copy-btn:hover{background:rgba(244,241,234,.06)}
+.card-form .who{font-size:14px;line-height:1.6;margin-top:8px}
 .card-form .btn-sub{width:100%;margin-top:14px}
-.partner{margin-top:28px;padding-left:16px;border-left:3px solid var(--ember-hi);max-width:40em}
-.partner b{margin-right:.5em}
-.flow-h{margin-top:36px;font-size:20px;line-height:1.45}
-.flow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px;margin-top:18px}
-.flow>li{min-width:0}
-.flow>li::before{display:none}
-.flow .stop{background:var(--asphalt);border:2px solid var(--ember-hi);color:var(--on-dark)}
-.flow>li:last-child .stop{background:var(--ember);border-color:var(--ember);color:#fff}
-.flow h4{font-size:16px;line-height:1.5;padding-top:8px}
-.flow p{font-size:14px;line-height:1.6;color:var(--on-dark-2);margin-top:2px}
-.privacy{margin-top:32px;padding:14px 16px;border:1px solid var(--rule-dark);border-radius:4px;color:var(--on-dark-2)}
-.privacy h3{font-size:15px;line-height:1.5;color:var(--on-dark)}
-.privacy p{font-size:13px;line-height:1.75;margin-top:6px;max-width:none}
+.partner{margin-top:24px;max-width:40em}
+.partner b{display:block;color:var(--on-dark)}
+.partner .irow{color:var(--on-dark-2)}
+.flow-h{margin-top:40px;font-size:18px;line-height:1.45}
+.route--flow{margin-top:16px}
+#apply .fold{margin-top:40px}
+.privacy p{max-width:none}
+.privacy p+p{margin-top:10px}
 .privacy a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(244,241,234,.45)}
 
 /* ---------- S9 フッター ---------- */
 .ft{background:var(--asphalt-3);color:var(--on-dark-2);padding:48px 0 calc(28px + 64px + env(safe-area-inset-bottom));font-size:15px;line-height:1.8}
 .no-js .ft{padding-bottom:28px}
-.ft-logo{width:160px}
-.ft-co{margin-top:18px}
-.ft-co b{display:block;color:var(--on-dark);font-weight:700}
+.ft-logo{display:inline-block}
+.ft-logo img{width:160px}
+.ft-van{margin:20px 0 0}
+.ft-van img{width:160px;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.ft-co{margin-top:20px;font-size:14px;line-height:1.7}
+.ft-co p{max-width:none}
+.ft-co b{color:var(--on-dark);font-weight:700}
 .ft-co a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(244,241,234,.4)}
-.ft-links{margin-top:28px;border-top:1px solid var(--rule-dark)}
+.ft-links{margin-top:24px;border-top:1px solid var(--rule-dark)}
 .ft-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;border-bottom:1px solid var(--rule-dark);color:var(--on-dark);font-weight:700}
 .ft-links a:hover{color:#fff}
 .ft-links .ico{width:18px;height:18px;color:var(--on-dark-2)}
-.ft-legal{margin-top:28px}
-.ft-legal p{font-size:14px;line-height:1.8;max-width:none}
-.ft-legal p+p{margin-top:10px}
-.ft-photo{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-dark)}
-.ft-photo h3{font-family:var(--f-gothic);font-size:13px;font-weight:700;color:var(--on-dark);letter-spacing:.04em}
-.ft-photo p{font-size:13px;line-height:1.75}
-.ft-photo a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(244,241,234,.4)}
+.ft-legal{margin-top:24px}
+.ft-legal>p{font-size:14px;line-height:1.7;max-width:none}
+.ft-legal>p+p{margin-top:8px}
+.ft .fold{margin-top:20px}
+.ft .fold>summary{min-height:48px}
+.ft .fold>.body{font-size:13px}
+.ft .fold p+p{margin-top:8px}
+.ft .fold a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(244,241,234,.4)}
 .ft-copy{margin-top:24px;font-size:13px;color:var(--on-dark-2)}
 
 /* ---------- 固定バー（1024未満） ---------- */
 .sbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--rule);box-shadow:0 -8px 20px -14px rgba(26,24,20,.5);transition:transform .2s ease,visibility 0s}
-.js:not(.rv-off) .sbar:not(.on){transform:translateY(110%);visibility:hidden;transition:transform .2s ease,visibility 0s .2s}
+.js:not(.rv-off) .sbar:not(.on){transform:translateY(110%);visibility:hidden;pointer-events:none;transition:transform .2s ease,visibility 0s .2s}
 .no-js .sbar{position:static;box-shadow:none}
 .sbar a{display:flex;align-items:center;justify-content:center;gap:6px;min-width:0;height:48px;padding:0 8px;border-radius:4px;font-size:15px;font-weight:700;white-space:nowrap}
 .sbar .ico{width:18px;height:18px}
@@ -379,26 +457,35 @@ details[open] .ans{animation:openIn .2s ease-out}
 
 /* ---------- 768以上 ---------- */
 @media(min-width:768px){
-  .sec{padding-block:88px}
-  h2{font-size:44px}
-  .hero-ph img{aspect-ratio:16/9}
-  .hero-ph .ph-note{bottom:56px;right:48px}
+  .sec{padding:88px 0 96px}
+  h2{font-size:44px;line-height:1.3}
+  .lead{font-size:17px}
   .hero-sheet{margin:-48px 48px 0;padding:36px 40px 24px}
   .hero-sheet h1{font-size:72px}
   .hero-cta{flex-direction:row;align-items:center;flex-wrap:wrap;gap:16px 24px}
   .hero-cta .btn-tel{width:auto}
-  .facts>div{grid-template-columns:3em minmax(0,1fr)}
+  .facts{column-gap:24px}
   .fit-cols{grid-template-columns:1fr 1fr;gap:24px}
   .fut-ph{max-width:560px}
-  .fut-ph img{aspect-ratio:4/3}
+  .band-tag{margin-inline:48px}
   .apply-cards{grid-template-columns:1fr 1fr;gap:24px}
   .card{display:flex;flex-direction:column;align-items:flex-start}
   .card .btn,.card .copybox{align-self:stretch}
-  .row{display:grid;grid-template-columns:10em minmax(0,1fr);column-gap:20px;font-size:16px}
-  .row dt,.row dd{display:block}
-  .doc{padding-inline:24px}
   .calc{padding-inline:24px}
-  .flow{grid-template-columns:repeat(4,minmax(0,1fr))}
+  /* 仕様書の行（1行の組み方） */
+  .row>summary{grid-template-columns:11rem minmax(0,1fr) auto;grid-template-areas:"k v m";align-items:center;min-height:52px;padding:12px 16px}
+  .row .more{align-self:center}
+  .row .full{padding:0 16px 16px calc(16px + 11rem + 12px)}
+  /* 手順・流れ（横） */
+  .route--steps,.route--flow{display:grid;column-gap:32px}
+  .route--steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .route--flow{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px}
+  .route--steps>li,.route--flow>li{display:flex;flex-direction:column;align-items:flex-start;padding-bottom:0}
+  .route--steps>li::before,.route--flow>li::before{left:20px;top:19px;bottom:auto;width:calc(100% + 32px);height:2px;transform-origin:left}
+  .route--flow>li::before{width:calc(100% + 24px)}
+  .js:not(.rv-off) .route--steps:not(.in)>li::before,.js:not(.rv-off) .route--flow:not(.in)>li::before{transform:scaleX(0)}
+  .route--steps h3{padding-top:14px}
+  .route--flow .t{padding-top:12px}
 }
 
 /* ---------- 1024以上 ---------- */
@@ -406,14 +493,15 @@ details[open] .ans{animation:openIn .2s ease-out}
   html{scroll-padding-bottom:0;scroll-padding-top:72px}
   section[id]{scroll-margin-top:0}
   .sbar{display:none}
-  .sec{padding-block:112px}
+  .sec{padding:112px 0 120px}
   .sh{margin-bottom:24px}
-  h2{font-size:clamp(44px,4.4vw,56px)}
-  .lead{font-size:19px;margin-top:24px}
-  .g12{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px}
+  h2{font-size:52px}
+  .lead{font-size:18px;margin-top:16px}
+  .fig{margin-top:40px}
+  .g12{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;align-items:start}
   .g12>*{min-width:0}
-  .g12.head{align-items:end}
-  .g12.head .lead{margin-top:0}
+  .g12>.fig,.g12>.fut-ph{margin-top:0}
+  .ico.s28,.route .stop .ico{width:28px;height:28px;stroke-width:1.6}
   /* ヘッダー */
   .hd{position:sticky;top:0}
   .hd.sc{box-shadow:0 1px 0 var(--rule-dark)}
@@ -425,94 +513,96 @@ details[open] .ans{animation:openIn .2s ease-out}
   .hero{display:grid;padding-bottom:0}
   .hero-ph{position:absolute;top:0;right:0;bottom:0;width:56%}
   .hero-ph img{height:100%;aspect-ratio:auto;object-position:50% 60%}
-  .hero-ph .ph-note{right:16px;bottom:16px}
+  .hero-ph .ph-note{top:auto;right:16px;bottom:16px}
   .hero-sheet{width:clamp(480px,45vw,576px);margin:44px 0 52px max(24px,calc((100% - 1120px) / 2));padding:36px 48px 28px}
   .hero-sheet h1{font-size:clamp(72px,7vw,92px)}
   .hero .lead{margin-top:18px}
-  .facts{order:3;margin-top:22px}
-  .hero-cta{order:4;margin-top:24px}
+  .facts{gap:20px 24px;margin-top:24px}
+  .facts .nv .nm{font-size:36px}
+  .facts .tv{font-size:17px}
+  .hero-cta{margin-top:28px}
   /* S2 */
-  .fit-close{margin-left:calc((100% - 352px) / 12 + 32px);max-width:736px;font-size:21px}
+  .fit-side{position:sticky;top:104px}
+  .fit-main{margin-top:0}
+  .fit-cols{margin-top:0}
   /* S3 */
-  .fut-ph{max-width:none;margin-top:36px}
-  .steps{margin-top:8px}
-  .steps>li{padding-bottom:36px}
-  .steps h3{font-size:26px}
-  .plain{margin-top:56px;padding:36px 48px}
-  .plain ol{grid-template-columns:1fr 1fr;column-gap:48px;row-gap:14px;margin-top:18px}
+  .fut-ph{max-width:none}
+  .route--steps{margin-top:64px}
+  .route--steps>li::before{left:24px;top:23px}
+  .route .stop{width:48px;height:48px}
+  .route--steps h3{font-size:22px;padding-top:16px}
+  .route--steps p{font-size:15px}
+  .plain{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);column-gap:32px;margin-top:64px;padding:32px 40px 24px}
+  .plain h3{font-size:22px;padding-top:8px}
   /* S4 */
-  .map{margin-top:0}
+  .band img{height:440px;aspect-ratio:auto}
+  .band--end img{height:400px}
+  .band-tag{position:absolute;left:max(24px,calc((100% - 1120px) / 2));bottom:40px;width:448px;margin:0;padding:28px 32px 28px}
+  .day-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:1fr auto auto auto;grid-template-areas:"map ." "map h" "map nt" "rt rt";column-gap:32px;margin-top:64px}
+  .map-f{grid-area:map}
   .map svg{aspect-ratio:16/10}
-  .day-h{margin-top:64px;font-size:26px}
-  .day-flow{display:flex;flex-wrap:wrap;column-gap:24px;margin-top:24px}
-  .dphoto{margin:0 0 32px;flex:0 0 calc((100% - 24px) * var(--r,1.5) / var(--rs,3))}
-  .dphoto.dv{order:1}
-  .dphoto.dd{order:2}
-  .tl{display:grid;column-gap:24px}
-  .tl.t1{order:3;flex:0 0 calc((100% - 24px) * 4 / 6);grid-template-columns:repeat(4,minmax(0,1fr))}
-  .tl.t2{order:4;flex:0 0 calc((100% - 24px) * 2 / 6);grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tl>li{display:flex;flex-direction:column;padding-bottom:0}
-  .tl>li::before{left:6px;top:49px;bottom:auto;width:calc(100% + 24px);height:2px;background:var(--ember);transform-origin:left}
-  .tl.t1>li:last-child::before{display:block}
-  .js:not(.rv-off) .tl.route:not(.in)>li::before{transform:scaleX(0)}
-  .tl-t{font-size:28px;line-height:32px}
-  .tl .stop{margin:12px 0 16px}
-  .tl p{font-size:15px}
+  .day-h{grid-area:h;margin-top:0;font-size:26px}
+  .day .note{grid-area:nt;margin-top:8px}
+  .route--time{grid-area:rt;margin-top:48px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:16px}
+  .route--time>li{grid-template-columns:none;grid-template-rows:32px 48px auto;row-gap:12px;justify-items:start;padding-bottom:0}
+  .route--time>li::before{left:24px;top:67px;bottom:auto;width:calc(100% + 16px);height:2px;transform-origin:left}
+  .js:not(.rv-off) .route--time:not(.in)>li::before{transform:scaleX(0)}
+  .route--time .tm{font-size:28px;line-height:32px;text-align:left}
+  .route--time .t{padding-top:0}
+  .band--end{margin-top:64px}
+  .sec.day{padding-bottom:40px}
   /* S5 */
-  .sim-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:32px;align-items:start}
+  .sim-body{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:32px;align-items:start;margin-top:40px}
   .sim-mini{display:none}
   .calc{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;padding:4px 28px 12px;border-top:1px solid var(--rule-strong);border-radius:4px}
   .calc-g h3{display:flex;flex-direction:column;justify-content:flex-end;min-height:calc(2.9em + 26px)}
-  .xg{gap:10px}
   .res-col{margin-top:0}
-  .sim-in{position:sticky;top:96px}
   .res{padding:30px 32px}
   .res-big b{font-size:88px}
   /* S6・S7 */
-  .side{position:sticky;top:104px}
-  .cond-grid{display:block}
-  .cond-head{position:static;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:32px;align-items:end}
-  .cond-head h2{grid-row:1 / span 2}
-  .cond-head .lead{margin-top:0}
-  .cond-head .legend{grid-column:2;margin-top:12px}
-  .cond-grid .doc{margin-top:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;row-gap:16px;align-items:start;padding:6px 36px 14px;background:linear-gradient(var(--rule),var(--rule)) 50% 0/1px 100% no-repeat,var(--sheet)}
-  .cond-grid .grp:nth-child(odd){grid-column:1}
-  .cond-grid .grp:nth-child(even){grid-column:2}
-  .cond-grid .doc.mason{grid-auto-rows:4px;grid-auto-flow:row dense;row-gap:0}
-  .cond-grid .row{grid-template-columns:8.5em minmax(0,1fr)}
-  .cond-grid .grp:nth-child(n+3) .g-hd{padding-top:26px}
-  .g-hd{font-size:24px;padding-top:22px}
-  .faq-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
-  .faq-list{margin-top:0}
-  .qa summary{padding:18px 0}
+  .side{position:sticky;top:96px}
+  .g48{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);column-gap:32px;align-items:start}
+  .g48>*{min-width:0}
+  .legend{margin-top:16px}
+  .spec-tools{justify-content:flex-start;margin-top:12px}
+  .spec{margin-top:0}
+  .spec-g h3{font-size:20px}
+  .faq-more{margin-top:0}
+  .qa>summary{padding:16px 0}
   /* S8 */
-  .apply-cards{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:32px;margin-top:44px}
+  .apply-head,.sim-head{align-items:end}
+  .apply-head .lead,.sim-head .lead{margin-top:0;padding-bottom:10px}
+  .apply-cards{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:32px;margin-top:48px}
   .card{padding:36px 40px}
   .card h3{font-size:26px}
   .btn-big{min-height:80px;padding-inline:28px;gap:16px}
   .btn-big .nm{font-size:42px}
+  .btn-big small{display:none}
+  .partner{margin-top:48px;max-width:736px}
   .flow-h{margin-top:64px;font-size:26px}
-  .flow{column-gap:32px;margin-top:26px}
-  .flow>li::before{display:block;left:36px;top:17px;bottom:auto;width:calc(100% - 4px);height:2px;background:var(--ember-hi);transform-origin:left}
-  .flow>li:last-child::before{display:none}
-  .js:not(.rv-off) .flow.route:not(.in)>li::before{transform:scaleX(0)}
-  .flow h4{padding-top:14px;font-size:17px}
-  .flow p{font-size:15px}
-  .privacy{margin-top:56px;max-width:760px;padding:20px 26px}
+  .route--flow{margin-top:24px;column-gap:32px}
+  .route--flow>li::before{left:24px;top:23px;width:calc(100% + 32px)}
+  .route--flow .t{font-size:17px;padding-top:16px}
+  .route--flow .t small{font-size:15px}
+  #apply .fold{margin-top:64px;max-width:736px}
   /* S9 */
-  .ft{padding:72px 0 36px}
+  .ft{padding:72px 0 40px}
   .ft-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,5fr);column-gap:48px}
-  .ft-links,.ft-legal{margin-top:0}
+  .ft-van img{width:240px}
+  .ft-co,.ft-links,.ft-legal{margin-top:0}
+  .ft-links{margin-top:20px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv{opacity:1!important;transform:none!important}
+  .rv,.irows>li{opacity:1!important;transform:none!important}
   .route>li::before,.route .stop{transform:none!important}
 }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+  <!-- 操作のアイコン（墨一色） -->
   <symbol id="i-tel" viewBox="0 0 24 24"><path d="M7.2 3.6l2.4-.3c.5-.1 1 .2 1.2.7l1.1 2.9c.2.5 0 1-.4 1.3L10 9.4a11 11 0 0 0 4.6 4.6l1.2-1.5c.3-.4.8-.6 1.3-.4l2.9 1.1c.5.2.8.7.7 1.2l-.3 2.4c-.1.9-.9 1.6-1.8 1.6C11 18.3 5.7 13 5.6 5.4c0-.9.7-1.7 1.6-1.8z"/></symbol>
   <symbol id="i-out" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6"/></symbol>
@@ -521,6 +611,29 @@ details[open] .ans{animation:openIn .2s ease-out}
   <symbol id="i-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></symbol>
   <symbol id="i-ok" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 7"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M15 9V5.5A1.5 1.5 0 0 0 13.5 4h-8A1.5 1.5 0 0 0 4 5.5v8A1.5 1.5 0 0 0 5.5 15H9"/></symbol>
+  <!-- 絵のアイコン（墨の線＋朱の一点） -->
+  <symbol id="p-parcel" viewBox="0 0 24 24"><path d="M3.5 6.5h17V10h-17z"/><path d="M5 10v9.5h14V10"/><path d="M10.5 6.5v6l1.5-1.2 1.5 1.2v-6z" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-van" viewBox="0 0 24 24"><path d="M2.5 16.5V7a1 1 0 0 1 1-1H15l4.5 5h1a1 1 0 0 1 1 1v4.5"/><path d="M2.5 16.5h2.3M9.2 16.5h5.6M19.2 16.5h2.3M15 6.3V11h4.3"/><circle cx="7" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><rect x="5" y="8.8" width="4.6" height="4.2" rx=".6" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-tag" viewBox="0 0 24 24"><path d="M12.6 3.5H19a1.5 1.5 0 0 1 1.5 1.5v6.4c0 .4-.16.78-.44 1.06l-7.5 7.5a1.5 1.5 0 0 1-2.12 0l-5.4-5.4a1.5 1.5 0 0 1 0-2.12l7.5-7.5c.28-.28.66-.44 1.06-.44z"/><circle cx="16.2" cy="7.8" r="1.8" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-pin" viewBox="0 0 24 24"><path d="M12 19s-6-5-6-9.5a6 6 0 0 1 12 0C18 14 12 19 12 19z"/><path d="M6 21.5h12"/><circle cx="12" cy="9.5" r="2.2" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-zero" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="2.6" ry="4.2" style="stroke:var(--ico-a,#D23A1E);stroke-width:2"/></symbol>
+  <symbol id="p-pair" viewBox="0 0 24 24"><path d="M3 8.5h13.5M13 5l3.5 3.5L13 12"/><path d="M7.5 15.5H21M17.5 12l3.5 3.5-3.5 3.5" style="stroke:var(--ico-a,#D23A1E)"/></symbol>
+  <symbol id="p-key" viewBox="0 0 24 24"><circle cx="8" cy="12" r="4.5"/><path d="M12.5 12h9M18.5 12v3.5M21.5 12v2.5"/><circle cx="8" cy="12" r="1.7" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-doc" viewBox="0 0 24 24"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 11.5h7M8.5 14.5h7M8.5 17.5h3"/><circle cx="15.5" cy="17.5" r="2" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2.2" style="stroke:var(--ico-a,#D23A1E);stroke-width:2"/></symbol>
+  <symbol id="p-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><rect x="13.5" y="13" width="3.5" height="3.5" rx=".5" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-umbrella" viewBox="0 0 24 24"><path d="M3 12.5a9 8.5 0 0 1 18 0z"/><path d="M12 3v1"/><path d="M12 12.5v6a2 2 0 0 1-4 0" style="stroke:var(--ico-a,#D23A1E);stroke-width:2"/></symbol>
+  <symbol id="p-pen" viewBox="0 0 24 24"><path d="M15 4.5l4.5 4.5L9 19.5H4.5V15z"/><path d="M12.5 7l4.5 4.5"/><path d="M13 21h7" style="stroke:var(--ico-a,#D23A1E);stroke-width:2"/></symbol>
+  <symbol id="p-cup" viewBox="0 0 24 24"><path d="M5 10h11v4.5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 11.5h1.5a2.5 2.5 0 0 1 0 5H16M4 21.5h13"/><path d="M8.5 3.5c-1 1.2 1 2.3 0 3.5M12.5 3.5c-1 1.2 1 2.3 0 3.5" style="stroke:var(--ico-a,#D23A1E)"/></symbol>
+  <symbol id="p-lamp" viewBox="0 0 24 24"><path d="M7 21.5V7a3.5 3.5 0 0 1 3.5-3.5H13M4.5 21.5h5"/><path d="M12.5 3.5h5.5l-1.2 2.8h-3.1z"/><path d="M13.6 8h2.8l2.2 6h-7.2z" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-return" viewBox="0 0 24 24"><path d="M20 8H9a5 5 0 0 0 0 10h4.5"/><rect x="13.5" y="15" width="6.5" height="6" rx=".8"/><path d="M16.5 4.5L20 8l-3.5 3.5" style="stroke:var(--ico-a,#D23A1E);stroke-width:2"/></symbol>
+  <symbol id="p-talk" viewBox="0 0 24 24"><path d="M4.5 4.5h10A1.5 1.5 0 0 1 16 6v5.5a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3h-1A1.5 1.5 0 0 1 3 11.5V6a1.5 1.5 0 0 1 1.5-1.5z"/><path d="M18.5 9.5h1A1.5 1.5 0 0 1 21 11v5.5a1.5 1.5 0 0 1-1.5 1.5H19v3l-3.5-3H11a1.5 1.5 0 0 1-1.5-1.5v-1" style="stroke:var(--ico-a,#D23A1E)"/></symbol>
+  <symbol id="p-calc" viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="1.5"/><path d="M8 5.5h8V9H8z"/><g style="fill:currentColor;stroke:none"><circle cx="9" cy="13" r="1"/><circle cx="12" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><circle cx="9" cy="17" r="1"/><circle cx="12" cy="17" r="1"/></g><rect x="13.7" y="15.4" width="2.6" height="3.4" rx=".5" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-plate" viewBox="0 0 24 24"><rect x="2.5" y="6.5" width="19" height="11" rx="1.5"/><path d="M9 9.8h6M5.8 13.8h1.4"/><path d="M9 13.8h9.2" style="stroke:var(--ico-a,#D23A1E);stroke-width:2.2"/></symbol>
+  <symbol id="p-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V4.5A1.5 1.5 0 0 1 6.5 3h7A1.5 1.5 0 0 1 15 4.5V21M15 9.5h3.5A1.5 1.5 0 0 1 20 11v10"/><path d="M8 7h1.5M10.5 7H12M8 10.5h1.5M10.5 10.5H12M8 14h1.5M10.5 14H12"/><rect x="8.5" y="17" width="3" height="4" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-route" viewBox="0 0 24 24"><circle cx="5" cy="18.5" r="2"/><circle cx="12" cy="12" r="2"/><path d="M6.6 17.1l3.8-3.7M13.6 10.6l3.6-3.4"/><circle cx="19" cy="5.5" r="2.5" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  <symbol id="p-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/><circle cx="12" cy="13" r="1.7" style="fill:var(--ico-a,#D23A1E);stroke:none"/></symbol>
+  </defs>
 </svg>
 <a class="skip" href="#main">本文へ</a>
 
@@ -548,17 +661,18 @@ details[open] .ans{animation:openIn .2s ease-out}
   </figure>
   <div class="hero-sheet">
     <h1 id="h1"><span class="hero-labels"><span class="ph">世田谷区・ゆうパック配達</span><span class="sep">｜</span><span class="ph">軽貨物・業務委託パートナー募集</span><span class="vh">｜</span></span><span class="ph">配達は、</span><span class="ph"><em>入口</em>です。</span></h1>
-    <p class="lead">単価の高さで人を集めるつもりはありません。長く一緒にやって、いずれ現場を任せられる人を探しています。</p>
+    <p class="lead">単価で人を集めることはしません。長く一緒にやり、いずれ現場を任せられる人を探しています。</p>
     <dl class="facts">
-      <div><dt>報酬</dt><dd><b>完全出来高 143円／個〜</b><small>（当社公表の単価。実単価は面談で提示）</small></dd></div>
-      <div><dt>場所</dt><dd>世田谷区・丁目単位の狭いエリア</dd></div>
-      <div><dt>費用</dt><dd><span class="ph">加盟金・登録料ゼロ／</span><span class="ph">未経験は同行研修から</span></dd></div>
+      <div class="ntag"><dt><svg class="ico s20" aria-hidden="true"><use href="#p-tag"/></svg>報酬</dt><dd><span class="nv"><span class="nm">143</span><span class="u">円／個〜</span></span><p class="nt"><span class="ph">完全出来高・</span><span class="ph">当社公表の単価</span><span class="ph">（実単価は面談で）</span></p></dd></div>
+      <div class="ntag"><dt><svg class="ico s20" aria-hidden="true"><use href="#p-zero"/></svg>加盟金・登録料</dt><dd><span class="nv"><span class="nm">0</span><span class="u">円</span></span></dd></div>
+      <div class="ntag"><dt><svg class="ico s20" aria-hidden="true"><use href="#p-pin"/></svg>場所</dt><dd class="tv"><span class="ph">世田谷区・</span><span class="ph">丁目単位の</span><span class="ph">狭いエリア</span></dd></div>
+      <div class="ntag"><dt><svg class="ico s20" aria-hidden="true"><use href="#p-pair"/></svg>未経験</dt><dd class="tv"><span class="ph">先輩の同行</span><span class="ph">研修から</span></dd></div>
     </dl>
     <div class="hero-cta">
-      <a class="btn btn-tel" href="tel:08089560913" data-cta="tel-hero"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg><span><small>採用担当の柳井に直接つながります</small><span class="nm">080-8956-0913</span></span></a>
+      <a class="btn btn-tel" href="tel:08089560913" data-cta="tel-hero"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg><span><small>採用担当・柳井の直通</small><span class="nm">080-8956-0913</span></span></a>
       <a class="tlink" href="#fit">向き・不向きを先に読む<svg class="ico" aria-hidden="true"><use href="#i-down"/></svg></a>
     </div>
-    <p class="issuer">募集主体：<span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社</span>　<span class="ph">採用担当：柳井 良介</span></p>
+    <p class="issuer">募集主体：<span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社</span><span class="who">採用担当：柳井 良介</span></p>
   </div>
 </section>
 
@@ -566,75 +680,86 @@ details[open] .ans{animation:openIn .2s ease-out}
 <section class="sec" id="fit" aria-labelledby="h-fit">
   <div class="wrap">
     <div class="sh rv"><span class="sh-no">01</span><span class="sh-rl"></span><span>向き・不向き</span></div>
-    <div class="g12 head">
-      <h2 id="h-fit" class="rv"><span class="ph">先に、</span><span class="ph">向かない方を。</span></h2>
-      <p class="lead rv">お互いの時間を無駄にしないために、ふるいを先に置きます。ここで「違う」と思ったら、閉じてもらって構いません。</p>
-    </div>
-    <div class="fit-cols">
-      <div class="fit-card fit-no rv">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>向いていない方</h3>
-        <ul class="fit-list">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>今月だけ、短期で稼ぎたい方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>単価の高さだけで選ぶ方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>配達以外はやりたくない方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span><span class="ph">掛け持ちの合間に、</span><span class="ph">数日だけ入りたい方</span></span></li>
-        </ul>
+    <div class="g12">
+      <div class="fit-side">
+        <h2 id="h-fit" class="rv"><span class="ph">先に、</span><span class="ph">向かない方を。</span></h2>
+        <p class="lead rv">ここで「違う」と思ったら、閉じてもらって構いません。</p>
       </div>
-      <div class="fit-card fit-yes rv" style="--i:2">
-        <h3><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg>一緒にやりたい方</h3>
-        <ul class="fit-list">
-          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><span>数年単位で腰を据える方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><span>いずれ現場を任されたい方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><span>自分で段取りを組める方</span></li>
-          <li><svg class="ico" aria-hidden="true"><use href="#i-ok"/></svg><span>後から来る人に教えられる方</span></li>
-        </ul>
+      <div class="fit-main">
+        <div class="fit-cols">
+          <div class="fit-card fit-no">
+            <h3><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg>向いていない方</h3>
+            <ul class="irows">
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>今月だけ、短期で稼ぎたい方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>単価の高さだけで選ぶ方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span>配達以外はやりたくない方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-x"/></svg><span><span class="ph">掛け持ちの合間に、</span><span class="ph">数日だけ入りたい方</span></span></li>
+            </ul>
+          </div>
+          <div class="fit-card fit-yes">
+            <h3><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg>一緒にやりたい方</h3>
+            <ul class="irows b">
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg><span>数年単位で腰を据える方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg><span>いずれ現場を任されたい方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg><span>自分で段取りを組める方</span></li>
+              <li class="irow"><svg class="ico" aria-hidden="true"><use href="#i-o"/></svg><span>後から来る人に教えられる方</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="fit-close mc rv">単価だけで比べるなら、世田谷にはもっと高い案件があります。当社は、単価で集めて繁忙期が終わったら切る、という集め方をしていません。だからこの募集は、「配達の先」まで一緒に見られる人に絞っています。</p>
   </div>
 </section>
 
 <!-- S3 配達の先 -->
-<section class="sec dark future" id="future" aria-labelledby="h-future">
+<section class="sec dark" id="future" aria-labelledby="h-future">
   <div class="wrap">
     <div class="sh rv"><span class="sh-no">02</span><span class="sh-rl"></span><span>配達の先</span></div>
     <div class="g12">
       <div>
         <h2 id="h-future" class="rv"><span class="ph">配達の先に、</span><span class="ph">何があるか。</span></h2>
-        <p class="lead rv">配送の現場には、運ぶ人と同じだけ「現場を回す人」が要ります。新しく入った人に教える人、エリアを調整する人、品質を見る人。当社はその担い手を、現場から出したいと考えています。報酬も、配達の出来高だけで頭打ちにはしません。</p>
-        <figure class="fut-ph rv">
-          <img src="img/future-hands-map-660.webp" srcset="img/future-hands-map-660.webp 660w, img/future-hands-map-1040.webp 1040w" sizes="(min-width: 1024px) 448px, (min-width: 768px) 560px, calc(100vw - 48px)" width="660" height="495" alt="机の上の住宅地図に、ペンで担当の範囲を囲む手と、横で開いたノートに手を置くもう一人の手" loading="lazy" decoding="async">
-          <figcaption class="ph-note">写真はイメージです</figcaption>
-        </figure>
+        <p class="lead rv"><span class="ph">現場を回す人を、</span><span class="ph">配達する人の中から</span><span class="ph">出したいと考えています。</span></p>
       </div>
-      <ol class="route steps">
-        <li style="--i:0"><span class="stop">1</span><div><h3>まず、配達で覚える</h3><p>世田谷区の担当エリアを持ち、ゆうパックの集配を回します。未経験の方は先輩の同行から。ここは全員が通ります。</p></div></li>
-        <li style="--i:1"><span class="stop">2</span><div><h3>教える側に回る</h3><p>配達と並行して、新しく入った方の同行研修、エリアの調整、現場のトラブル対応を任せていきます。</p></div></li>
-        <li style="--i:2"><span class="stop">3</span><div><h3>管理業務も任せる</h3><p>配達に加えて、育成・エリアの調整・品質管理といった管理業務を別に委託します。その分のインセンティブ報酬が、配達の報酬に加わります。</p></div></li>
-      </ol>
+      <figure class="fut-ph rv">
+        <img src="img/future-hands-map-660.webp" srcset="img/future-hands-map-660.webp 660w, img/future-hands-map-1040.webp 1040w" sizes="(min-width: 1024px) 640px, (min-width: 768px) 560px, calc(100vw - 48px)" width="660" height="495" alt="机の上の住宅地図に、ペンで担当の範囲を囲む手と、横で開いたノートに手を置くもう一人の手" loading="lazy" decoding="async">
+        <figcaption class="cap">写真はイメージです</figcaption>
+      </figure>
     </div>
+    <ol class="route route--steps">
+      <li style="--i:0"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg></span><div><h3>まず、配達で覚える</h3><p>全員がまず、担当エリアの集配を回します。</p></div></li>
+      <li style="--i:1"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-pair"/></svg></span><div><h3>教える側に回る</h3><p><span class="ph">配達しながら、</span><span class="ph">新しく入った方の同行研修を任せます。</span></p></div></li>
+      <li style="--i:2"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-key"/></svg></span><div><h3>管理業務も任せる</h3><p><span class="ph">育成や品質管理を別に委託し、</span><span class="ph">その分のインセンティブが加わります。</span></p></div></li>
+    </ol>
     <div class="plain rv">
       <h3>はっきり書いておくこと</h3>
-      <ol>
-        <li><span class="n">1</span><span>社員登用ではありません。先に進んでも、契約は業務委託のままです。</span></li>
-        <li><span class="n">2</span><span>社会保険・雇用保険は、役割が変わっても適用されません。</span></li>
-        <li><span class="n">3</span><span>任せる業務の範囲と、インセンティブの計算方法・金額は、その都度書面（電磁的方法を含む）で明示します。</span></li>
-        <li><span class="n">4</span><span>「何年で何を任せる」とは約束しません。いま任せられる範囲とその先の道筋は、面談で具体的にお伝えします。</span></li>
-      </ol>
+      <ul class="irows">
+        <li class="irow"><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span><span class="ph">社員登用ではなく、</span><span class="ph">先に進んでも</span><span class="ph">業務委託のままです。</span></span></li>
+        <li class="irow"><svg class="ico" aria-hidden="true"><use href="#p-umbrella"/></svg><span><span class="ph">社会保険・雇用保険は、</span><span class="ph">役割が変わっても</span><span class="ph">適用されません。</span></span></li>
+        <li class="irow"><svg class="ico" aria-hidden="true"><use href="#p-calendar"/></svg><span><span class="ph">時期も役割も約束しません。</span><span class="ph">範囲とインセンティブは、</span><span class="ph">その都度書面で明示します。</span></span></li>
+      </ul>
     </div>
   </div>
 </section>
 
 <!-- S4 仕事と1日 -->
-<section class="sec" id="day" aria-labelledby="h-day">
+<section class="sec day" id="day" aria-labelledby="h-day">
+  <div class="band">
+    <figure class="band-ph">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="img/day-street-1600.webp" width="1600" height="550">
+        <img src="img/day-street-750.webp" width="750" height="422" alt="世田谷区内の住宅街。生垣と木の門の前の、落ち葉の積もった細い道" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="ph-note">写真はイメージです</figcaption>
+    </figure>
+    <div class="band-tag">
+      <div class="sh rv"><span class="sh-no">03</span><span class="sh-rl"></span><span>仕事と1日</span></div>
+      <h2 id="h-day" class="rv"><span class="ph">担当は、</span><span class="ph">丁目単位。</span></h2>
+      <p class="lead rv"><span class="ph">1丁目〜3丁目といった</span><span class="ph">狭い範囲が中心です。</span><span class="ph">移動が短いぶん、</span><span class="ph">多く回れます。</span></p>
+    </div>
+  </div>
   <div class="wrap">
-    <div class="sh rv"><span class="sh-no">03</span><span class="sh-rl"></span><span>仕事と1日</span></div>
-    <div class="g12">
-      <div>
-        <h2 id="h-day" class="rv"><span class="ph">担当は、</span><span class="ph">丁目単位。</span></h2>
-        <p class="lead rv">配送エリアは「1丁目〜3丁目」といった狭い範囲がメインです。移動が短いほど、同じ時間で回れる個数が増えます。出来高制では、ここが収入に直結します。長時間・長距離の運転を強いる運用はしていません。</p>
-      </div>
-      <figure class="rv" style="margin:0">
+    <div class="day-grid">
+      <figure class="map-f rv">
         <div class="map">
           <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="map-t">
             <title id="map-t">担当エリアの図（イメージ）。細い道で区切られた街区のうち、1丁目・2丁目・3丁目の狭い範囲を回る</title>
@@ -647,11 +772,11 @@ details[open] .ans{animation:openIn .2s ease-out}
             <g fill="none" stroke="rgba(26,24,20,.16)" stroke-width="1">
               <path d="M40 0L37 85M74 0L71 84M0 44H106M162 0L159 79M200 0L197 77M118 40H234M296 0V73M248 36H354M408 0L410 66M446 0V64M50 97L47 182M0 140H100M424 78V154M376 118H480M46 194L44 300M0 248H94M150 186L148 300M188 183L189 300M106 242H226M430 166V300M382 232H480"/>
             </g>
-            <g fill="#F7E3DB" stroke="#D23A1E" stroke-width="2">
+            <g fill="#FBFAF6" stroke="#D23A1E" stroke-width="2">
               <path d="M114 94L230 88L226 168L110 176Z"/><path d="M242 88L358 82L362 160L238 166Z"/><path d="M240 178L364 172L368 272L236 278Z"/>
             </g>
             <path d="M80 90L108 86L236 81L366 75L368 166L234 172L232 284" fill="none" stroke="#D23A1E" stroke-width="2.5" stroke-dasharray="7 6" stroke-linecap="round" stroke-linejoin="round"/>
-            <g transform="translate(52 86) rotate(-3)"><rect width="23" height="11" rx="2.5" fill="#1A1814"/><rect x="16" y="2" width="5" height="4.5" rx="1" fill="#FBFAF6"/></g>
+            <use href="#p-van" x="50" y="73" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="color:#1A1814"/>
             <g class="map-lbl" fill="#B02E18" text-anchor="middle">
               <text x="170" y="138">1丁目</text><text x="300" y="131">2丁目</text><text x="302" y="232">3丁目</text>
             </g>
@@ -659,41 +784,36 @@ details[open] .ans{animation:openIn .2s ease-out}
         </div>
         <figcaption class="cap">図はイメージです</figcaption>
       </figure>
-    </div>
-
-    <h3 class="day-h rv">1日の流れ（標準的な例）</h3>
-    <div class="day-flow" style="--rs:2.8323">
-      <figure class="dphoto dv rv" style="--r:1.3333">
-        <img src="img/day-van-700.webp" srcset="img/day-van-700.webp 700w, img/day-van-1120.webp 1120w" sizes="(min-width: 1024px) 520px, calc(100vw - 48px)" width="700" height="525" alt="当社の黒い軽バン。住宅街の道に停めてある" loading="lazy" decoding="async">
-        <span class="t nm">8:00</span>
-        <figcaption>当社の車両（写真：当社公式サイトより）</figcaption>
-      </figure>
-      <ol class="route tl t1">
-        <li style="--i:0"><span class="tl-t nm">8:00</span><span class="stop"></span><div><h4>荷積み</h4><p>担当の拠点で荷物を積み、ルートを確認します。</p></div></li>
-        <li style="--i:1"><span class="tl-t nm">9:00</span><span class="stop"></span><div><h4>午前の配達</h4><p>担当の丁目を回ります。移動が短く、個数を積みやすい時間帯です。</p></div></li>
-        <li style="--i:2"><span class="tl-t nm">12:00</span><span class="stop"></span><div><h4>休憩</h4><p>時間も場所も、自分のペースで取れます。</p></div></li>
-        <li style="--i:3"><span class="tl-t nm">13:00</span><span class="stop"></span><div><h4>午後の配達（2便目）</h4><p>午後指定の荷物を積んで再開します。</p></div></li>
+      <h3 class="day-h rv">1日の流れ（標準的な例）</h3>
+      <ol class="route route--time">
+        <li style="--i:0"><time class="tm nm" datetime="08:00">8:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-parcel"/></svg></span><p class="t">荷積み</p></li>
+        <li style="--i:1"><time class="tm nm" datetime="09:00">9:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg></span><p class="t">午前の配達</p></li>
+        <li style="--i:2"><time class="tm nm" datetime="12:00">12:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-cup"/></svg></span><p class="t">休憩<small><span class="ph">時間も場所も</span><span class="ph">自分のペースで</span></small></p></li>
+        <li style="--i:3"><time class="tm nm" datetime="13:00">13:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg></span><p class="t"><span class="ph">午後の配達</span><span class="ph">（2便目）</span></p></li>
+        <li style="--i:4"><time class="tm nm" datetime="18:00">18:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-lamp"/></svg></span><p class="t"><span class="ph">夕方の配達</span><span class="ph">（3便目）</span><small>夜間指定と再配達</small></p></li>
+        <li style="--i:5"><time class="tm nm" datetime="20:00">20:00</time><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-return"/></svg></span><p class="t">終了<small>早く終われば早上がり</small></p></li>
       </ol>
-      <figure class="dphoto dd rv" style="--r:1.4989">
-        <img src="img/day-dusk-700.webp" srcset="img/day-dusk-700.webp 700w, img/day-dusk-1120.webp 1120w" sizes="(min-width: 1024px) 580px, calc(100vw - 48px)" width="700" height="467" alt="世田谷区岡本の坂の上から見た夕景。沈む夕日と富士山、手前に街並み" loading="lazy" decoding="async">
-        <figcaption>世田谷区岡本の夕景（写真はイメージです）</figcaption>
-      </figure>
-      <ol class="route tl t2">
-        <li style="--i:0"><span class="tl-t nm">18:00</span><span class="stop"></span><div><h4>夕方の配達（3便目）</h4><p>夜間指定と、不在だった分の再配達です。</p></div></li>
-        <li style="--i:1"><span class="tl-t nm">20:00</span><span class="stop"></span><div><h4>終了</h4><p>拠点で持ち戻り分を返却して終わります。早く終われば、その分早く上がれます。</p></div></li>
-      </ol>
+      <p class="irow note"><svg class="ico s20" aria-hidden="true"><use href="#p-clock"/></svg><span>便の時間は、担当エリアによって変わります。</span></p>
     </div>
-    <p class="note-s day-note">稼働は 8:00〜20:00／9:00〜20:00 などのシフト制で、週休2日が基本です。便の時間は担当エリアによって変わります。</p>
   </div>
+  <figure class="band band--end">
+    <div class="band-ph">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="img/day-dusk-1600.webp" width="1600" height="500">
+        <img src="img/day-dusk-700.webp" width="700" height="467" alt="世田谷区岡本の坂の上から見た夕景。沈む夕日と富士山、手前に街並み" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <figcaption class="cap band-cap">世田谷区岡本の夕景（写真はイメージです）　<span class="ph">写真：<a href="https://commons.wikimedia.org/wiki/File:Mt_Fuji_Sunset_from_Okamoto,_Setagaya,_Tokyo.jpg" target="_blank" rel="noopener">Doricono</a>／<a class="nw" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption>
+  </figure>
 </section>
 
 <!-- S5 収入の試算（id="sim" は全エリア版からリンクされている） -->
 <section class="sec sim" id="sim" aria-labelledby="h-sim">
   <div class="wrap">
     <div class="sh rv"><span class="sh-no">04</span><span class="sh-rl"></span><span>お金</span></div>
-    <div class="g12 head">
+    <div class="g12 sim-head">
       <h2 id="h-sim" class="rv"><span class="ph">経費を引いて、</span><span class="ph">いくら残るか。</span></h2>
-      <p class="lead">「こんなに稼げます」の表ではありません。経費を引いたあとに何が残るかを、ご自身の数字で確かめるためのものです。報酬は完全出来高（個建て）で、配達個数×単価が売上になります。燃料や保険をどこまで自分で持つかは案件ごとに違うので、経費の欄はご自身の実費に置き換えてください。</p>
+      <p class="lead"><span class="ph">経費の欄を、</span><span class="ph">ご自身の実費に置き換えてください。</span></p>
     </div>
 
     <div class="sim-body">
@@ -705,7 +825,7 @@ details[open] .ans{animation:openIn .2s ease-out}
             <div class="fld">
               <div class="fld-h"><label for="s-qty">1日の配達個数</label><span class="fld-v"><b class="nm" id="v-qty">120</b><i>個</i></span></div>
               <div class="fld-c"><button type="button" class="stp dn" data-k="qty" data-d="-1" aria-label="1日の配達個数を減らす"></button><input type="range" id="s-qty" min="40" max="220" step="5" value="120" style="--p:44.44%" aria-describedby="n-qty"><button type="button" class="stp up" data-k="qty" data-d="1" aria-label="1日の配達個数を増やす"></button></div>
-              <p class="fld-n" id="n-qty">120個は仮の数字です。</p>
+              <p class="fld-n" id="n-qty"><span class="ph">仮の数字です。</span><span class="ph">繁忙期と通常期で試してください。</span></p>
             </div>
             <div class="fld">
               <div class="fld-h"><label for="s-price"><span class="ph">単価</span><span class="ph">（円／個・税抜）</span></label><span class="fld-v"><b class="nm" id="v-price">143</b><i>円</i></span></div>
@@ -719,7 +839,7 @@ details[open] .ans{animation:openIn .2s ease-out}
             </div>
           </div>
           <div class="calc-g">
-            <h3><span class="ph">あなたの経費</span><span class="ph">（1か月あたり・実費で）</span></h3>
+            <h3><span class="ph">経費</span><span class="ph">（月額・実費で）</span></h3>
             <div class="xg">
               <div class="xc">
                 <label for="s-fuel">燃料費</label>
@@ -753,20 +873,27 @@ details[open] .ans{animation:openIn .2s ease-out}
           <p class="res-sub" id="v-perday">1日あたり約14,660円（配達120個×143円×22日−経費55,000円）</p>
           <div class="bar" aria-hidden="true"><span class="bar-net" id="v-bar" style="width:85.43%"></span></div>
           <p class="bar-l" aria-hidden="true"><span>差引後</span><span>経費</span></p>
-          <table class="brk">
-            <tr><th scope="row"><span class="ph">売上</span><span class="ph">（個数×単価×日数）</span></th><td class="nm"><span id="v-rev">377,520</span><small>円</small></td></tr>
-            <tr><th scope="row">経費の合計</th><td class="nm"><span id="v-cost">−55,000</span><small>円</small></td></tr>
-          </table>
           <ul class="disc">
-            <li>※ この金額は試算で、収入の保証ではありません。配達個数は日によって変わります。</li>
-            <li>※ 消費税・所得税・住民税・国民健康保険料・国民年金などは含みません。業務委託のため、ご自身で申告・納付していただきます。</li>
-            <li>※ 実際の単価と経費の負担区分は、面談で提示し、契約時に書面（電磁的方法を含む）で明示します。</li>
-            <li>※ 当社が公表している単価は「143円／個〜」で、エリア・案件により変わります。</li>
-            <li>※ 1日の配達個数は、エリア・便数・季節で変わります。繁忙期（12月前後）と通常期を分けて試してください。</li>
-            <li id="n-car">※ 車両費は、リース・ローン・維持費の月額です。初期値の0円は仮の数字です。持ち込みの場合も、車検・税金・タイヤ・オイルなどの維持費を月割りで入れてください。リースを使う場合は、月額・期間・中途解約時の扱いを面談で必ず提示します。</li>
-            <li id="n-etc">※ その他は、駐車場・通信・備品などです。</li>
+            <li>※ 試算で、収入の保証ではありません。</li>
+            <li>※ 税金・国保・年金は含みません。</li>
+            <li>※ <span class="ph">実単価と経費の負担区分は、</span><span class="ph">面談で提示します。</span></li>
+            <li id="n-car">※ <span class="ph">車両費の0円は仮です。</span><span class="ph">持ち込みでも</span><span class="ph">維持費を入れてください。</span></li>
           </ul>
         </div>
+        <details class="fold">
+          <summary><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="fd-t">試算の注意（全文）</span><span class="more"><span class="o">開く</span><span class="c">閉じる</span><i class="pl" aria-hidden="true"></i></span></summary>
+          <div class="body">
+            <ul class="disc">
+              <li>※ この金額は試算で、収入の保証ではありません。配達個数は日によって変わります。</li>
+              <li>※ 消費税・所得税・住民税・国民健康保険料・国民年金などは含みません。業務委託のため、ご自身で申告・納付していただきます。</li>
+              <li>※ 実際の単価と経費の負担区分は、面談で提示し、契約時に書面（電磁的方法を含む）で明示します。</li>
+              <li>※ 当社が公表している単価は「143円／個〜」で、エリア・案件により変わります。</li>
+              <li>※ 1日の配達個数は、エリア・便数・季節で変わります。繁忙期（12月前後）と通常期を分けて試してください。</li>
+              <li>※ 車両費は、リース・ローン・維持費の月額です。初期値の0円は仮の数字です。持ち込みの場合も、車検・税金・タイヤ・オイルなどの維持費を月割りで入れてください。リースを使う場合は、月額・期間・中途解約時の扱いを面談で必ず提示します。</li>
+              <li id="n-etc">※ その他は、駐車場・通信・備品などです。</li>
+            </ul>
+          </div>
+        </details>
         <a class="btn btn-tel" href="tel:08089560913" data-cta="tel-sim"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>実際の単価を電話で聞く</a>
       </div>
     </div>
@@ -775,121 +902,116 @@ details[open] .ans{animation:openIn .2s ease-out}
 
 <!-- S6 条件 -->
 <section class="sec" id="conditions" aria-labelledby="h-cond">
-  <div class="wrap">
-    <div class="sh rv"><span class="sh-no">05</span><span class="sh-rl"></span><span>条件</span></div>
-    <div class="g12 cond-grid">
-      <div><div class="side cond-head">
-        <h2 id="h-cond" class="rv"><span class="ph">条件は、</span><span class="ph">全部書きます。</span></h2>
-        <p class="lead">確定している項目は、そのまま書いています。案件ごとに決まる部分も空欄にはせず、「契約時に明示」と分けて書いています。書いていないことを後から足したり、書いたことを面談で下げたりはしません。</p>
-        <p class="note-s legend"><span class="stamp">契約時に明示</span> ＝ 案件ごとに決まるため、契約時に書面（電磁的方法を含む）で明示する部分。20項目のうち7項目にあります。</p>
-      </div></div>
+  <div class="wrap g48">
+    <div><div class="side">
+      <div class="sh rv"><span class="sh-no">05</span><span class="sh-rl"></span><span>条件</span></div>
+      <h2 id="h-cond" class="rv"><span class="ph">条件は、</span><span class="ph">全部書きます。</span></h2>
+      <p class="legend"><span class="stamp">契約時に明示</span>の7項目は、<span class="ph">契約時に書面</span><span class="ph">（電磁的方法を含む）で</span><span class="ph">明示します。</span></p>
+      <div class="spec-tools"><button type="button" class="spec-all" id="spec-all" aria-controls="spec" aria-expanded="false" hidden>すべて開く</button></div>
+    </div></div>
 
-      <div class="doc">
-        <div class="grp">
-          <h3 class="g-hd"><span class="g-l nm" aria-hidden="true">A</span>契約とお金<span class="g-c">8項目</span></h3>
-          <dl>
-            <div class="row"><dt>契約形態</dt><dd>業務委託契約（雇用契約ではありません）。労働基準法上の労働者には当たらないため、当社の社会保険・雇用保険は適用されません。</dd></div>
-            <div class="row"><dt>報酬の体系</dt><dd>完全出来高制（個建て）。配達個数×単価。当社公表の単価は143円／個〜（エリア・案件により変動）。<span class="mx"><span class="mx-k">契約時に明示</span>この案件の実単価は、面談で提示します。</span></dd></div>
-            <div class="row"><dt>報酬の締め・支払</dt><dd><span class="mx"><span class="mx-k">契約時に明示</span>締め日・支払日・支払方法。フリーランス新法に基づき、支払期日を明示します。</span></dd></div>
-            <div class="row"><dt>経費の負担区分</dt><dd>燃料・任意保険・貨物保険・車両の維持費は、案件によって負担区分が変わります。<span class="mx"><span class="mx-k">契約時に明示</span>どれがご自身の負担になるかを面談でお伝えし、契約書面に記載します。上の試算には、ご自身の実費を入れてください。</span></dd></div>
-            <div class="row"><dt><span class="ph">違約金・</span><span class="ph">ペナルティ</span></dt><dd><span class="mx"><span class="mx-k">契約時に明示</span>違約金の有無と内容。書面に無い違約金・ペナルティを、後から求めることはありません。</span></dd></div>
-            <div class="row"><dt>契約期間・更新</dt><dd><span class="mx"><span class="mx-k">契約時に明示</span>契約期間と更新の条件。</span></dd></div>
-            <div class="row"><dt>加盟金・登録料</dt><dd>一切不要です。保証金もかかりません（当社公式サイトに記載のとおり、加盟金などの費用はかかりません）。</dd></div>
-            <div class="row"><dt>社会保険・労災</dt><dd>業務委託のため、当社の健康保険・厚生年金・雇用保険の適用はありません。労災保険は、ご自身で特別加入制度を利用できる場合があります（加入の手続きはご自身で行っていただきます）。</dd></div>
-          </dl>
-        </div>
-        <div class="grp">
-          <h3 class="g-hd"><span class="g-l nm" aria-hidden="true">B</span>仕事と時間<span class="g-c">5項目</span></h3>
-          <dl>
-            <div class="row"><dt>業務内容</dt><dd>東京都世田谷区内でのゆうパック等の宅配業務（集配・持ち戻り分の返却を含む）。軽貨物車両による配送です。</dd></div>
-            <div class="row"><dt>就業エリア</dt><dd>東京都世田谷区。配送エリアを絞った狭い範囲で、1丁目〜3丁目といった範囲がメインです。長時間・長距離の運転を強いる運用はしていません。</dd></div>
-            <div class="row"><dt>稼働時間</dt><dd>8:00〜20:00／9:00〜20:00 などのシフト制（週休2日が基本）。早く終われば早上がりできます。実際の便の時間は担当エリアにより異なります。</dd></div>
-            <div class="row"><dt>研修</dt><dd>未経験の方は、先輩ドライバーの同行からスタートします。</dd></div>
-            <div class="row"><dt>求める関わり方</dt><dd>長期的に関わっていただける方を前提とした募集です。短期・スポットのみのご依頼は、この案件ではお受けしていません。</dd></div>
-          </dl>
-        </div>
-        <div class="grp">
-          <h3 class="g-hd"><span class="g-l nm" aria-hidden="true">C</span>免許と車<span class="g-c">3項目</span></h3>
-          <dl>
-            <div class="row"><dt>必要な免許</dt><dd>普通自動車運転免許（AT限定可）。</dd></div>
-            <div class="row"><dt>必要な車両</dt><dd>軽バン（持ち込み）。お持ちでない場合は、リースの相談ができます。<span class="mx"><span class="mx-k">契約時に明示</span>リースを利用する場合は、月額・期間・中途解約時の扱い・保険・故障時の負担を契約前に提示します。</span></dd></div>
-            <div class="row"><dt>営業ナンバー</dt><dd>事業用の黒ナンバー（貨物軽自動車運送事業の届出）が必要です。自家用のままでは配送できません。届出がまだの方には、手続きの進め方を面談でご案内します。</dd></div>
-          </dl>
-        </div>
-        <div class="grp">
-          <h3 class="g-hd"><span class="g-l nm" aria-hidden="true">D</span><span><span class="ph">この先のことと、</span><span class="ph">募集の情報</span></span><span class="g-c">4項目</span></h3>
-          <dl>
-            <div class="row"><dt><span class="ph">配達の先の</span><span class="ph">役割・報酬</span></dt><dd>この募集では、社員登用という形は取っていません。業務委託のまま、育成・エリアの調整・品質管理といった管理業務をあわせてお任せし、その分のインセンティブ報酬が加わる形です。役割が変わっても契約は業務委託で、社会保険・雇用保険は適用されません。<span class="mx"><span class="mx-k">契約時に明示</span>任せる業務の範囲と、インセンティブの計算方法・金額は、その都度書面で明示します。年数や役割の約束は、このページではしません。</span></dd></div>
-            <div class="row"><dt><span class="ph">法人・</span><span class="ph">協力会社の方</span></dt><dd>エリア単位での一括委託の相談が可能です。既存の配送体制にそのまま組み込める形を、担当者と直接詰めてください。</dd></div>
-            <div class="row"><dt>募集の主体</dt><dd>BURNING BROS.【バーニングブロス】株式会社（神奈川県相模原市南区<span class="nw">上鶴間本町3-18-27</span>）。採用担当：柳井 良介</dd></div>
-            <div class="row"><dt><span class="ph">この</span><span class="ph">募集内容の時点</span></dt><dd>2026年11月1日時点の内容です。募集を終了した場合は、このページを速やかに閉じます。</dd></div>
-          </dl>
-        </div>
-      </div>
+    <div class="spec" id="spec">
+      <div class="spec-g"><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="gl nm" aria-hidden="true">A</span><h3>契約とお金</h3></div>
+      <details class="row"><summary><span class="k">契約形態</span><span class="v"><span class="ph">業務委託契約</span><span class="ph">（雇用契約ではありません）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">契約形態</dt><dd>業務委託契約（雇用契約ではありません）。労働基準法上の労働者には当たらないため、当社の社会保険・雇用保険は適用されません。</dd></dl></details>
+      <details class="row"><summary><span class="k">報酬の体系</span><span class="v"><span class="ln"><span class="ph">完全出来高・公表単価</span> <span class="nw">143円／個〜</span></span><span class="ln"><span class="stamp">契約時に明示</span>実単価は面談で</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">報酬の体系</dt><dd>完全出来高制（個建て）。配達個数×単価。当社公表の単価は143円／個〜（エリア・案件により変動）。<span class="stamp">契約時に明示</span>この案件の実単価は、面談で提示します。</dd></dl></details>
+      <details class="row"><summary><span class="k">締め・支払</span><span class="v"><span class="stamp">契約時に明示</span><span class="ph">締め日・支払日・</span><span class="ph">支払方法</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">締め・支払</dt><dd><span class="stamp">契約時に明示</span>締め日・支払日・支払方法。フリーランス新法に基づき、支払期日を明示します。</dd></dl></details>
+      <details class="row"><summary><span class="k">経費の負担区分</span><span class="v"><span class="stamp">契約時に明示</span><span class="ph">燃料・保険・</span><span class="ph">車の維持費</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">経費の負担区分</dt><dd>燃料・任意保険・貨物保険・車両の維持費は、案件によって負担区分が変わります。<span class="stamp">契約時に明示</span>どれがご自身の負担になるかを面談でお伝えし、契約書面に記載します。上の試算には、ご自身の実費を入れてください。</dd></dl></details>
+      <details class="row"><summary><span class="k"><span class="ph">違約金・</span><span class="ph">ペナルティ</span></span><span class="v"><span class="stamp">契約時に明示</span>有無と内容</span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">違約金・ペナルティ</dt><dd><span class="stamp">契約時に明示</span>違約金の有無と内容。書面に無い違約金・ペナルティを、後から求めることはありません。</dd></dl></details>
+      <details class="row"><summary><span class="k">契約期間・更新</span><span class="v"><span class="stamp">契約時に明示</span><span class="ph">期間と</span><span class="ph">更新の条件</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">契約期間・更新</dt><dd><span class="stamp">契約時に明示</span>契約期間と更新の条件。</dd></dl></details>
+      <details class="row"><summary><span class="k">加盟金・登録料</span><span class="v">一切不要（保証金も）</span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">加盟金・登録料</dt><dd>一切不要です。保証金もかかりません（当社公式サイトに記載のとおり、加盟金などの費用はかかりません）。</dd></dl></details>
+      <details class="row"><summary><span class="k">社会保険・労災</span><span class="v"><span class="ph">適用なし</span><span class="ph">（労災は特別加入</span><span class="ph">できる場合あり）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">社会保険・労災</dt><dd>業務委託のため、当社の健康保険・厚生年金・雇用保険の適用はありません。労災保険は、ご自身で特別加入制度を利用できる場合があります（加入の手続きはご自身で行っていただきます）。</dd></dl></details>
+
+      <div class="spec-g"><svg class="ico" aria-hidden="true"><use href="#p-clock"/></svg><span class="gl nm" aria-hidden="true">B</span><h3>仕事と時間</h3></div>
+      <details class="row"><summary><span class="k">業務内容</span><span class="v"><span class="ph">ゆうパック等の</span><span class="ph">宅配・集配</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">業務内容</dt><dd>東京都世田谷区内でのゆうパック等の宅配業務（集配・持ち戻り分の返却を含む）。軽貨物車両による配送です。</dd></dl></details>
+      <details class="row"><summary><span class="k">担当エリア</span><span class="v"><span class="ph">世田谷区の狭い範囲</span><span class="ph">（丁目単位）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">担当エリア</dt><dd>東京都世田谷区。配送エリアを絞った狭い範囲で、1丁目〜3丁目といった範囲がメインです。長時間・長距離の運転を強いる運用はしていません。</dd></dl></details>
+      <details class="row"><summary><span class="k">稼働時間</span><span class="v"><span class="ph"><span class="nw">8:00〜20:00</span> などの</span><span class="ph">シフト制</span><span class="ph">（週休2日が基本）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">稼働時間</dt><dd>8:00〜20:00／9:00〜20:00 などのシフト制（週休2日が基本）。早く終われば早上がりできます。実際の便の時間は担当エリアにより異なります。</dd></dl></details>
+      <details class="row"><summary><span class="k">研修</span><span class="v"><span class="ph">未経験は</span><span class="ph">先輩の同行から</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">研修</dt><dd>未経験の方は、先輩ドライバーの同行からスタートします。</dd></dl></details>
+      <details class="row"><summary><span class="k">関わり方</span><span class="v"><span class="ph">長期が前提</span><span class="ph">（短期・スポットのみは不可）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">関わり方</dt><dd>長期的に関わっていただける方を前提とした募集です。短期・スポットのみのご依頼は、この案件ではお受けしていません。</dd></dl></details>
+
+      <div class="spec-g"><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg><span class="gl nm" aria-hidden="true">C</span><h3>免許と車</h3></div>
+      <details class="row"><summary><span class="k">必要な免許</span><span class="v"><span class="ph">普通自動車運転免許</span><span class="ph">（AT限定可）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">必要な免許</dt><dd>普通自動車運転免許（AT限定可）。</dd></dl></details>
+      <details class="row"><summary><span class="k">必要な車両</span><span class="v"><span class="ln"><span class="ph">軽バン持ち込み／</span><span class="ph">リース相談可</span></span><span class="ln"><span class="stamp">契約時に明示</span>リースの条件</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">必要な車両</dt><dd>軽バン（持ち込み）。お持ちでない場合は、リースの相談ができます。<span class="stamp">契約時に明示</span>リースを利用する場合は、月額・期間・中途解約時の扱い・保険・故障時の負担を契約前に提示します。</dd></dl></details>
+      <details class="row"><summary><span class="k">営業ナンバー</span><span class="v"><span class="ph">黒ナンバーが必要</span><span class="ph">（手続きは面談で案内）</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">営業ナンバー</dt><dd>事業用の黒ナンバー（貨物軽自動車運送事業の届出）が必要です。自家用のままでは配送できません。届出がまだの方には、手続きの進め方を面談でご案内します。</dd></dl></details>
+
+      <div class="spec-g"><svg class="ico" aria-hidden="true"><use href="#p-route"/></svg><span class="gl nm" aria-hidden="true">D</span><h3><span class="ph">この先と、</span><span class="ph">募集の情報</span></h3></div>
+      <details class="row"><summary><span class="k">配達の先</span><span class="v"><span class="ln"><span class="ph">業務委託のまま、</span><span class="ph">管理業務</span></span><span class="ln"><span class="stamp">契約時に明示</span>インセンティブ</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">配達の先</dt><dd>この募集では、社員登用という形は取っていません。業務委託のまま、育成・エリアの調整・品質管理といった管理業務をあわせてお任せし、その分のインセンティブ報酬が加わる形です。役割が変わっても契約は業務委託で、社会保険・雇用保険は適用されません。<span class="stamp">契約時に明示</span>任せる業務の範囲と、インセンティブの計算方法・金額は、その都度書面で明示します。年数や役割の約束は、このページではしません。</dd></dl></details>
+      <details class="row"><summary><span class="k">協力会社</span><span class="v"><span class="ph">エリア単位の</span><span class="ph">一括委託を相談可</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">協力会社</dt><dd>エリア単位での一括委託の相談が可能です。既存の配送体制にそのまま組み込める形を、担当者と直接詰めてください。</dd></dl></details>
+      <details class="row"><summary><span class="k">募集の主体</span><span class="v"><span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社／</span><span class="ph">神奈川県相模原市南区</span><span class="ph">上鶴間本町3-18-27</span></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">募集の主体</dt><dd>BURNING BROS.【バーニングブロス】株式会社（神奈川県相模原市南区<span class="nw">上鶴間本町3-18-27</span>）。採用担当：柳井 良介</dd></dl></details>
+      <details class="row"><summary><span class="k">募集内容の時点</span><span class="v"><time class="dstamp" datetime="2026-11-01"><span class="nm">2026</span>年<span class="nm">11</span>月<span class="nm">1</span>日<span class="u2">時点</span></time></span><span class="more"><i class="pl" aria-hidden="true"></i><span class="o">詳しく</span><span class="c">閉じる</span></span></summary><dl class="full"><dt class="vh">募集内容の時点</dt><dd>2026年11月1日時点の内容です。募集を終了した場合は、このページを速やかに閉じます。</dd></dl></details>
     </div>
   </div>
 </section>
 
 <!-- S7 よくある質問 -->
 <section class="sec sec-cont" id="faq" aria-labelledby="h-faq">
-  <div class="wrap">
-    <div class="sh rv"><span class="sh-no">06</span><span class="sh-rl"></span><span>質問</span></div>
-    <div class="g12 faq-grid">
-      <div><div class="side"><h2 id="h-faq" class="rv">よくある質問</h2></div></div>
-      <div class="faq-list">
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">未経験でも</span><span class="ph">応募できますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>できます。先輩ドライバーの同行からスタートします。普通自動車運転免許（AT限定可）があれば応募いただけます。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx">単価はいくらですか？</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>当社が公表している単価は143円／個〜で、エリア・案件によって変わります。ゆうパックの配送単価は担当局や案件の内容で変わるため、このページで確定した数字はお約束できません。実際の単価は面談でお伝えし、契約時に書面（電磁的方法を含む）で明示します。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">結局、</span><span class="ph">いくら稼げますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>配達個数と単価、そしてご自身の経費で変わります。このページの試算に、想定する個数と実費を入れて計算してください。当社から「月○万円を保証します」という言い方はしません。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">黒ナンバーは</span><span class="ph">必要ですか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>必要です。軽貨物で宅配の仕事を請けるには、貨物軽自動車運送事業の届出（事業用の黒ナンバー）が必要で、自家用の黄色ナンバーのままでは配送できません。届出がまだの方には、手続きの進め方を面談でご案内します。「マイカーですぐ稼げる」という案内はしていません。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx">車を持っていません。</span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>リースの相談ができます。その場合、月額・契約期間・中途解約時の扱い・保険・故障時の負担を、契約前に必ず提示します。金額を伏せたまま契約をお願いすることはありません。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">加盟金や</span><span class="ph">登録料は</span><span class="ph">かかりますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>かかりません。加盟金・登録料・保証金は一切いただきません。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">雇用とは</span><span class="ph">どう違いますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>業務委託契約なので、当社の健康保険・厚生年金・雇用保険は適用されず、確定申告はご自身で行っていただきます。有給休暇や残業代といった労働基準法上の制度も適用されません。労災保険は、ご自身で特別加入制度を利用できる場合があります。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">短期だけ、</span><span class="ph">副業として</span><span class="ph">数日だけでも</span><span class="ph">働けますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>この案件ではお受けしていません。長期的に関わっていただける方を前提に募集しているためです。短期で収入を作りたい場合は、他社のスポット案件のほうが条件が合うと思います。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">「配達の先」とは、</span><span class="ph">具体的に</span><span class="ph">何ですか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>新しく入った方の同行研修、エリアの調整、品質管理といった管理業務を、配達とあわせてお任せしていきます。報酬は配達分に加えてインセンティブが付きます。この募集では社員登用という形は取っていないので、業務委託のまま、任せる範囲と報酬が増えていくとお考えください。社会保険・雇用保険が適用されない点は、役割が変わっても同じです。「何年で何を任せる」という約束はせず、いま任せられる範囲とその先の道筋を面談でお伝えします。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">法人（協力会社）として</span><span class="ph">エリアごと</span><span class="ph">受けられますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>できます。エリア単位での一括委託をご相談ください。台数・稼働できる日・既存の配送体制をお聞かせいただければ、具体的な形を詰めます。窓口は同じ <a class="nw" href="tel:08089560913" data-cta="tel-faq">080-8956-0913</a> です。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">世田谷区以外でも</span><span class="ph">働けますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>当社は座間市・相模原市・横浜市・世田谷区・大田区で配送しています。このページは世田谷区の案件向けですが、他エリアのご相談も同じ窓口で受け付けています。</p></div></details>
-        <details class="qa"><summary><span class="q-mk mc" aria-hidden="true">問</span><span class="q-tx"><span class="ph">応募したら、</span><span class="ph">いつ連絡が</span><span class="ph">来ますか？</span></span><span class="pm" aria-hidden="true"></span></summary><div class="ans"><span class="a-mk mc" aria-hidden="true">答</span><p>お電話なら、その場で採用担当が条件をお伝えします。メール（info@mimoria.jp）の場合は、採用担当から折り返しご連絡します。急ぐ方は、お電話のほうが確実です。</p></div></details>
-      </div>
+  <div class="wrap g48">
+    <div><div class="side">
+      <div class="sh rv"><span class="sh-no">06</span><span class="sh-rl"></span><span>質問</span></div>
+      <h2 id="h-faq" class="rv">よくある質問</h2>
+    </div></div>
+    <div>
+      <details class="fold faq-more">
+        <summary><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="fd-t">質問の一覧（<span class="nm">12</span>問）</span><span class="more"><span class="o">開く</span><span class="c">閉じる</span><i class="pl" aria-hidden="true"></i></span></summary>
+        <div class="body">
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-pair"/></svg><span class="q-tx"><span class="ph">未経験でも</span><span class="ph">応募できますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>できます。先輩ドライバーの同行からスタートします。普通自動車運転免許（AT限定可）があれば応募いただけます。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-tag"/></svg><span class="q-tx">単価はいくらですか？</span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>当社が公表している単価は143円／個〜で、エリア・案件によって変わります。ゆうパックの配送単価は担当局や案件の内容で変わるため、このページで確定した数字はお約束できません。実際の単価は面談でお伝えし、契約時に書面（電磁的方法を含む）で明示します。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-calc"/></svg><span class="q-tx"><span class="ph">結局、</span><span class="ph">いくら稼げますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>配達個数と単価、そしてご自身の経費で変わります。このページの試算に、想定する個数と実費を入れて計算してください。当社から「月○万円を保証します」という言い方はしません。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-plate"/></svg><span class="q-tx"><span class="ph">黒ナンバーは</span><span class="ph">必要ですか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>必要です。軽貨物で宅配の仕事を請けるには、貨物軽自動車運送事業の届出（事業用の黒ナンバー）が必要で、自家用の黄色ナンバーのままでは配送できません。届出がまだの方には、手続きの進め方を面談でご案内します。「マイカーですぐ稼げる」という案内はしていません。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg><span class="q-tx">車を持っていません。</span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>リースの相談ができます。その場合、月額・契約期間・中途解約時の扱い・保険・故障時の負担を、契約前に必ず提示します。金額を伏せたまま契約をお願いすることはありません。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-zero"/></svg><span class="q-tx"><span class="ph">加盟金や</span><span class="ph">登録料は</span><span class="ph">かかりますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>かかりません。加盟金・登録料・保証金は一切いただきません。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="q-tx"><span class="ph">雇用とは</span><span class="ph">どう違いますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>業務委託契約なので、当社の健康保険・厚生年金・雇用保険は適用されず、確定申告はご自身で行っていただきます。有給休暇や残業代といった労働基準法上の制度も適用されません。労災保険は、ご自身で特別加入制度を利用できる場合があります。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-calendar"/></svg><span class="q-tx"><span class="ph">短期だけ、</span><span class="ph">副業として</span><span class="ph">数日だけでも</span><span class="ph">働けますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>この案件ではお受けしていません。長期的に関わっていただける方を前提に募集しているためです。短期で収入を作りたい場合は、他社のスポット案件のほうが条件が合うと思います。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-key"/></svg><span class="q-tx"><span class="ph">「配達の先」とは、</span><span class="ph">具体的に</span><span class="ph">何ですか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>新しく入った方の同行研修、エリアの調整、品質管理といった管理業務を、配達とあわせてお任せしていきます。報酬は配達分に加えてインセンティブが付きます。この募集では社員登用という形は取っていないので、業務委託のまま、任せる範囲と報酬が増えていくとお考えください。社会保険・雇用保険が適用されない点は、役割が変わっても同じです。「何年で何を任せる」という約束はせず、いま任せられる範囲とその先の道筋を面談でお伝えします。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-building"/></svg><span class="q-tx"><span class="ph">法人（協力会社）として</span><span class="ph">エリアごと</span><span class="ph">受けられますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>できます。エリア単位での一括委託をご相談ください。台数・稼働できる日・既存の配送体制をお聞かせいただければ、具体的な形を詰めます。窓口は同じ <a class="nw" href="tel:08089560913" data-cta="tel-faq">080-8956-0913</a> です。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-pin"/></svg><span class="q-tx"><span class="ph">世田谷区以外でも</span><span class="ph">働けますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>当社は座間市・相模原市・横浜市・世田谷区・大田区で配送しています。このページは世田谷区の案件向けですが、他エリアのご相談も同じ窓口で受け付けています。</p></div></details>
+          <details class="qa"><summary><svg class="ico" aria-hidden="true"><use href="#p-talk"/></svg><span class="q-tx"><span class="ph">応募したら、</span><span class="ph">いつ連絡が</span><span class="ph">来ますか？</span></span><i class="pl" aria-hidden="true"></i></summary><div class="ans"><p>お電話なら、その場で採用担当が条件をお伝えします。メール（info@mimoria.jp）の場合は、採用担当から折り返しご連絡します。急ぐ方は、お電話のほうが確実です。</p></div></details>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- S8 応募（id="apply" は変えない） -->
+<!-- S8 連絡（id="apply" は変えない） -->
 <section class="sec dark" id="apply" aria-labelledby="h-apply">
   <div class="wrap">
     <div class="sh rv"><span class="sh-no">07</span><span class="sh-rl"></span><span>連絡</span></div>
-    <div class="g12 head">
+    <div class="g12 apply-head">
       <h2 id="h-apply" class="rv"><span class="ph">話を、</span><span class="ph">はじめましょう。</span></h2>
-      <p class="lead rv">履歴書は要りません。「世田谷のゆうパックの件で」とだけ伝えてください。どこまでやりたいか、何年くらいで考えているか。そこから話しましょう。</p>
+      <p class="lead rv"><span class="ph">履歴書は要りません。</span><span class="ph">「世田谷のゆうパックの件で」</span><span class="ph">とだけ伝えてください。</span></p>
     </div>
     <div class="apply-cards" id="apply-cards">
       <div class="card card-tel rv">
-        <h3>電話で話す</h3>
-        <p>採用担当の柳井が直接出て、単価・エリア・開始時期をその場で詰められます。</p>
+        <h3><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg>電話で話す</h3>
+        <p><span class="ph">採用担当の柳井が出て、</span><span class="ph">単価やエリアを</span><span class="ph">その場で話せます。</span></p>
         <a class="btn btn-tel btn-big" href="tel:08089560913" data-cta="tel-apply"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg><span><span class="nm">080-8956-0913</span><small>タップで発信</small></span></a>
       </div>
       <div class="card card-form rv" style="--i:2">
-        <h3>メールで送る</h3>
-        <p>件名に「世田谷区・ゆうパックの業務委託希望」と書いて送ってください。採用担当から折り返しご連絡します。</p>
-        <div class="copybox"><span id="copy-src">info@mimoria.jp</span><button type="button" class="copy-btn" id="copy-btn"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>コピー</button></div>
+        <h3><svg class="ico" aria-hidden="true"><use href="#p-mail"/></svg>メールで送る</h3>
+        <p><span class="ph">件名に「世田谷区・ゆうパックの</span><span class="ph">業務委託希望」と</span><span class="ph">入れてください。</span></p>
+        <div class="copybox"><span id="copy-src" class="nw">info@mimoria.jp</span><button type="button" class="copy-btn" id="copy-btn"><svg class="ico" aria-hidden="true"><use href="#i-copy"/></svg>コピー</button></div>
+        <p class="who"><span class="ph">株式会社MIMORIAのアドレスで、</span><span class="ph">柳井が受け取ります。</span></p>
         <a class="btn btn-sub" href="mailto:info@mimoria.jp?subject=%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E3%83%BB%E3%82%86%E3%81%86%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E5%B8%8C%E6%9C%9B" data-cta="mail-apply">メールを書く<svg class="ico" aria-hidden="true"><use href="#i-out"/></svg></a>
       </div>
     </div>
-    <p class="partner"><b>協力会社の方へ</b>エリア単位での一括委託のご相談も、同じ電話・メールで受け付けています。</p>
+    <ul class="irows partner">
+      <li class="irow"><svg class="ico" aria-hidden="true"><use href="#p-building"/></svg><span><b>協力会社の方へ</b><span class="ph">エリアごとの一括委託も、</span><span class="ph">同じ窓口で相談できます。</span></span></li>
+    </ul>
 
     <h3 class="flow-h rv">連絡のあとの流れ</h3>
-    <ol class="route flow">
-      <li style="--i:0"><span class="stop">1</span><h4>連絡</h4><p>電話かメールで。</p></li>
-      <li style="--i:1"><span class="stop">2</span><h4>面談</h4><p>実単価と経費の負担区分を提示します。</p></li>
-      <li style="--i:2"><span class="stop">3</span><h4>契約</h4><p>条件を書面で明示します。</p></li>
-      <li style="--i:3"><span class="stop">4</span><h4>稼働</h4><p>未経験の方は同行から。</p></li>
+    <ol class="route route--flow">
+      <li style="--i:0"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg></span><p class="t">連絡<small>電話かメールで</small></p></li>
+      <li style="--i:1"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-talk"/></svg></span><p class="t">面談<small>実単価と経費の負担区分を提示</small></p></li>
+      <li style="--i:2"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-pen"/></svg></span><p class="t">契約<small>条件を書面で明示</small></p></li>
+      <li style="--i:3"><span class="stop"><svg class="ico" aria-hidden="true"><use href="#p-van"/></svg></span><p class="t">稼働<small>未経験は同行から</small></p></li>
     </ol>
 
-    <div class="privacy">
-      <h3>個人情報の取り扱い</h3>
-      <p>お電話・メールでいただいた氏名・連絡先等は、本募集に関するご連絡と選考のためにのみ利用します。ご本人の同意なく第三者へ提供することはありません。利用目的の範囲を超えて使用せず、不要になった時点で削除します。応募・お問い合わせの受付と連絡は、BURNING BROS.【バーニングブロス】株式会社の採用担当（柳井 良介）が行い、メールは株式会社MIMORIAのアドレス（info@mimoria.jp）で受け付けています。削除・開示のご希望は <span class="nw">080-8956-0913</span> または <span class="nw">info@mimoria.jp</span> までお知らせください。</p>
-      <p>このページでは、閲覧の状況を知るために Google アナリティクスを使っています。Cookie により、見たページや操作などの情報を集めますが、氏名や連絡先は集めません。Google によるデータの扱いは、<a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Google のポリシー</a>をご覧ください。</p>
-    </div>
+    <details class="fold privacy">
+      <summary><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="fd-t"><span class="ph">個人情報と、</span><span class="ph">アクセス解析</span><span class="ph">について</span></span><span class="more"><span class="o">開く</span><span class="c">閉じる</span><i class="pl" aria-hidden="true"></i></span></summary>
+      <div class="body">
+        <p>お電話・メールでいただいた氏名・連絡先等は、本募集に関するご連絡と選考のためにのみ利用します。ご本人の同意なく第三者へ提供することはありません。利用目的の範囲を超えて使用せず、不要になった時点で削除します。応募・お問い合わせの受付と連絡は、BURNING BROS.【バーニングブロス】株式会社の採用担当（柳井 良介）が行い、メールは株式会社MIMORIAのアドレス（info@mimoria.jp）で受け付けています。削除・開示のご希望は <span class="nw">080-8956-0913</span> または <span class="nw">info@mimoria.jp</span> までお知らせください。</p>
+        <p>このページでは、閲覧の状況を知るために Google アナリティクスを使っています。Cookie により、見たページや操作などの情報を集めますが、氏名や連絡先は集めません。Google によるデータの扱いは、<a href="https://policies.google.com/technologies/partner-sites?hl=ja" target="_blank" rel="noopener">Google のポリシー</a>をご覧ください。</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -899,22 +1021,39 @@ details[open] .ans{animation:openIn .2s ease-out}
 <footer class="ft">
   <div class="wrap ft-grid">
     <div>
-      <img class="ft-logo" src="img/logo.png" width="300" height="71" alt="BURNING BROS.【バーニングブロス】株式会社" loading="lazy" decoding="async">
-      <p class="ft-co"><b><span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社</span></b>〒252-0318 神奈川県相模原市南区上鶴間本町3-18-27<br>採用担当：柳井 良介<br>TEL <a href="tel:08089560913" data-cta="tel-footer">080-8956-0913</a>／<a href="mailto:info@mimoria.jp?subject=%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E3%83%BB%E3%82%86%E3%81%86%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E5%B8%8C%E6%9C%9B" data-cta="mail-footer">info@mimoria.jp</a><br><a href="https://burning-bros.com" target="_blank" rel="noopener">burning-bros.com</a></p>
+      <a class="ft-logo" href="https://burning-bros.com" target="_blank" rel="noopener"><img src="img/logo.png" width="300" height="71" alt="BURNING BROS.【バーニングブロス】株式会社" loading="lazy" decoding="async"></a>
+      <figure class="ft-van">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="img/day-van-700.webp" width="700" height="525">
+          <img src="img/day-van-320.webp" width="320" height="240" alt="当社の黒い軽バン。住宅街の道に停めてある" loading="lazy" decoding="async">
+        </picture>
+        <figcaption class="cap"><span class="ph">当社の車両</span><span class="ph">（写真：当社公式サイトより）</span></figcaption>
+      </figure>
     </div>
-    <nav class="ft-links" aria-label="関連ページ">
-      <a href="../"><span><span class="ph">配送パートナー募集トップ</span><span class="ph">（全エリア）</span></span><svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
-      <a href="mailto:info@mimoria.jp?subject=%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E3%83%BB%E3%82%86%E3%81%86%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E5%B8%8C%E6%9C%9B" data-cta="mail-footer-nav">メールで問い合わせる<svg class="ico" aria-hidden="true"><use href="#i-out"/></svg></a>
-    </nav>
-    <div class="ft-legal">
-      <p>年齢・性別・国籍による応募の制限はありません。記載内容は2026年11月1日時点のものです。募集を終了した場合は、速やかに掲載を終了します。</p>
-      <p>ゆうパックは日本郵便株式会社のサービスです。本ページは BURNING BROS.【バーニングブロス】株式会社による業務委託パートナーの募集で、日本郵便株式会社の募集ページではありません。</p>
-      <div class="ft-photo">
-        <h3>写真について</h3>
-        <p>ページ上部の軽バンの写真と、「配達の先」にある地図と手の写真は、画像生成AIで作成したイメージです。実在の車両・場所・人物ではありません。</p>
-        <p>夕景の写真：Doricono「<a href="https://commons.wikimedia.org/wiki/File:Mt_Fuji_Sunset_from_Okamoto,_Setagaya,_Tokyo.jpg" target="_blank" rel="noopener">Mt Fuji Sunset from Okamoto, Setagaya, Tokyo</a>」（Wikimedia Commons）／ライセンス：<a class="nw" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a> ／切り抜き・色調補正・縮小</p>
+    <div>
+      <div class="ft-co">
+        <p><b><span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社</span></b></p>
+        <p>〒252-0318 <span class="ph">神奈川県相模原市南区</span><span class="ph">上鶴間本町3-18-27</span></p>
+        <p>採用担当：柳井 良介</p>
+        <p>TEL <a class="nw" href="tel:08089560913" data-cta="tel-footer">080-8956-0913</a></p>
+        <p><a href="mailto:info@mimoria.jp?subject=%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E3%83%BB%E3%82%86%E3%81%86%E3%83%91%E3%83%83%E3%82%AF%E3%81%AE%E6%A5%AD%E5%8B%99%E5%A7%94%E8%A8%97%E5%B8%8C%E6%9C%9B" data-cta="mail-footer">info@mimoria.jp</a></p>
       </div>
-      <p class="ft-copy">&copy; <span class="ph">BURNING BROS.</span><span class="ph">【バーニングブロス】株式会社</span></p>
+      <nav class="ft-links" aria-label="関連ページ">
+        <a href="../">全エリアの募集を見る<svg class="ico" aria-hidden="true"><use href="#i-right"/></svg></a>
+      </nav>
+    </div>
+    <div class="ft-legal">
+      <p>年齢・性別・国籍による応募の制限はありません。</p>
+      <p>募集を終了したら、速やかに掲載を終えます。</p>
+      <p>ゆうパックは日本郵便株式会社のサービスです。このページは日本郵便の募集ページではありません。</p>
+      <details class="fold">
+        <summary><svg class="ico" aria-hidden="true"><use href="#p-doc"/></svg><span class="fd-t">写真について</span><span class="more"><span class="o">開く</span><span class="c">閉じる</span><i class="pl" aria-hidden="true"></i></span></summary>
+        <div class="body">
+          <p>ページ上部の軽バンの写真と、「配達の先」にある地図と手の写真は、画像生成AIで作成したイメージです。実在の車両・場所・人物ではありません。</p>
+          <p>夕景の写真：Doricono「<a href="https://commons.wikimedia.org/wiki/File:Mt_Fuji_Sunset_from_Okamoto,_Setagaya,_Tokyo.jpg" target="_blank" rel="noopener">Mt Fuji Sunset from Okamoto, Setagaya, Tokyo</a>」（Wikimedia Commons）／ライセンス：<a class="nw" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a> ／切り抜き・色調補正・縮小</p>
+        </div>
+      </details>
+      <p class="ft-copy">&copy; BURNING BROS.</p>
     </div>
   </div>
 </footer>
@@ -945,9 +1084,8 @@ details[open] .ans{animation:openIn .2s ease-out}
   var el = {};
   ids.forEach(function (k) { el[k] = d.getElementById('s-' + k); el['v' + k] = d.getElementById('v-' + k); });
   var out = {
-    net: d.getElementById('v-net'), rev: d.getElementById('v-rev'), cost: d.getElementById('v-cost'),
-    perday: d.getElementById('v-perday'), mini: d.getElementById('v-mini'), bar: d.getElementById('v-bar'),
-    box: d.getElementById('sim-result')
+    net: d.getElementById('v-net'), perday: d.getElementById('v-perday'), mini: d.getElementById('v-mini'),
+    bar: d.getElementById('v-bar'), box: d.getElementById('sim-result')
   };
   var simFired = false, shownNet = 322520, tween = 0;
   function fmt(n) { return Math.round(n).toLocaleString('ja-JP'); }
@@ -984,8 +1122,6 @@ details[open] .ans{animation:openIn .2s ease-out}
       }
       if (el['v' + k]) el['v' + k].textContent = fmt(v);
     });
-    out.rev.textContent = fmt(rev);
-    out.cost.textContent = '−' + fmt(cost);
     out.perday.textContent = '1日あたり約' + signed(days ? net / days : 0) + '円（配達' + qty + '個×' + price + '円×' + days + '日−経費' + fmt(cost) + '円）';
     out.bar.style.width = (rev > 0 && net > 0 ? net / rev * 100 : 0).toFixed(2) + '%';
     out.box.classList.toggle('neg', net < 0);
@@ -1032,6 +1168,21 @@ details[open] .ans{animation:openIn .2s ease-out}
     else fallback();
   });
 
+  /* 条件: すべて開く／すべて閉じる（JS のときだけ出す。行は1つずつでも開ける） */
+  var allBtn = d.getElementById('spec-all'), rows = d.querySelectorAll('#spec details.row');
+  function syncAll() {
+    var open = Array.prototype.every.call(rows, function (r) { return r.open; });
+    allBtn.textContent = open ? 'すべて閉じる' : 'すべて開く';
+    allBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  allBtn.hidden = false;
+  allBtn.addEventListener('click', function () {
+    var open = allBtn.getAttribute('aria-expanded') !== 'true';
+    Array.prototype.forEach.call(rows, function (r) { r.open = open; });
+    syncAll();
+  });
+  Array.prototype.forEach.call(rows, function (r) { r.addEventListener('toggle', syncAll); });
+
   /* ページ内リンク: 押した瞬間だけ smooth にする（CSS で常時 smooth にすると、撮影や支援技術の「先頭へ戻す」が途中で止まる） */
   if (!reduce) d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="#"]');
@@ -1040,34 +1191,27 @@ details[open] .ans{animation:openIn .2s ease-out}
     setTimeout(function () { root.style.scrollBehavior = ''; }, 1200);
   });
 
-  /* 条件（1024以上）: 2×2 の格子の空きを詰める。C は A の下、D は B の下（JS が無ければ普通の 2×2） */
-  var cdoc = d.querySelector('#conditions .doc'), wide = window.matchMedia && matchMedia('(min-width: 1024px)');
-  function mason() {
-    var on = !!(wide && wide.matches);
-    cdoc.classList.toggle('mason', on);
-    Array.prototype.forEach.call(cdoc.children, function (g) {
-      g.style.gridRowEnd = on ? 'span ' + Math.ceil((g.getBoundingClientRect().height + 20) / 4) : '';
-    });
-  }
-  mason();
-  if (d.fonts && d.fonts.ready) d.fonts.ready.then(mason);
-  var masonT = 0;
-  window.addEventListener('resize', function () { clearTimeout(masonT); masonT = setTimeout(mason, 120); });
-
   /* ヘッダーの罫（1024以上） */
   var hd = d.getElementById('hd');
   window.addEventListener('scroll', function () { hd.classList.toggle('sc', window.scrollY > 8); }, { passive: true });
 
-  /* 浮き上がり・ルート線・固定バー・試算の小さい結果 */
+  /* 浮き上がり・道筋の線・札の罫・ものさし・固定バー・試算の小さい結果 */
   if (!('IntersectionObserver' in window)) { root.classList.add('rv-off'); return; }
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -8% 0px' });
-  d.querySelectorAll('.rv, .route').forEach(function (n) { io.observe(n); });
+  d.querySelectorAll('.rv, .route, .irows').forEach(function (n) { io.observe(n); });
 
   var bar = d.getElementById('sbar'), heroOut = false, applyIn = false;
   function upd() { bar.classList.toggle('on', heroOut && !applyIn); }
-  new IntersectionObserver(function (es) { heroOut = es[0].intersectionRatio < 0.99; upd(); }, { threshold: [0, 0.99, 1] }).observe(d.querySelector('.hero .btn-tel'));
+  // ヒーローの電話を「通り過ぎた」ときだけ出す（QA 4周目 #13: 第一画面でバーが札に重なり、限定が隠れていた）。
+  // IntersectionObserver だと、下から先頭へ一気に戻ったとき（ボタンが一度も画面に入らない）に呼ばれず、出たまま残る。
+  // そこでスクロールのたびに位置を直接測る。
+  var heroBtn = d.querySelector('.hero .btn-tel'), heroTick = false;
+  function heroChk() { heroTick = false; heroOut = heroBtn.getBoundingClientRect().top < 0; upd(); }
+  window.addEventListener('scroll', function () { if (!heroTick) { heroTick = true; requestAnimationFrame(heroChk); } }, { passive: true });
+  window.addEventListener('resize', heroChk);
+  heroChk();
   new IntersectionObserver(function (es) { applyIn = es[0].isIntersecting; upd(); }).observe(d.getElementById('apply-cards'));
   var mini = d.getElementById('sim-mini');
   new IntersectionObserver(function (es) { mini.classList.toggle('off', es[0].isIntersecting); }).observe(out.box);
