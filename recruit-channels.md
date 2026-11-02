@@ -160,7 +160,8 @@ Search Console 送信済みの `https://richend0913.github.io/sitemap_index.xml`
 
 ## 数字の見かた
 
-LPには GA4（G-MEKMEB48FQ、公式サイトと同じプロパティ）を入れてあり、次のイベントが飛ぶ:
+LPには GA4 を入れてあり、次のイベントが飛ぶ:
+※2026-11-02 訂正: 当初 G-MEKMEB48FQ（「公式サイトと同じプロパティ」と記録されていた）を入れていたが、オーナーの両Googleアカウント（ryosuke459a / next.growth0913）を実地確認したところ、どちらのアカウントにも存在しなかった（next.growth0913 には Analytics 自体が未作成）。世田谷LPの計測がオーナー管理外のプロパティに飛んでいたため、2026-11-02 に採用LP群の実在プロパティ G-63VB4HT3T2（jobconnect-app-54a70、ryosuke459a 所有）へ統一した。
 
 | イベント | 意味 |
 |---|---|
